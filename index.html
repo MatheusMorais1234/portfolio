@@ -31,8 +31,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
-<link rel="stylesheet" href="assets/css/fonts.css?v=20261016">
-<link rel="stylesheet" href="assets/css/style.css?v=20261016">
+<link rel="stylesheet" href="assets/css/fonts.css?v=20261017">
+<link rel="stylesheet" href="assets/css/style.css?v=20261017">
 
 <script type="application/ld+json">
 {
@@ -75,7 +75,7 @@
         <span class="lang__opt is-on" data-lang="pt">PT</span>
         <span class="lang__opt" data-lang="en">EN</span>
       </button>
-      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261016" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
+      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261017" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
         <i aria-hidden="true"></i><i aria-hidden="true"></i>
       </button>
@@ -95,7 +95,7 @@
     <a href="#certificados" data-i18n="nav.certs">Certificados</a>
     <a href="#contato" data-i18n="nav.cta">Contato</a>
   </nav>
-  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261016" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261017" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
 </div>
 
 <main id="main">
@@ -109,7 +109,7 @@
       <p class="hero__lede" data-i18n="hero.lede">Sou Matheus Morais, desenvolvedor full-stack em Goiânia. Na ASSEGO, criei e mantive os sistemas de gestão usados por mais de 100 funcionários e o aplicativo de cerca de 9 mil associados, com cobrança integrada ao Sicoob e ao Itaú.</p>
       <div class="hero__cta">
         <a class="btn btn--solid" href="#contato" data-i18n="hero.ctaPrimary">Entrar em contato</a>
-        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261016" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261017" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
       </div>
     </div>
 
@@ -256,6 +256,28 @@
           <p class="oss__side-h" data-i18n="code.builtWith">Construído com</p>
           <ul class="oss__stack" id="ossStack"><!--g:ossStack--><li>React</li><li>Vite</li><li>Express</li><li>Node.js</li><li>Prisma</li><li>PostgreSQL</li><li>JWT</li><!--/g:ossStack--></ul>
           <p class="oss__more" id="ossMore"><!--g:ossMore-->Também há repositórios de estudo de POO e princípios SOLID em Java, do período em que comecei na stack.<!--/g:ossMore--></p>
+        </aside>
+      </article>
+
+      <article class="oss oss--case" id="pizzaria">
+        <figure class="case__shot">
+          <img src="assets/img/projetos/pizzaria.jpg" alt="Painel da pizzaria: pedidos em kanban nas colunas novos, em andamento, saiu para entrega e concluídos" width="1550" height="698" loading="lazy">
+        </figure>
+        <div class="oss__main">
+          <p class="oss__kicker" data-i18n="pizza.kicker">Projeto pessoal · código aberto</p>
+          <h3 class="oss__name">Bella Napoli</h3>
+          <p class="oss__tagline" data-i18n="pizza.tagline">Sistema de delivery para pizzaria</p>
+          <p class="oss__desc" data-i18n="pizza.desc">O cliente monta o pedido pelo celular — tamanhos, adicionais, cupom, fidelidade, pedido pela mesa via QR Code — e acompanha cada etapa. A pizzaria controla tudo num painel com kanban, cardápio, cupons e relatórios. Antes de publicar, fiz uma revisão de segurança e corrigi XSS armazenado, acesso a pedidos de terceiros e CSRF no painel, cada correção num commit próprio.</p>
+          <div class="oss__links">
+            <a class="btn btn--solid" href="https://pizzaria.matheusmorais.com" target="_blank" rel="noopener" data-i18n="pizza.demo">Abrir a demo</a>
+            <a class="btn btn--line" href="https://pizzaria.matheusmorais.com/admin/login.php" target="_blank" rel="noopener" data-i18n="pizza.admin">Painel da pizzaria</a>
+            <a class="btn btn--line" href="https://github.com/MatheusMorais1234/pizzaria-delivery" target="_blank" rel="noopener" data-i18n="pizza.code">Ver o código</a>
+          </div>
+        </div>
+        <aside class="oss__side">
+          <p class="oss__side-h" data-i18n="code.builtWith">Construído com</p>
+          <ul class="oss__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>Tailwind CSS</li><li>PDO</li></ul>
+          <p class="oss__more" data-i18n="pizza.more">Marca fictícia. A demo tem uma conta de teste no painel e é recriada a cada 24 horas — pode fazer pedidos e mexer à vontade.</p>
         </aside>
       </article>
 
@@ -534,7 +556,7 @@
         <div><dt>GitHub</dt><dd><a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">MatheusMorais1234</a></dd></div>
       </dl>
 
-      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261016" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
+      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261017" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
     </header>
 
     <div class="sec__body">
@@ -615,9 +637,9 @@
   </button>
 </div>
 
-<script src="assets/js/data.js?v=20261016" defer></script>
-<script src="assets/js/i18n.js?v=20261016" defer></script>
-<script src="assets/js/render.js?v=20261016" defer></script>
-<script src="assets/js/main.js?v=20261016" defer></script>
+<script src="assets/js/data.js?v=20261017" defer></script>
+<script src="assets/js/i18n.js?v=20261017" defer></script>
+<script src="assets/js/render.js?v=20261017" defer></script>
+<script src="assets/js/main.js?v=20261017" defer></script>
 </body>
 </html>
