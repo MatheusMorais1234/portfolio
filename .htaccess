@@ -1,0 +1,59 @@
+# ===== matheusmorais.com =====
+
+# HTTPS + sem www
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+
+# Compressao
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+  # webp e woff2 ja sao comprimidos — nao passam pelo gzip
+</IfModule>
+
+# Cache do navegador
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  # CSS e JS entram com ?v=AAAAMMDD no index.html: trocar a versao
+  # invalida o cache na hora, entao da para guardar por um ano.
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/pdf "access plus 30 days"
+</IfModule>
+
+# Seguranca
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # O site e 100% self-hosted. O unico destino externo e api.github.com,
+  # usada para a data do ultimo commit (connect-src).
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.github.com https://api.web3forms.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
+
+  # Nenhuma dessas APIs e usada pelo site.
+  Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=()"
+
+  Header set Cross-Origin-Opener-Policy "same-origin"
+
+  # HSTS so entra em respostas HTTPS. Ative o SSL antes de subir isto.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# Nada de PDF cru de certificado nem da pasta privada, mesmo que suba por engano
+RedirectMatch 404 ^/_nao-publicar/
+RedirectMatch 404 ^/_ferramentas/
+RedirectMatch 404 ^/assets/img/certificados/.*\.(pdf|PDF)$
+
+ErrorDocument 404 /404.html

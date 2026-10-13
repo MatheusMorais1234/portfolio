@@ -1,0 +1,6 @@
+# Documentos originais com CPF, RG e assinatura — nunca versionar nem publicar
+_nao-publicar/
+
+*.zip
+.DS_Store
+Thumbs.db

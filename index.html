@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="docTitle">Matheus Morais — Desenvolvedor Full-Stack</title>
+<meta name="description" id="docDesc" content="Desenvolvedor full-stack júnior em Goiânia. Sistemas de gestão, dashboards financeiros e integrações de pagamento em produção desde 2023, com PHP, TypeScript, React e Next.js.">
+<meta name="author" content="Matheus Renato Arantes de Morais">
+<link rel="canonical" id="docCanonical" href="https://matheusmorais.com/">
+
+<!-- As duas versões têm URL própria: o idioma vive em ?lang= e é compartilhável. -->
+<link rel="alternate" hreflang="pt-BR" href="https://matheusmorais.com/">
+<link rel="alternate" hreflang="en" href="https://matheusmorais.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://matheusmorais.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" id="ogUrl" content="https://matheusmorais.com/">
+<meta property="og:title" id="ogTitle" content="Matheus Morais — Desenvolvedor Full-Stack">
+<meta property="og:description" id="ogDesc" content="Desenvolvedor full-stack júnior em Goiânia. Sistemas de gestão, relatórios financeiros e integrações bancárias em produção desde 2023.">
+<meta property="og:image" content="https://matheusmorais.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Matheus Morais — Desenvolvedor Full-Stack">
+<meta property="og:locale" id="ogLocale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="Matheus Morais">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
+<link rel="stylesheet" href="assets/css/fonts.css?v=20261013">
+<link rel="stylesheet" href="assets/css/style.css?v=20261013">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matheus Renato Arantes de Morais",
+  "alternateName": "Matheus Morais",
+  "jobTitle": "Desenvolvedor Full-Stack",
+  "url": "https://matheusmorais.com/",
+  "email": "matheusrenatoam@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Goiânia", "addressRegion": "GO", "addressCountry": "BR" },
+  "sameAs": ["https://www.linkedin.com/in/arantes-matheus", "https://github.com/MatheusMorais1234"],
+  "knowsLanguage": ["pt-BR", "en"],
+  "knowsAbout": ["PHP", "JavaScript", "TypeScript", "React", "Next.js", "Java", "SQL", "MySQL", "PostgreSQL", "Docker", "Linux"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a href="#top" class="nav__brand">Matheus Morais</a>
+
+    <nav class="nav__links" aria-label="Seções">
+      <a href="#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="#experiencia" data-i18n="nav.path">Experiência</a>
+      <a href="#projetos" data-i18n="nav.work">Projetos</a>
+      <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
+      <!--g:navServices--><!--/g:navServices-->
+      <a href="#tecnologias" data-i18n="nav.stack">Tecnologias</a>
+      <a href="#certificados" data-i18n="nav.certs">Certificados</a>
+      <a href="#contato" data-i18n="nav.cta">Contato</a>
+    </nav>
+
+    <div class="nav__right">
+      <button class="lang" id="langToggle" type="button" aria-label="Trocar idioma / Switch language">
+        <span class="lang__opt is-on" data-lang="pt">PT</span>
+        <span class="lang__opt" data-lang="en">EN</span>
+      </button>
+      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+        <i aria-hidden="true"></i><i aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MENU MOBILE ===== -->
+<div class="menu" id="menu" hidden>
+  <nav class="menu__links" aria-label="Seções (menu)">
+    <a href="#sobre" data-i18n="nav.about">Sobre</a>
+    <a href="#experiencia" data-i18n="nav.path">Experiência</a>
+    <a href="#projetos" data-i18n="nav.work">Projetos</a>
+      <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
+    <!--g:menuServices--><!--/g:menuServices-->
+    <a href="#tecnologias" data-i18n="nav.stack">Tecnologias</a>
+    <a href="#certificados" data-i18n="nav.certs">Certificados</a>
+    <a href="#contato" data-i18n="nav.cta">Contato</a>
+  </nav>
+  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+</div>
+
+<main id="main">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="hero__status"><span class="hero__dot" aria-hidden="true"></span><span data-i18n="hero.status">Disponível para início imediato em vagas de desenvolvedor júnior</span></p>
+      <h1 class="hero__title" data-i18n="hero.title">Sistemas de gestão, relatórios financeiros e integrações bancárias em produção desde 2023.</h1>
+      <p class="hero__lede" data-i18n="hero.lede">Sou Matheus Morais, desenvolvedor full-stack em Goiânia. Na ASSEGO, criei e mantive os sistemas de gestão usados por mais de 100 funcionários e o aplicativo de cerca de 9 mil associados, com cobrança integrada ao Sicoob e ao Itaú.</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#contato" data-i18n="hero.ctaPrimary">Entrar em contato</a>
+        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+      </div>
+    </div>
+
+    <figure class="hero__photo">
+      <img src="assets/img/matheus.jpeg" alt="Matheus Renato Arantes de Morais" width="720" height="1280" fetchpriority="high">
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <dl class="facts">
+      <div><dt data-i18n="facts.now">Disponibilidade</dt><dd data-i18n="facts.nowV">Imediata, em Goiânia ou remoto</dd></div>
+      <div><dt data-i18n="facts.exp">Experiência</dt><dd data-i18n="facts.expV">Desde 2023, em três empresas</dd></div>
+      <div><dt data-i18n="facts.edu">Formação</dt><dd data-i18n="facts.eduV">Análise e Desenvolvimento de Sistemas, Senac Goiás</dd></div>
+      <div><dt data-i18n="facts.lang">Idiomas</dt><dd data-i18n="facts.langV">Português nativo, inglês B2</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===== SOBRE ===== -->
+<section class="sec" id="sobre">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="about.h">Sobre</h2>
+    </header>
+    <div class="sec__body prose">
+      <p class="prose__lead" data-i18n="about.p1">Comecei em 2023 e passei a maior parte desse tempo dentro de sistemas que já existiam: código legado, banco cheio de dado real e usuário esperando do outro lado. Foi assim que aprendi a ler antes de escrever.</p>
+      <p data-i18n="about.p2">Até outubro de 2026 trabalhei na ASSEGO, uma associação com cerca de 9 mil associados, mantendo e criando os sistemas internos usados por mais de 100 funcionários: contratos, financeiro, relatórios, cobrança e o aplicativo dos associados. No último ano lá passei a atuar também em Java corporativo (Java 7/8 em JBoss EAP) e em telas Angular — em nível inicial, mas já entregando manutenção com autonomia.</p>
+      <p data-i18n="about.p3">Sou formado em Análise e Desenvolvimento de Sistemas pelo Senac Goiás e tenho certificado de inglês nível B2 pelo Centro de Línguas da UFG (480 horas), além de vivência na Alemanha. Procuro uma vaga de desenvolvedor júnior onde eu possa aprofundar essa stack e crescer junto com um time que revisa código.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIÊNCIA ===== -->
+<section class="sec" id="experiencia">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="path.h">Experiência</h2>
+      <p class="sec__sub" data-i18n="path.sub">Do mais recente ao mais antigo.</p>
+    </header>
+    <div class="sec__body">
+      <ol class="xps" id="timeline"><!--g:timeline-->
+      <li class="xp">
+        <p class="xp__when">01/2025 — 10/2026</p>
+        <div class="xp__body">
+          <h3 class="xp__role">Estagiário de Desenvolvimento</h3>
+          <p class="xp__org"><strong>ASSEGO</strong> Associação dos Subtenentes e Sargentos do Estado de Goiás</p>
+          <ul class="xp__pts"><li>Sistema de gestão de contratos com fluxo de aprovação, geração de PDF e histórico de alterações.</li><li>Sistemas de gestão, dashboards e relatórios usados por mais de 100 funcionários do administrativo e do financeiro, com filtros e exportação em PDF/Excel.</li><li>Integração com as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, retorno de pagamentos e rotinas de cobrança.</li><li>PWA usado por cerca de 9 mil associados, com foco em responsividade e uso no celular.</li><li>Manutenção em aplicações Java 7/8 em JBoss EAP 6 e 7 e correções em telas Angular.</li><li>Modelagem MySQL/PostgreSQL, versionamento com Git e deploy em Linux.</li></ul>
+          <p class="xp__tags">PHP, TypeScript, React, Next.js, MySQL, PostgreSQL, Java, JBoss, Docker, Linux</p>
+        </div>
+      </li>
+      <li class="xp">
+        <p class="xp__when">07/2023 — 04/2024</p>
+        <div class="xp__body">
+          <h3 class="xp__role">Estagiário de Desenvolvimento</h3>
+          <p class="xp__org"><strong>JHON CODE</strong> Agência de desenvolvimento web</p>
+          <ul class="xp__pts"><li>Sistemas web sob medida para diversos clientes, do banco ao front.</li><li>Painéis administrativos para que o cliente gerenciasse o próprio conteúdo sem depender de dev.</li><li>Autenticação segura: hash de senha, sessões e controle de acesso por perfil.</li><li>Modelagem de banco e diagramas de sistema antes de escrever código.</li></ul>
+          <p class="xp__tags">PHP, JavaScript, HTML, CSS, MySQL, APIs REST</p>
+        </div>
+      </li>
+      <li class="xp">
+        <p class="xp__when">01/2023 — 06/2023</p>
+        <div class="xp__body">
+          <h3 class="xp__role">Estagiário de Desenvolvimento</h3>
+          <p class="xp__org"><strong>FIO GUIA</strong> Controle financeiro para médicos</p>
+          <ul class="xp__pts"><li>Primeiro contato profissional com desenvolvimento, em produto financeiro real.</li><li>SQL, Flutter e integração de APIs no aplicativo dos clientes.</li><li>Fluxos de automação de conversas no WhatsApp com Manychat.</li></ul>
+          <p class="xp__tags">SQL, Flutter, APIs, Manychat</p>
+        </div>
+      </li>
+      <li class="xp">
+        <p class="xp__when">01/2023 — 06/2025</p>
+        <div class="xp__body">
+          <h3 class="xp__role">Análise e Desenvolvimento de Sistemas</h3>
+          <p class="xp__org"><strong>Faculdade Senac Goiás</strong> Formação concluída</p>
+          <ul class="xp__pts"><li>Engenharia de software, qualidade de software, banco de dados e metodologias ágeis.</li></ul>
+          <p class="xp__tags">Scrum, Engenharia de Software, Qualidade de Software</p>
+        </div>
+      </li>
+      <li class="xp">
+        <p class="xp__when">Concluído em 2026</p>
+        <div class="xp__body">
+          <h3 class="xp__role">Inglês, nível B2</h3>
+          <p class="xp__org"><strong>UFG</strong> Centro de Línguas da Universidade Federal de Goiás</p>
+          <ul class="xp__pts"><li>480 horas, nível B2 do Quadro Comum Europeu.</li><li>Vivência na Alemanha.</li></ul>
+        </div>
+      </li><!--/g:timeline--></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETOS ===== -->
+<section class="sec" id="projetos">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="work.h">Sistemas em produção</h2>
+      <p class="sec__sub" data-i18n="work.sub">São sistemas internos, então não há link público. Aqui está o problema que cada um resolve e com o que foi feito.</p>
+    </header>
+    <div class="sec__body">
+      <ul class="projs" id="workGrid"><!--g:work-->
+      <li class="proj">
+        <h3 class="proj__h">Gestão de contratos</h3>
+        <p class="proj__p">Cadastro, fluxo de aprovação em etapas, geração de documento em PDF e histórico completo de alterações. Substituiu um processo que vivia em planilha e e-mail.</p>
+        <p class="proj__stack">PHP, MySQL, JavaScript, PDF</p>
+      </li>
+      <li class="proj">
+        <h3 class="proj__h">Dashboards gerenciais</h3>
+        <p class="proj__p">Relatórios para o administrativo e o financeiro com filtros combinados e exportação em PDF e Excel — o que antes exigia pedir número para o TI.</p>
+        <p class="proj__stack">React, TypeScript, PostgreSQL</p>
+      </li>
+      <li class="proj">
+        <h3 class="proj__h">Integração Sicoob e Itaú</h3>
+        <p class="proj__p">Emissão de boletos, leitura do retorno de pagamento e rotinas automáticas de cobrança. A parte do sistema que não pode errar valor nem data.</p>
+        <p class="proj__stack">PHP, APIs REST, Webhooks, MySQL</p>
+      </li>
+      <li class="proj">
+        <h3 class="proj__h">PWA do associado</h3>
+        <p class="proj__p">Aplicativo instalável usado por cerca de 9 mil associados para acessar seus dados pelo celular, com layout pensado primeiro para tela pequena.</p>
+        <p class="proj__stack">Next.js, TypeScript, PWA</p>
+      </li>
+      <li class="proj">
+        <h3 class="proj__h">Automação de rotinas internas</h3>
+        <p class="proj__p">Importação de arquivos, geração de relatórios agendada e disparo de e-mail com PHPMailer. Horas de trabalho manual por mês que deixaram de existir.</p>
+        <p class="proj__stack">PHP, Cron, PHPMailer, Linux</p>
+      </li>
+      <li class="proj">
+        <h3 class="proj__h">Manutenção de legado Java</h3>
+        <p class="proj__p">Deploy de WAR, ajuste de datasource e investigação de erro por log em Java 7/8 sobre JBoss EAP 6 e 7, além de correções em telas Angular.</p>
+        <p class="proj__stack">Java 7/8, JBoss EAP, Angular</p>
+      </li><!--/g:work--></ul>
+
+      <article class="oss" id="codigo">
+        <div class="oss__main">
+          <p class="oss__kicker" data-i18n="code.h">Código aberto</p>
+          <h3 class="oss__name" id="ossName">freelamanager</h3>
+          <p class="oss__tagline" id="ossTagline"><!--g:ossTagline-->Gestor de clientes e contratos para freelancers<!--/g:ossTagline--></p>
+          <p class="oss__desc" id="ossDesc"><!--g:ossDesc-->Projeto pessoal full-stack: cadastro de clientes, contratos e acompanhamento de trabalhos. Autenticação com JWT, API em Express, banco modelado no Prisma sobre PostgreSQL e front em React com Vite. É o mesmo tipo de sistema que eu construo no trabalho — só que este dá para abrir e ler.<!--/g:ossDesc--></p>
+          <p class="oss__live" id="ossLive" aria-live="polite"></p>
+          <div class="oss__links">
+            <a class="btn btn--solid" id="ossCta" href="https://github.com/MatheusMorais1234/freelamanager" target="_blank" rel="noopener" data-i18n="code.cta">Ver o código no GitHub</a>
+            <a class="btn btn--line" href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener" data-i18n="code.profile">Todos os repositórios</a>
+          </div>
+        </div>
+        <aside class="oss__side">
+          <p class="oss__side-h" data-i18n="code.builtWith">Construído com</p>
+          <ul class="oss__stack" id="ossStack"><!--g:ossStack--><li>React</li><li>Vite</li><li>Express</li><li>Node.js</li><li>Prisma</li><li>PostgreSQL</li><li>JWT</li><!--/g:ossStack--></ul>
+          <p class="oss__more" id="ossMore"><!--g:ossMore-->Também há repositórios de estudo de POO e princípios SOLID em Java, do período em que comecei na stack.<!--/g:ossMore--></p>
+        </aside>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FERRAMENTAS ===== -->
+<section class="sec" id="ferramentas">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="tools.h">Ferramentas</h2>
+      <p class="sec__sub" data-i18n="tools.sub">Utilitários de pagamento que qualquer pessoa pode usar. Rodam no navegador, sem enviar dados, com as mesmas regras das integrações bancárias que faço no trabalho.</p>
+    </header>
+    <div class="sec__body">
+      <ul class="projs">
+        <li class="proj">
+          <h3 class="proj__h"><a class="proj__link" href="/ferramentas/pix/" data-i18n="tools.pixH">Gerador de Pix copia e cola e QR Code</a></h3>
+          <p class="proj__p" data-i18n="tools.pixP">Monta o código no padrão BR Code do Banco Central, com CRC16, e lê um código recebido para conferir se ele foi alterado.</p>
+          <p class="proj__stack">JavaScript, BR Code, CRC16, QR Code</p>
+        </li>
+        <li class="proj">
+          <h3 class="proj__h"><a class="proj__link" href="/ferramentas/boleto/" data-i18n="tools.boletoH">Validador de boleto</a></h3>
+          <p class="proj__p" data-i18n="tools.boletoP">Confere os dígitos verificadores em módulo 10 e 11, identifica banco, valor e vencimento, e desenha o código de barras Intercalado 2 de 5.</p>
+          <p class="proj__stack">JavaScript, FEBRABAN, módulo 10 e 11, ITF</p>
+        </li>
+        <li class="proj">
+          <h3 class="proj__h"><a class="proj__link" href="/ferramentas/cnab/" data-i18n="tools.cnabH">Leitor de arquivo de retorno CNAB</a></h3>
+          <p class="proj__p" data-i18n="tools.cnabP">Abre o retorno de cobrança do banco e mostra quem pagou, quanto foi creditado e o que foi rejeitado, conferindo os totais do trailer. CNAB 240 e 400 do Itaú.</p>
+          <p class="proj__stack">JavaScript, CNAB 240/400, FEBRABAN, CSV</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!--g:secServices--><!--/g:secServices-->
+
+<!-- ===== TECNOLOGIAS ===== -->
+<section class="sec" id="tecnologias">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="stack.h">Tecnologias</h2>
+      <p class="sec__sub" data-i18n="stack.sub">Agrupadas pelo quanto eu uso hoje. Abra qualquer uma para ver onde ela entrou no trabalho.</p>
+    </header>
+    <div class="sec__body techgroups" id="stackGrid"><!--g:stack-->
+      <div class="techs">
+        <h3 class="techs__h">Domínio sólido</h3>
+        <ul class="techs__list">
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/php.svg" alt="" width="20" height="20" loading="lazy"><span>PHP</span></summary>
+              <p>Base dos sistemas internos da ASSEGO e de todos os projetos de cliente na JHON CODE: gestão de contratos, rotinas de cobrança, geração de PDF e envio de e-mail com PHPMailer.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/typescript.svg" alt="" width="20" height="20" loading="lazy"><span>TypeScript</span></summary>
+              <p>Linguagem padrão do front das aplicações novas. Tipagem dos contratos de API de pagamento evitou boa parte dos erros de integração com Sicoob e Itaú.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/javascript.svg" alt="" width="20" height="20" loading="lazy"><span>JavaScript</span></summary>
+              <p>Front-end desde 2023: painéis administrativos, validação de formulários, tabelas dinâmicas e exportação de relatórios direto no navegador.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/css3.svg" alt="" width="20" height="20" loading="lazy"><span>HTML &amp; CSS</span></summary>
+              <p>Layout responsivo em tudo que entrego, com atenção a acessibilidade básica e a telas de celular — este site inclusive, escrito à mão.</p>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <div class="techs">
+        <h3 class="techs__h">Uso diário</h3>
+        <ul class="techs__list">
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/react.svg" alt="" width="20" height="20" loading="lazy"><span>React</span></summary>
+              <p>Interfaces dos dashboards gerenciais: filtros combinados, tabelas com muitos registros e exportação em PDF/Excel para as áreas administrativa e financeira.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/nextjs.svg" alt="" width="20" height="20" loading="lazy"><span>Next.js</span></summary>
+              <p>PWA dos associados — rotas, autenticação, cache offline e foco total em uso no celular, que é onde os associados realmente abrem o sistema.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/mysql.svg" alt="" width="20" height="20" loading="lazy"><span>MySQL</span></summary>
+              <p>Modelagem e manutenção das bases dos sistemas internos: histórico de alterações de contratos, conciliação de pagamentos e queries de relatório.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/postgresql.svg" alt="" width="20" height="20" loading="lazy"><span>PostgreSQL</span></summary>
+              <p>Base das aplicações mais novas. Uso de views e funções para consolidar relatórios financeiros sem pesar no front.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/docker.svg" alt="" width="20" height="20" loading="lazy"><span>Docker</span></summary>
+              <p>Padronização dos ambientes de desenvolvimento para que PHP, banco e serviços subam iguais na minha máquina e no servidor.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/linux.svg" alt="" width="20" height="20" loading="lazy"><span>Linux</span></summary>
+              <p>Deploy e operação dos sistemas: permissões, cron, leitura de log, FTP/SFTP e diagnóstico quando algo cai fora do horário.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/git.svg" alt="" width="20" height="20" loading="lazy"><span>Git</span></summary>
+              <p>Versionamento em todos os projetos, branches por demanda e histórico limpo — inclusive em bases que não tinham controle nenhum antes.</p>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <div class="techs">
+        <h3 class="techs__h">Nível inicial</h3>
+        <ul class="techs__list">
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/java.svg" alt="" width="20" height="20" loading="lazy"><span>Java</span></summary>
+              <p>Java 7 e 8 em sistemas legados: leitura de código existente, correção de rotinas e ajustes pontuais. Nível inicial, com apoio da equipe.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/spring.svg" alt="" width="20" height="20" loading="lazy"><span>Spring Boot</span></summary>
+              <p>Estudo dirigido e projetos próprios de API REST, para chegar preparado nas demandas de back-end Java do time.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/angular.svg" alt="" width="20" height="20" loading="lazy"><span>Angular</span></summary>
+              <p>Correções em telas de sistemas já existentes: componentes, formulários e chamadas de serviço. Primeiro contato, feito com apoio da equipe.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/flutter.svg" alt="" width="20" height="20" loading="lazy"><span>Flutter</span></summary>
+              <p>Na FIO GUIA, telas do app de controle financeiro para médicos, consumindo API e integrando com o fluxo de atendimento.</p>
+            </details>
+          </li>
+          <li>
+            <details class="tech">
+              <summary><img src="assets/img/logos/redhat.svg" alt="" width="20" height="20" loading="lazy"><span>JBoss EAP</span></summary>
+              <p>EAP 6 e 7: deploy de WAR, ajuste de datasource e leitura de logs para investigar erro em produção.</p>
+            </details>
+          </li>
+        </ul>
+      </div><!--/g:stack--></div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICADOS ===== -->
+<section class="sec" id="certificados">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="certs.h">Certificados</h2>
+      <p class="sec__sub" data-i18n="certs.sub">Formação e cursos. Clique em um certificado para ampliar.</p>
+    </header>
+    <div class="sec__body">
+      <ul class="certs" id="certsGrid"><!--g:certs-->
+      <li>
+        <button class="cert" type="button" data-i="0">
+          <span class="cert__shot"><img src="assets/img/certificados/diploma-ads-senac.webp" alt="" loading="lazy"></span>
+          <span class="cert__title">Tecnólogo em Análise e Desenvolvimento de Sistemas</span>
+          <span class="cert__meta">Faculdade Senac Goiás, diploma, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="1">
+          <span class="cert__shot"><img src="assets/img/certificados/ingles-b2-ufg.webp" alt="" loading="lazy"></span>
+          <span class="cert__title">Inglês — nível B2</span>
+          <span class="cert__meta">UFG, Centro de Línguas, 480h, 2026</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="2">
+          <span class="cert__shot"><img src="assets/img/certificados/ifro-web.webp" alt="" loading="lazy" class="is-top"></span>
+          <span class="cert__title">Programação para Web</span>
+          <span class="cert__meta">Cursa, IFRO, 14h37, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="3">
+          <span class="cert__shot"><img src="assets/img/certificados/ifro-analise-projeto.webp" alt="" loading="lazy" class="is-top"></span>
+          <span class="cert__title">Análise e projeto de sistemas</span>
+          <span class="cert__meta">Cursa, IFRO, 11h02, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="4">
+          <span class="cert__shot"><img src="assets/img/certificados/ifro-logica.webp" alt="" loading="lazy" class="is-top"></span>
+          <span class="cert__title">Linguagem e lógica de programação</span>
+          <span class="cert__meta">Cursa, IFRO, 09h32, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="5">
+          <span class="cert__shot"><img src="assets/img/certificados/ifro-banco-de-dados.webp" alt="" loading="lazy" class="is-top"></span>
+          <span class="cert__title">Banco de dados completo</span>
+          <span class="cert__meta">Cursa, IFRO, 06h16, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="6">
+          <span class="cert__shot"><img src="assets/img/certificados/ifro-estrutura-dados.webp" alt="" loading="lazy" class="is-top"></span>
+          <span class="cert__title">Estrutura de dados</span>
+          <span class="cert__meta">Cursa, IFRO, 04h27, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="7">
+          <span class="cert__shot"><img src="assets/img/certificados/ev-seguranca-ti.webp" alt="" loading="lazy"></span>
+          <span class="cert__title">Segurança em Tecnologia da Informação</span>
+          <span class="cert__meta">Fundação Bradesco, Escola Virtual, 12h, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="8">
+          <span class="cert__shot"><img src="assets/img/certificados/ev-hardware-software.webp" alt="" loading="lazy"></span>
+          <span class="cert__title">Fundamentos de TI: hardware e software</span>
+          <span class="cert__meta">Fundação Bradesco, Escola Virtual, 7h, 2025</span>
+        </button>
+      </li>
+      <li>
+        <button class="cert" type="button" data-i="9">
+          <span class="cert__shot"><img src="assets/img/certificados/ev-sharepoint.webp" alt="" loading="lazy"></span>
+          <span class="cert__title">SharePoint</span>
+          <span class="cert__meta">Fundação Bradesco, Escola Virtual, 2h, 2025</span>
+        </button>
+      </li><!--/g:certs--></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section class="sec sec--contact" id="contato">
+  <div class="wrap sec__grid">
+    <header class="sec__head">
+      <h2 class="sec__h" data-i18n="contact.h">Contato</h2>
+      <p class="contact__lead" data-i18n="contact.lead">Procurando um desenvolvedor júnior que já colocou sistema em produção?</p>
+      <p class="sec__sub" data-i18n="contact.sub">Posso começar imediatamente, presencial em Goiânia ou remoto. Respondo em até um dia útil.</p>
+
+      <dl class="clinks">
+        <div><dt>E-mail</dt><dd><a href="mailto:matheusrenatoam@gmail.com">matheusrenatoam@gmail.com</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/5562992014463" target="_blank" rel="noopener">+55 62 99201-4463</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">in/arantes-matheus</a></dd></div>
+        <div><dt>GitHub</dt><dd><a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">MatheusMorais1234</a></dd></div>
+      </dl>
+
+      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
+    </header>
+
+    <div class="sec__body">
+      <form class="form" id="contactForm" novalidate>
+        <h3 class="form__legend" data-i18n="form.legend">Enviar mensagem</h3>
+
+        <!-- campo-armadilha: humano não vê, robô de spam preenche -->
+        <div class="form__trap" aria-hidden="true">
+          <label for="f-site">Não preencha</label>
+          <input type="text" id="f-site" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form__row">
+          <p class="field">
+            <label for="f-nome" data-i18n="form.name">Nome</label>
+            <input type="text" id="f-nome" name="nome" required autocomplete="name" data-i18n-ph="form.namePh" placeholder="Seu nome">
+          </p>
+          <p class="field">
+            <label for="f-email" data-i18n="form.email">E-mail</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" data-i18n-ph="form.emailPh" placeholder="nome@empresa.com.br">
+          </p>
+        </div>
+
+        <div class="form__row">
+          <p class="field">
+            <label for="f-fone"><span data-i18n="form.phone">WhatsApp</span> <em data-i18n="form.optional">opcional</em></label>
+            <input type="tel" id="f-fone" name="whatsapp" autocomplete="tel" data-i18n-ph="form.phonePh" placeholder="(62) 90000-0000">
+          </p>
+          <p class="field">
+            <label for="f-assunto" data-i18n="form.subject">Assunto</label>
+            <select id="f-assunto" name="assunto">
+              <option value="s1" data-i18n="form.s1">Vaga efetiva (CLT)</option>
+              <option value="s2" data-i18n="form.s2">Vaga PJ ou contrato</option>
+              <option value="s3" data-i18n="form.s3">Conversar sobre uma oportunidade</option>
+              <option value="s4" data-i18n="form.s4">Outro assunto</option>
+            </select>
+          </p>
+        </div>
+
+        <p class="field">
+          <label for="f-msg" data-i18n="form.msg">Mensagem</label>
+          <textarea id="f-msg" name="mensagem" rows="6" required data-i18n-ph="form.msgPh" placeholder="A empresa, a vaga e o que você gostaria de saber. Se tiver o link da vaga, cole aqui."></textarea>
+        </p>
+
+        <div class="form__foot">
+          <button class="btn btn--solid" type="submit" id="formSend" data-i18n="form.send">Enviar mensagem</button>
+          <p class="form__privacy" data-i18n="form.privacy">Seus dados vão direto para o meu e-mail e não são repassados a ninguém.</p>
+        </div>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>© <span id="year">2026</span> Matheus Renato Arantes de Morais</span>
+    <a href="#top" data-i18n="foot.top">Voltar ao topo</a>
+  </div>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Certificado" hidden>
+  <button class="lbox__btn lbox__close" id="lboxClose" type="button" data-i18n-label="lbox.close" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lbox__btn lbox__nav lbox__nav--prev" id="lboxPrev" type="button" data-i18n-label="lbox.prev" aria-label="Anterior">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <figure class="lbox__fig">
+    <img id="lboxImg" src="" alt="" width="1400" height="1050">
+    <figcaption id="lboxCap"></figcaption>
+  </figure>
+  <button class="lbox__btn lbox__nav lbox__nav--next" id="lboxNext" type="button" data-i18n-label="lbox.next" aria-label="Próximo">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+<script src="assets/js/data.js?v=20261013" defer></script>
+<script src="assets/js/i18n.js?v=20261013" defer></script>
+<script src="assets/js/render.js?v=20261013" defer></script>
+<script src="assets/js/main.js?v=20261013" defer></script>
+</body>
+</html>
