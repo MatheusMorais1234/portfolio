@@ -4,3 +4,6 @@ _nao-publicar/
 *.zip
 .DS_Store
 Thumbs.db
+
+# Configuração local do Claude Code
+.claude/
