@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Pix copia e cola e QR Code — Matheus Morais</title>
+<meta name="description" content="Gere o Pix copia e cola e o QR Code com valor fixo, ou leia um código Pix e confira se ele está íntegro. Grátis, sem cadastro, e nada sai do seu navegador.">
+<link rel="canonical" href="https://matheusmorais.com/ferramentas/pix/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matheusmorais.com/ferramentas/pix/">
+<meta property="og:title" content="Gerador de Pix copia e cola e QR Code">
+<meta property="og:description" content="Gere o código e o QR Code de um Pix, ou leia um código recebido e confira se está íntegro. Nada sai do seu navegador.">
+<meta property="og:image" content="https://matheusmorais.com/assets/img/og.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/schibsted-grotesk-latin.woff2">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=20261013">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261013">
+<link rel="stylesheet" href="/assets/css/ferramentas.css?v=20261013">
+</head>
+<body>
+
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="nav tnav" id="nav">
+  <div class="wrap nav__in">
+    <a href="/" class="nav__brand">Matheus Morais</a>
+    <nav class="nav__links" aria-label="Site">
+      <a href="/ferramentas/" aria-current="page">Ferramentas</a>
+      <a href="/">Portfólio</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="tool">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Você está em">
+      <a href="/ferramentas/">Ferramentas</a><span aria-hidden="true">/</span><span>Pix</span>
+    </nav>
+
+    <h1 class="tool__h">Gerador de Pix copia e cola e QR Code</h1>
+    <p class="tool__lede">Monte o código de um Pix com valor fixo para colocar numa cobrança, num cardápio ou numa mensagem. Recebeu um código e quer saber o que tem dentro? Use a aba de leitura.</p>
+    <p class="tool__privacy">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Tudo acontece no seu navegador. Nenhum dado é enviado a servidor.
+    </p>
+
+    <div class="tabs" role="tablist" aria-label="Modo">
+      <button type="button" role="tab" id="tab-gerar" aria-controls="painel-gerar" aria-selected="true">Gerar Pix</button>
+      <button type="button" role="tab" id="tab-ler" aria-controls="painel-ler" aria-selected="false" tabindex="-1">Ler um código</button>
+    </div>
+
+    <!-- ===== GERAR ===== -->
+    <section id="painel-gerar" role="tabpanel" aria-labelledby="tab-gerar">
+      <div class="work">
+        <form class="panel" id="formPix" novalidate>
+          <p class="field">
+            <label for="p-chave">Chave Pix</label>
+            <input type="text" id="p-chave" name="chave" autocomplete="off" spellcheck="false" placeholder="CPF, CNPJ, celular, e-mail ou chave aleatória" aria-describedby="p-chave-hint p-chave-err">
+            <span class="field__hint" id="p-chave-hint">O tipo é reconhecido sozinho.</span>
+            <span class="field__err" id="p-chave-err"></span>
+          </p>
+
+          <p class="field">
+            <label for="p-nome">Nome de quem recebe</label>
+            <input type="text" id="p-nome" name="nome" autocomplete="off" maxlength="60" placeholder="Como aparece no banco" aria-describedby="p-nome-err">
+            <span class="field__err" id="p-nome-err"></span>
+          </p>
+
+          <div class="form__row">
+            <p class="field">
+              <label for="p-cidade">Cidade</label>
+              <input type="text" id="p-cidade" name="cidade" autocomplete="off" maxlength="40" placeholder="Goiânia" aria-describedby="p-cidade-err">
+              <span class="field__err" id="p-cidade-err"></span>
+            </p>
+            <p class="field">
+              <label for="p-valor">Valor <em>opcional</em></label>
+              <input type="text" id="p-valor" name="valor" inputmode="decimal" autocomplete="off" placeholder="150,00" aria-describedby="p-valor-hint p-valor-err">
+              <span class="field__hint" id="p-valor-hint">Vazio, quem paga digita o valor.</span>
+              <span class="field__err" id="p-valor-err"></span>
+            </p>
+          </div>
+
+          <p class="field">
+            <label for="p-descricao">Mensagem <em>opcional</em></label>
+            <input type="text" id="p-descricao" name="descricao" autocomplete="off" maxlength="72" placeholder="Pedido 42, mensalidade de outubro…">
+          </p>
+
+          <p class="field">
+            <label for="p-txid">Identificador <em>opcional</em></label>
+            <input type="text" id="p-txid" name="txid" autocomplete="off" spellcheck="false" maxlength="25" placeholder="PEDIDO42" aria-describedby="p-txid-hint p-txid-err">
+            <span class="field__hint" id="p-txid-hint">Aparece no extrato e ajuda a saber qual cobrança foi paga. Só letras e números.</span>
+            <span class="field__err" id="p-txid-err"></span>
+          </p>
+
+          <button type="button" class="btn btn--line" id="pixExemplo">Preencher com um exemplo</button>
+        </form>
+
+        <div class="panel panel--wash" id="pixSaida" aria-live="polite">
+          <div class="empty" id="pixVazio">
+            <strong>O código aparece aqui</strong>
+            Preencha a chave, o nome e a cidade.
+          </div>
+
+          <div id="pixPronto" hidden>
+            <div class="qr" id="pixQr"></div>
+            <div class="out">
+              <label for="pixCodigo">Pix copia e cola</label>
+              <textarea class="code" id="pixCodigo" rows="4" readonly></textarea>
+            </div>
+            <div class="actions">
+              <button type="button" class="btn btn--solid" id="pixCopiar">Copiar código</button>
+              <button type="button" class="btn btn--line" id="pixBaixar">Baixar QR Code (PNG)</button>
+            </div>
+            <p class="note" id="pixAviso"></p>
+            <p class="note" id="pixCopiado" role="status"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LER ===== -->
+    <section id="painel-ler" role="tabpanel" aria-labelledby="tab-ler" hidden>
+      <div class="work">
+        <div class="panel">
+          <p class="field field--mono">
+            <label for="l-codigo">Pix copia e cola</label>
+            <textarea id="l-codigo" rows="7" spellcheck="false" placeholder="00020126…"></textarea>
+            <span class="field__hint">Cole o código inteiro. A leitura acontece enquanto você cola.</span>
+          </p>
+        </div>
+
+        <div class="panel panel--wash" id="lerSaida" aria-live="polite">
+          <div class="empty" id="lerVazio">
+            <strong>O conteúdo do código aparece aqui</strong>
+            Recebedor, chave, valor e se o código está íntegro.
+          </div>
+          <div id="lerPronto" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" aria-labelledby="how-h">
+      <h2 id="how-h">Como o código é montado</h2>
+      <div class="how__body">
+        <p>O Pix copia e cola segue o padrão BR Code do Banco Central: uma sequência de campos em que cada um tem um identificador de dois dígitos, o tamanho do conteúdo e o conteúdo. <code>5913Fulano de Tal</code>, por exemplo, é o campo 59 (nome do recebedor) com 13 caracteres.</p>
+        <p>A chave, a mensagem e o identificador vão agrupados no campo 26, que não pode passar de 99 caracteres. Por isso a mensagem é encurtada quando a chave é longa. Nome e cidade têm limite de 25 e 15 caracteres, e acentos são removidos para nenhum aplicativo de banco recusar o código.</p>
+        <p>Os últimos quatro caracteres são um CRC16, calculado sobre todo o resto. Se qualquer letra for alterada, o banco recusa o código. É esse cálculo que a aba de leitura refaz para dizer se o código está íntegro.</p>
+        <p>Este gerador cria Pix estático, que pode ser pago mais de uma vez. Pix dinâmico, com vencimento e baixa automática, precisa de integração com a API do banco.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>Feito por <a href="/">Matheus Morais</a>, desenvolvedor full-stack</span>
+    <a href="/ferramentas/">Outras ferramentas</a>
+  </div>
+</footer>
+
+<script src="/assets/js/vendor/qrcode.js?v=20261013" defer></script>
+<script src="/assets/js/ferramentas/pagamentos.js?v=20261013" defer></script>
+<script src="/assets/js/ferramentas/pix-pagina.js?v=20261013" defer></script>
+</body>
+</html>

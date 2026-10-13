@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leitor de arquivo de retorno CNAB 240 e 400 — Matheus Morais</title>
+<meta name="description" content="Abra o arquivo de retorno de cobrança do banco e veja, em uma tabela, quem pagou, quanto entrou na conta e quais boletos foram rejeitados. CNAB 240 e CNAB 400 do Itaú. Nada sai do seu navegador.">
+<link rel="canonical" href="https://matheusmorais.com/ferramentas/cnab/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matheusmorais.com/ferramentas/cnab/">
+<meta property="og:title" content="Leitor de arquivo de retorno CNAB">
+<meta property="og:description" content="Veja quem pagou, quanto entrou na conta e o que foi rejeitado no retorno de cobrança do banco. Nada sai do seu navegador.">
+<meta property="og:image" content="https://matheusmorais.com/assets/img/og.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/schibsted-grotesk-latin.woff2">
+<link rel="stylesheet" href="/assets/css/fonts.css?v=20261013">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261013">
+<link rel="stylesheet" href="/assets/css/ferramentas.css?v=20261013">
+</head>
+<body>
+
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="nav tnav" id="nav">
+  <div class="wrap nav__in">
+    <a href="/" class="nav__brand">Matheus Morais</a>
+    <nav class="nav__links" aria-label="Site">
+      <a href="/ferramentas/" aria-current="page">Ferramentas</a>
+      <a href="/">Portfólio</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="tool">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Você está em">
+      <a href="/ferramentas/">Ferramentas</a><span aria-hidden="true">/</span><span>Retorno CNAB</span>
+    </nav>
+
+    <h1 class="tool__h">Leitor de arquivo de retorno CNAB</h1>
+    <p class="tool__lede">Abra o arquivo de retorno de cobrança que o banco devolve e veja, em uma tabela, quem pagou, quanto entrou na conta e quais boletos foram rejeitados. Lê CNAB 240 no padrão FEBRABAN e CNAB 400 do Itaú.</p>
+    <p class="tool__privacy">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      O arquivo é lido no seu navegador e não é enviado a lugar nenhum.
+    </p>
+
+    <div class="work work--stack">
+      <div class="panel">
+        <label class="drop" id="rZona" for="r-arquivo">
+          <input type="file" id="r-arquivo" accept=".ret,.RET,.txt,.TXT,.cnab,.CNAB,.rem,text/plain">
+          <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M12 15V4M7.5 8.5L12 4l4.5 4.5M5 15v4h14v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>Escolha o arquivo de retorno</strong>
+          <span>ou arraste para cá. Costuma terminar em .ret ou .txt.</span>
+        </label>
+        <button type="button" class="btn btn--line" id="rExemplo">Usar um arquivo de exemplo</button>
+      </div>
+
+      <div class="panel panel--wash" aria-live="polite">
+        <div class="empty" id="rVazio">
+          <strong>O resultado aparece aqui</strong>
+          O exemplo é um retorno fictício do Sicoob, com um título de cada situação.
+        </div>
+        <div id="rPronto" hidden></div>
+      </div>
+    </div>
+
+    <section class="how" aria-labelledby="how-h">
+      <h2 id="how-h">Como o arquivo é lido</h2>
+      <div class="how__body">
+        <p>O <strong>CNAB</strong> é o formato em que empresa e banco trocam informação de cobrança: a empresa manda a <em>remessa</em> com os boletos a registrar, e o banco devolve o <em>retorno</em> dizendo o que aconteceu com cada um. Cada linha tem tamanho fixo, e cada informação mora numa posição exata.</p>
+        <p>No <strong>CNAB 240</strong>, cada boleto vem em dois registros: o segmento <code>T</code> traz nosso número, vencimento, valor e pagador, e o segmento <code>U</code> traz o valor pago, juros, descontos e a data do crédito. O código de movimento, nas posições 16 e 17, diz se foi entrada confirmada, liquidação, baixa ou rejeição.</p>
+        <p>O <strong>CNAB 400</strong> põe tudo numa linha só, mas cada banco escolhe as próprias posições. Por isso aqui está só o layout do Itaú, o que eu uso no trabalho.</p>
+        <p>Além dos títulos, a ferramenta confere o <strong>trailer</strong>: a quantidade de registros e de lotes que o banco declarou no fim do arquivo precisa bater com o que veio de fato. Quando não bate, o arquivo foi cortado no download ou editado à mão.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <span>Feito por <a href="/">Matheus Morais</a>, desenvolvedor full-stack</span>
+    <a href="/ferramentas/">Outras ferramentas</a>
+  </div>
+</footer>
+
+<script src="/assets/js/ferramentas/cnab.js?v=20261013" defer></script>
+<script src="/assets/js/ferramentas/cnab-pagina.js?v=20261013" defer></script>
+</body>
+</html>

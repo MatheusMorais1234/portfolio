@@ -1,0 +1,22 @@
+# ===================================================================
+# OPCIONAL — só use se o site tiver de ficar em public_html/matheus/
+#
+# Este arquivo vai em  public_html/.htaccess  (a RAIZ).
+# O .htaccess do site continua dentro de public_html/matheus/ — os dois
+# convivem: o Apache lê o da raiz primeiro e o da pasta depois.
+#
+# Renomeie para  .htaccess  ao enviar.
+#
+# Melhor que isto: mover os arquivos para a raiz, ou trocar o diretorio
+# raiz do dominio no hPanel. Use isto so se nenhum dos dois for possivel.
+# ===================================================================
+
+RewriteEngine On
+
+# A raiz do dominio entrega o index de dentro da pasta
+RewriteRule ^$ /matheus/index.html [L]
+
+# Todo o resto (assets, 404, sitemap...) tambem vem de dentro da pasta.
+# A condicao evita laco infinito quando a URL ja aponta para /matheus/.
+RewriteCond %{REQUEST_URI} !^/matheus/
+RewriteRule ^(.*)$ /matheus/$1 [L]
