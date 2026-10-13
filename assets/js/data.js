@@ -255,22 +255,63 @@ const CERTS = [
    --------------------------------------------------------------------- */
 const GITHUB_USER = 'MatheusMorais1234';
 
-const OPEN_SOURCE = {
-  repo: 'freelamanager',
-  url: 'https://github.com/MatheusMorais1234/freelamanager',
-  title: 'freelamanager',
-  tagline:{ pt:'Gestor de clientes e contratos para freelancers',
-            en:'Client and contract manager for freelancers' },
-  desc:{ pt:'Projeto pessoal full-stack: cadastro de clientes, contratos e acompanhamento de trabalhos. Autenticação com JWT, API em Express, banco modelado no Prisma sobre PostgreSQL e front em React com Vite. É o mesmo tipo de sistema que eu construo no trabalho — só que este dá para abrir, ler e usar: a demo está no ar, com conta de demonstração.',
-         en:'A personal full-stack project: client records, contracts and job tracking. JWT authentication, an Express API, a Prisma-modelled PostgreSQL database and a React front end on Vite. It is the same kind of system I build at work — except this one you can open, read and use: the demo is live, with a demo account.' },
-  stack:['React','Vite','Express','Node.js','Prisma','PostgreSQL','JWT'],
-  fallbackDate:'2026-08-18'
-};
-
-const OTHER_REPOS = {
-  pt:'Também há repositórios de estudo de POO e princípios SOLID em Java, do período em que comecei na stack.',
-  en:'There are also study repositories on OOP and SOLID principles in Java, from when I started with that stack.'
-};
+/* ---------------------------------------------------------------------
+   4.5 PROJETOS — o que fiz por conta propria e esta no ar.
+   img: print 16:10 ou mais largo; o card corta pelo canto superior
+   esquerdo. live: repositorio cuja data do ultimo commit aparece no card.
+   links[0] e o botao principal.
+   --------------------------------------------------------------------- */
+const PROJECTS = [
+  {
+    name:'FreelaManager',
+    img:'assets/img/projetos/freelamanager.jpg',
+    alt:{ pt:'Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento',
+          en:'FreelaManager dashboard with clients, contracts, receivables and a revenue chart' },
+    kicker:{ pt:'Full-stack · código aberto', en:'Full-stack · open source' },
+    tagline:{ pt:'Clientes, contratos e recebimentos para freelancers',
+              en:'Clients, contracts and payments for freelancers' },
+    desc:{ pt:'API em Express com JWT, PostgreSQL via Prisma e front em React. 95 testes rodam no CI a cada commit. Tem landing page e conta de demonstração que entra com um clique.',
+           en:'Express API with JWT, PostgreSQL through Prisma and a React front end. 95 tests run in CI on every commit. Ships with a landing page and a one-click demo account.' },
+    stack:['React','Express','PostgreSQL','Prisma'],
+    live:{ repo:'freelamanager', fallbackDate:'2026-10-13' },
+    links:[
+      { label:{ pt:'Abrir a demo', en:'Open the demo' }, href:'https://app.matheusmorais.com' },
+      { label:{ pt:'Código', en:'Code' }, href:'https://github.com/MatheusMorais1234/freelamanager' }
+    ]
+  },
+  {
+    name:'Bella Napoli',
+    img:'assets/img/projetos/pizzaria.jpg',
+    alt:{ pt:'Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos',
+          en:'Pizzeria dashboard with orders in a kanban: new, in progress, out for delivery and done' },
+    kicker:{ pt:'PHP · código aberto', en:'PHP · open source' },
+    tagline:{ pt:'Delivery para pizzaria, do cardápio ao kanban',
+              en:'Pizzeria delivery, from menu to kanban' },
+    desc:{ pt:'Pedido pelo celular com cupom, fidelidade e QR Code de mesa; a pizzaria acompanha tudo num kanban. Antes de publicar, revisei a segurança e corrigi XSS, CSRF e acesso a pedidos de terceiros.',
+           en:'Orders from the phone with coupons, loyalty points and table QR codes; the pizzeria runs everything from a kanban. Before publishing I reviewed security and fixed XSS, CSRF and access to other customers’ orders.' },
+    stack:['PHP 8','MySQL','JavaScript','Tailwind'],
+    links:[
+      { label:{ pt:'Abrir a demo', en:'Open the demo' }, href:'https://pizzaria.matheusmorais.com' },
+      { label:{ pt:'Código', en:'Code' }, href:'https://github.com/MatheusMorais1234/pizzaria-delivery' }
+    ]
+  },
+  {
+    name:'HipocratIA',
+    img:'assets/img/projetos/hipocratia.jpg',
+    alt:{ pt:'Página inicial da HipocratIA com uma questão de legislação comentada pela IA',
+          en:'HipocratIA landing page with a health-law question explained by AI' },
+    kicker:{ pt:'Produto próprio · pré-lançamento', en:'My own product · pre-launch' },
+    tagline:{ pt:'Legislação da saúde para concursos, com IA',
+              en:'AI-assisted health-law prep for civil-service exams' },
+    desc:{ pt:'Questões comentadas por IA, simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas. Está no ar, ainda sem assinantes; o código é privado.',
+           en:'AI-explained questions, mock exams and Mercado Pago subscriptions on a hand-rolled PHP 8.1 MVC of about 30,000 lines. Live, with no subscribers yet; the code is private.' },
+    stack:['PHP 8.1','MySQL','Claude API','Mercado Pago'],
+    links:[
+      { label:{ pt:'Visitar o site', en:'Visit the site' }, href:'https://hipocratia.com.br' },
+      { label:{ pt:'Pedir o código', en:'Ask for the code' }, href:'#contato' }
+    ]
+  }
+];
 
 /* ---------------------------------------------------------------------
    6. SERVIÇOS  —  DESLIGADOS NO MOMENTO

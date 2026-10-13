@@ -67,7 +67,7 @@ function applyStrings(){
   // o curriculo acompanha o idioma: todos os links marcados com .js-cv
   const pt = lang === 'pt';
   $$('.js-cv').forEach(cv => {
-    cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261017' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261017';
+    cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261018' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261018';
     cv.setAttribute('download', pt ? 'Matheus-Morais-Curriculo.pdf' : 'Matheus-Morais-Resume.pdf');
   });
   $$('.lang__opt').forEach(o => o.classList.toggle('is-on', o.dataset.lang === lang));
@@ -116,15 +116,9 @@ function renderServices(){
   });
 }
 
-function renderOpenSource(){
-  const o = OPEN_SOURCE;
-  $('#ossName').textContent    = o.title;
-  $('#ossTagline').textContent = o.tagline[lang];
-  $('#ossDesc').textContent    = o.desc[lang];
-  $('#ossCta').href            = o.url;
-  $('#ossMore').textContent    = OTHER_REPOS[lang];
-  $('#ossStack').innerHTML     = RENDER.ossStack();
-  mostraData(ultimoCommit || o.fallbackDate);
+function renderProjects(){
+  $('#projGrid').innerHTML = RENDER.projects(lang);
+  mostraData(ultimoCommit || PROJECTS.find(p => p.live)?.live.fallbackDate);
 }
 
 function renderCerts(){
@@ -143,7 +137,7 @@ function renderAll(){
   $('#workGrid').innerHTML = RENDER.work(lang);
   renderStack();
   renderServices();
-  renderOpenSource();
+  renderProjects();
   renderCerts();
 }
 
@@ -161,7 +155,7 @@ function mostraData(iso){
   if (!iso) return;
   const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-GB',
     { day:'numeric', month:'long', year:'numeric' }).format(new Date(iso));
-  $('#ossLive').textContent = `${I18N[lang]['code.updated']} ${fmt}`;
+  $$('[data-live]').forEach(el => { el.textContent = `${I18N[lang]['code.updated']} ${fmt}`; });
 }
 
 function lerCache(){
@@ -178,7 +172,7 @@ async function buscaUltimoCommit(){
   if (cache) { ultimoCommit = cache; return mostraData(cache); }
 
   try {
-    const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${OPEN_SOURCE.repo}`,
+    const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${PROJECTS.find(p => p.live).live.repo}`,
                           { headers:{ Accept:'application/vnd.github+json' } });
     if (!r.ok) return;
     const j = await r.json();

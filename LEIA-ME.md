@@ -52,7 +52,7 @@ Praticamente tudo mora em **`assets/js/data.js`** — não precisa mexer no HTML
   pela chave `MOSTRAR_SERVICOS` — veja a seção 2.1.
 - `WORK` — os sistemas em produção.
 - `CERTS` — os certificados.
-- `OPEN_SOURCE` — o projeto em destaque na seção "código aberto".
+- `PROJECTS` — os cards da seção "Projetos" (imagem, textos, tecnologias e botões). As imagens ficam em `assets/img/projetos/`.
 - `FORM` — a chave do formulário de contato e o número do WhatsApp.
 
 Cada campo tem duas versões: `pt` e `en`. Se editar um, edite o outro.

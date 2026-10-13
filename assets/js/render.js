@@ -57,7 +57,25 @@ const RENDER = (() => {
         </button>
       </li>`).join('');
 
-  const ossStack = () => OPEN_SOURCE.stack.map(t => `<li>${esc(t)}</li>`).join('');
+  /* Projetos: cards do mesmo tamanho, imagem em cima e botoes no rodape.
+     Link externo abre em outra aba; ancora (#contato) fica na pagina. */
+  const projects = lang => PROJECTS.map(p => `
+      <li class="pcard">
+        <figure class="pcard__shot"><img src="${esc(p.img)}" alt="${esc(p.alt[lang])}" loading="lazy" width="800" height="500"></figure>
+        <div class="pcard__body">
+          <p class="pcard__kicker">${esc(p.kicker[lang])}</p>
+          <h3 class="pcard__name">${esc(p.name)}</h3>
+          <p class="pcard__tag">${esc(p.tagline[lang])}</p>
+          <p class="pcard__desc">${esc(p.desc[lang])}</p>
+          <ul class="pcard__stack">${p.stack.map(t => `<li>${esc(t)}</li>`).join('')}</ul>${
+          p.live ? `
+          <p class="pcard__live" data-live="${esc(p.live.repo)}"></p>` : ''}
+          <div class="pcard__links">${p.links.map((l, i) => {
+            const ext = /^https?:/.test(l.href) ? ' target="_blank" rel="noopener"' : '';
+            return `<a class="btn btn--sm ${i === 0 ? 'btn--solid' : 'btn--line'}" href="${esc(l.href)}"${ext}>${esc(l.label[lang])}</a>`;
+          }).join('')}</div>
+        </div>
+      </li>`).join('');
 
   /* Serviços: só entram na página com MOSTRAR_SERVICOS = true no data.js. */
   const navServices = lang => !MOSTRAR_SERVICOS ? '' :
@@ -95,5 +113,5 @@ const RENDER = (() => {
 `;
   };
 
-  return { esc, timeline, work, stack, certs, ossStack, navServices, services, serviceRows };
+  return { esc, timeline, work, stack, certs, projects, navServices, services, serviceRows };
 })();
