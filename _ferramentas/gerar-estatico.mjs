@@ -31,13 +31,13 @@ const FONTES = ['assets/js/data.js', 'assets/js/i18n.js', 'assets/js/render.js']
 
 // as constantes sao `const`: nao entram sozinhas no objeto global do vm,
 // entao a ultima linha avaliada as recolhe em __saida
-const COLETA = 'globalThis.__saida = { STACK, TIMELINE, SERVICES, MOSTRAR_SERVICOS, WORK, CERTS, OPEN_SOURCE, OTHER_REPOS, RENDER };';
+const COLETA = 'globalThis.__saida = { STACK, TIMELINE, SERVICES, MOSTRAR_SERVICOS, WORK, CERTS, PROJECTS, RENDER };';
 
 runInNewContext(
   FONTES.map(f => readFileSync(arq(f), 'utf8')).concat(COLETA).join(String.fromCharCode(10)),
   ctx
 );
-const { STACK, TIMELINE, SERVICES, MOSTRAR_SERVICOS, WORK, CERTS, OPEN_SOURCE, OTHER_REPOS, RENDER } = ctx.__saida;
+const { STACK, TIMELINE, SERVICES, MOSTRAR_SERVICOS, WORK, CERTS, PROJECTS, RENDER } = ctx.__saida;
 
 const PT = 'pt';
 const { esc } = RENDER;
@@ -50,10 +50,7 @@ const blocos = {
   work:         RENDER.work(PT),
   stack:        RENDER.stack(PT),
   certs:        RENDER.certs(PT),
-  ossStack:     RENDER.ossStack(),
-  ossTagline:   esc(OPEN_SOURCE.tagline[PT]),
-  ossDesc:      esc(OPEN_SOURCE.desc[PT]),
-  ossMore:      esc(OTHER_REPOS[PT]),
+  projects:     RENDER.projects(PT),
 };
 
 let html = readFileSync(arq('index.html'), 'utf8');

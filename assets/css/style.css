@@ -342,6 +342,36 @@ ul,ol{ padding:0; list-style:none; }
 .oss--case .case__shot{ grid-column:1 / -1; border-bottom:1px solid var(--rule); }
 .oss--case .case__shot img{ display:block; width:100%; height:auto; border-radius:var(--r) var(--r) 0 0; }
 
+/* ---------- projetos: cards lado a lado ---------- */
+.phead .sec__sub{ max-width:52ch; }
+.pgrid{
+  margin-top:clamp(2rem, 4vw, 3rem);
+  display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:1.5rem;
+}
+.pcard{
+  display:flex; flex-direction:column; overflow:hidden;
+  background:var(--paper); border:1px solid var(--rule); border-radius:10px;
+  transition:border-color .2s, box-shadow .2s, transform .2s;
+}
+.pcard:hover{ border-color:var(--rule-2); box-shadow:0 18px 40px -24px rgba(14,26,43,.35); transform:translateY(-2px); }
+.pcard__shot{ aspect-ratio:16 / 10; overflow:hidden; background:var(--wash); border-bottom:1px solid var(--rule); }
+.pcard__shot img{ display:block; width:100%; height:100%; object-fit:cover; object-position:left top; }
+.pcard__body{ flex:1; display:flex; flex-direction:column; padding:1.35rem 1.4rem 1.4rem; }
+.pcard__kicker{ font-size:.8125rem; font-weight:600; color:var(--blue); }
+.pcard__name{ margin-top:.3rem; font-size:1.375rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; }
+.pcard__tag{ margin-top:.2rem; font-size:.9375rem; color:var(--ink); font-weight:500; }
+.pcard__desc{ margin-top:.75rem; font-size:.9375rem; color:var(--slate); }
+.pcard__stack{ margin-top:1rem; display:flex; flex-wrap:wrap; gap:.35rem; }
+.pcard__stack li{
+  font-size:.8125rem; font-weight:500; color:var(--slate);
+  background:var(--wash); border-radius:4px; padding:.2rem .5rem;
+}
+.pcard__live{ margin-top:.75rem; font-size:.8125rem; color:var(--quiet); }
+.pcard__live:empty{ display:none; }
+.pcard__links{ margin-top:auto; padding-top:1.25rem; display:flex; flex-wrap:wrap; gap:.5rem; }
+.pmore{ margin-top:1.75rem; font-size:.9375rem; color:var(--slate); }
+.pmore a{ color:var(--blue); font-weight:600; margin-left:.25rem; }
+
 /* ---------- tecnologias ---------- */
 .techgroups{ display:grid; gap:2.5rem; }
 .techs__h{
@@ -528,6 +558,7 @@ ul,ol{ padding:0; list-style:none; }
    RESPONSIVO
    ===================================================================== */
 @media (max-width: 1080px){
+  .pgrid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .nav__links{ gap:1.25rem; }
   .certs{ grid-template-columns:repeat(2, minmax(0,1fr)); }
 }
@@ -551,6 +582,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 
 @media (max-width: 680px){
+  .pgrid{ grid-template-columns:minmax(0, 1fr); }
   body{ font-size:1rem; }
   .nav__cv{ display:none; }
 
