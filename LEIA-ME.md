@@ -206,14 +206,22 @@ Painel → **Segurança → SSL**. Ative o certificado gratuito antes de divulga
 ## 3.1 Antes de subir: dois passos de um minuto
 
 **a) Troque a versão dos arquivos.** O `index.html` carrega o CSS e o JS com
-`?v=20260902` no fim do endereço, e o servidor manda o navegador guardar esses
-arquivos por um ano. Se você editar o `style.css` e não trocar a versão, quem já
-visitou o site **continua vendo a folha antiga**. Troque todos os `?v=` do
-`index.html` e do `404.html` para a data do dia:
+`?v=20261014` no fim do endereço, e o servidor manda o navegador guardar esses
+arquivos por um ano (os currículos em PDF, por 30 dias). Se você editar o
+`style.css` ou gerar um currículo novo e não trocar a versão, quem já visitou o
+site **continua vendo o arquivo antigo**. Troque todos os `?v=` para a data do
+dia — inclusive no `main.js`, que monta o link do currículo:
 
 ```bash
-sed -i 's/?v=[0-9]\{8\}/?v=20261013/g' index.html 404.html
+sed -i 's/?v=[0-9]\{8\}/?v=20261014/g' index.html 404.html ferramentas/index.html ferramentas/*/index.html assets/js/main.js
 ```
+
+Se publicar duas vezes no mesmo dia, use a data do dia seguinte: o número só
+precisa mudar, não precisa ser a data exata.
+
+**Currículo:** o texto mora em `_ferramentas/gerar-curriculo.mjs`. Edite lá e
+rode `node _ferramentas/gerar-curriculo.mjs` — ele gera os dois PDFs em
+`assets/` usando o Chrome ou o Edge.
 
 **b) Gere o conteúdo estático.**
 

@@ -348,7 +348,7 @@ const SERVICES = [
    preenchido. Ou seja, o site nunca fica sem caminho de contato.
    --------------------------------------------------------------------- */
 const FORM = {
-  key: 'SUA-CHAVE-WEB3FORMS-AQUI',
+  key: 'eb64cdc3-0d64-4e1b-a908-3bdfc20db800',
   endpoint: 'https://api.web3forms.com/submit',
   whatsapp: '5562992014463'
 };
