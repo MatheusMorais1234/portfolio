@@ -261,8 +261,8 @@ const OPEN_SOURCE = {
   title: 'freelamanager',
   tagline:{ pt:'Gestor de clientes e contratos para freelancers',
             en:'Client and contract manager for freelancers' },
-  desc:{ pt:'Projeto pessoal full-stack: cadastro de clientes, contratos e acompanhamento de trabalhos. Autenticação com JWT, API em Express, banco modelado no Prisma sobre PostgreSQL e front em React com Vite. É o mesmo tipo de sistema que eu construo no trabalho — só que este dá para abrir e ler.',
-         en:'A personal full-stack project: client records, contracts and job tracking. JWT authentication, an Express API, a Prisma-modelled PostgreSQL database and a React front end on Vite. It is the same kind of system I build at work — except this one you can open and read.' },
+  desc:{ pt:'Projeto pessoal full-stack: cadastro de clientes, contratos e acompanhamento de trabalhos. Autenticação com JWT, API em Express, banco modelado no Prisma sobre PostgreSQL e front em React com Vite. É o mesmo tipo de sistema que eu construo no trabalho — só que este dá para abrir, ler e usar: a demo está no ar, com conta de demonstração.',
+         en:'A personal full-stack project: client records, contracts and job tracking. JWT authentication, an Express API, a Prisma-modelled PostgreSQL database and a React front end on Vite. It is the same kind of system I build at work — except this one you can open, read and use: the demo is live, with a demo account.' },
   stack:['React','Vite','Express','Node.js','Prisma','PostgreSQL','JWT'],
   fallbackDate:'2026-08-18'
 };
