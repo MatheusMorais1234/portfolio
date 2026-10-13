@@ -338,6 +338,10 @@ ul,ol{ padding:0; list-style:none; }
 }
 .oss__more{ margin-top:1.5rem; font-size:.9375rem; color:var(--slate); }
 
+/* produto proprio: mesmo bloco, com o print em cima */
+.oss--case .case__shot{ grid-column:1 / -1; border-bottom:1px solid var(--rule); }
+.oss--case .case__shot img{ display:block; width:100%; height:auto; border-radius:var(--r) var(--r) 0 0; }
+
 /* ---------- tecnologias ---------- */
 .techgroups{ display:grid; gap:2.5rem; }
 .techs__h{
