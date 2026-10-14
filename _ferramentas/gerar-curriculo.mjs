@@ -38,148 +38,102 @@ const CV = {
     arquivo: 'Curriculo_Matheus_Renato.pdf',
     lang: 'pt-BR',
     titulo: 'Desenvolvedor Full-Stack | disponível para início imediato',
-    secoes: {
-      resumo:'Resumo profissional', skills:'Competências técnicas', exp:'Experiência profissional',
-      edu:'Formação acadêmica', idiomas:'Idiomas', projetos:'Projetos pessoais / código aberto', certs:'Certificações'
-    },
-    resumo: 'Desenvolvedor full-stack formado em Análise e Desenvolvimento de Sistemas, com quase dois anos mantendo sistemas de gestão em produção usados por mais de 100 funcionários e por um aplicativo de cerca de 9 mil associados: contratos, cobrança, relatórios gerenciais e integrações com as APIs do Sicoob e do Itaú. Atua do banco de dados ao front-end com PHP, TypeScript, React e Next.js, além de automações, deploy em Linux e manutenção de legado Java/JBoss. Inglês B2. Disponível para início imediato em vaga júnior CLT ou PJ, presencial em Goiânia ou remota.',
+    secoes: { resumo:'Resumo', skills:'Competências técnicas', exp:'Experiência profissional', projetos:'Projetos (no ar)', edu:'Formação e idiomas' },
+    resumo: 'Desenvolvedor full-stack com quase dois anos mantendo sistemas de gestão em produção na ASSEGO, usados por mais de 100 funcionários e por cerca de 9 mil associados: contratos, cobrança integrada ao Sicoob e ao Itaú, relatórios e aplicativo. PHP, TypeScript, React e Next.js do banco ao front-end. Inglês B2. Disponível de imediato, presencial em Goiânia ou remoto.',
     skills: [
-      ['Domínio sólido', 'PHP, TypeScript, JavaScript, HTML, CSS.'],
-      ['Uso diário', 'React, Next.js, MySQL, PostgreSQL, Docker, Linux, Git.'],
-      ['Back-end e integrações', 'APIs REST, Webhooks, Node.js, Express, JWT, PHPMailer, Cron, Prisma, CNAB 240/400.'],
-      ['Em evolução', 'Java 7/8, Spring Boot, Angular, Flutter, JBoss EAP 6/7.'],
-      ['Outros', 'PWA, Scrum.']
+      ['Principais', 'PHP, TypeScript, JavaScript, React, Next.js, HTML, CSS.'],
+      ['Banco e back-end', 'MySQL, PostgreSQL, Node.js, Express, Prisma, APIs REST, Webhooks, JWT, CNAB 240/400.'],
+      ['Infra e ferramentas', 'Linux, Docker, Git, GitHub Actions (CI), Cron.'],
+      ['Em evolução', 'Java 7/8, Spring Boot, Angular, JBoss EAP 6/7, Flutter.']
     ],
     exp: [
       { org:'ASSEGO - Associação dos Subtenentes e Sargentos do Estado de Goiás',
         cargo:'Estagiário de Desenvolvimento | Jan 2025 - Out 2026 | Goiânia, GO',
         pts:[
-          'Desenvolveu um sistema de gestão de contratos com aprovação em etapas, modelagem de dados, geração de PDF e histórico de alterações, substituindo um processo baseado em planilhas e e-mail.',
-          'Criou sistemas de gestão, dashboards e relatórios usados por mais de 100 funcionários das áreas administrativa e financeira, com filtros combinados e exportação em PDF/Excel, dando autonomia para consultas que antes dependiam do TI.',
-          'Integrou as APIs de pagamento do Sicoob e do Itaú para emissão de boletos, retorno de pagamento, baixa automática e régua de cobrança, usando TypeScript para tipar contratos de integração e reduzir erros.',
-          'Construiu a PWA mobile-first usada por cerca de 9 mil associados, com Next.js e TypeScript, cobrindo rotas, autenticação, interface responsiva e cache offline.',
-          'Automatizou importações, relatórios agendados e e-mails com PHPMailer/Cron, eliminando horas de trabalho manual por mês; também manteve aplicações Java 7/8 em JBoss EAP 6/7, corrigiu telas Angular e realizou deploy/versionamento em Linux e Git.'
+          'Integrou as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, leitura do retorno, baixa automática e régua de cobrança, com contratos de API tipados em TypeScript.',
+          'Criou o sistema de gestão de contratos (aprovação em etapas, PDF e histórico) e dashboards com exportação PDF/Excel usados por mais de 100 funcionários.',
+          'Construiu a PWA mobile-first usada por cerca de 9 mil associados, em Next.js e TypeScript.',
+          'Automatizou importações, relatórios e e-mails (PHPMailer/Cron) e manteve aplicações Java 7/8 em JBoss EAP e telas Angular.'
         ] },
       { org:'JHON CODE - agência de desenvolvimento web',
         cargo:'Estagiário de Desenvolvimento | Jul 2023 - Abr 2024',
         pts:[
-          'Desenvolveu sistemas web sob medida para clientes, do banco MySQL ao front-end em PHP, JavaScript, HTML e CSS.',
-          'Criou painéis administrativos para que clientes gerenciassem conteúdo e rotinas do próprio sistema sem depender de desenvolvedor.',
-          'Implementou autenticação com hash de senha, sessões e controle de acesso por perfil, conectando regras de negócio à interface.',
-          'Modelou bancos e diagramas de sistema antes da implementação e integrou APIs REST nos projetos entregues.'
+          'Desenvolveu sistemas web sob medida para clientes, do banco MySQL ao front-end em PHP e JavaScript.',
+          'Criou painéis administrativos e autenticação com hash de senha, sessões e controle de acesso por perfil.',
+          'Modelou bancos e diagramas antes da implementação e integrou APIs REST.'
         ] },
-      { org:'FIO GUIA - produto de controle financeiro para médicos',
+      { org:'FIO GUIA - produto financeiro para médicos',
         cargo:'Estagiário de Desenvolvimento | Jan 2023 - Jun 2023',
         pts:[
-          'Contribuiu para um produto financeiro real voltado a médicos, no primeiro papel profissional em desenvolvimento.',
-          'Implementou consultas e rotinas SQL e apoiou integrações de APIs no aplicativo dos clientes.',
-          'Colaborou em telas e fluxos em Flutter, conectando a interface às integrações e aos dados da aplicação.'
+          'Primeira experiência profissional: consultas SQL, integrações de API e telas em Flutter num produto financeiro real.'
         ] }
-    ],
-    edu: { titulo:'Tecnólogo em Análise e Desenvolvimento de Sistemas - Faculdade Senac Goiás', quando:'Jan 2023 - Jun 2025 (concluído)',
-           desc:'Engenharia de software, qualidade de software, banco de dados e metodologias ágeis.' },
-    idiomas: [
-      ['Português', 'nativo.'],
-      ['Inglês', 'B2 (Quadro Comum Europeu), 480 horas no Centro de Línguas da UFG, concluído em 2026; com vivência na Alemanha.']
     ],
     projetos: [
+      { nome:'HipocratIA', link:['hipocratia.com.br', 'https://hipocratia.com.br'],
+        texto:'Produto próprio de estudo para concursos da saúde: questões comentadas por IA (API do Claude), simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas.' },
+      { nome:'FreelaManager', link:['app.matheusmorais.com', 'https://app.matheusmorais.com'],
+        texto:'Gestão de clientes, contratos e recebimentos: React, Express, PostgreSQL e Prisma, com 95 testes no CI e demonstração no ar.' },
+      { nome:'Bella Napoli', link:['pizzaria.matheusmorais.com', 'https://pizzaria.matheusmorais.com'],
+        texto:'Delivery para pizzaria em PHP e MySQL, com painel kanban e QR Code de mesa. Fiz revisão de segurança antes de publicar (XSS, CSRF e acesso indevido a pedidos).' },
       { nome:'Ferramentas de pagamento', link:['matheusmorais.com/ferramentas', 'https://matheusmorais.com/ferramentas/'],
-        pts:[
-          'Gerador de Pix copia e cola com QR Code (BR Code e CRC16), validador de boleto (módulo 10/11, FEBRABAN) e leitor de arquivo de retorno CNAB 240/400, que mostra pagos, créditos e rejeições e confere os totais do arquivo.',
-          'JavaScript puro rodando no navegador, sem enviar dados, com suíte de testes automatizados.'
-        ] },
-      { nome:'freelamanager', link:['github.com/MatheusMorais1234/freelamanager', 'https://github.com/MatheusMorais1234/freelamanager'],
-        pts:[
-          'Gestor full-stack de clientes e contratos para freelancers, com autenticação JWT, API em Express, Prisma sobre PostgreSQL e front-end React com Vite.',
-          'Mantém também repositórios de estudo de orientação a objetos e princípios SOLID em Java.'
-        ] }
+        texto:'Gerador de Pix com QR Code, validador de boleto e leitor de retorno CNAB, em JavaScript com testes automatizados.' }
     ],
-    certs: [
-      'Tecnólogo em ADS - Faculdade Senac Goiás - diploma, 2025.',
-      'Inglês nível B2 - UFG, Centro de Línguas - 480h, 2026.',
-      'Programação para Web - Cursa/IFRO - 14h37, 2025.',
-      'Análise e projeto de sistemas - Cursa/IFRO - 11h02, 2025.',
-      'Linguagem e lógica de programação - Cursa/IFRO - 09h32, 2025.',
-      'Banco de dados completo - Cursa/IFRO - 06h16, 2025.',
-      'Estrutura de dados - Cursa/IFRO - 04h27, 2025.',
-      'Segurança em Tecnologia da Informação - Fundação Bradesco/Escola Virtual - 12h, 2025.',
-      'Fundamentos de TI: hardware e software - Fundação Bradesco/Escola Virtual - 7h, 2025.',
-      'SharePoint - Fundação Bradesco/Escola Virtual - 2h, 2025.'
-    ]
+    edu: [
+      ['Tecnólogo em Análise e Desenvolvimento de Sistemas', 'Faculdade Senac Goiás, concluído em 2025.'],
+      ['Inglês B2', 'Centro de Línguas da UFG, 480 horas, concluído em 2026; vivência na Alemanha.']
+    ],
+    rodape: 'Outros cursos e certificados em matheusmorais.com'
   },
 
   en: {
     arquivo: 'Matheus_Renato_Resume_EN.pdf',
     lang: 'en',
     titulo: 'Full-Stack Developer | available immediately',
-    secoes: {
-      resumo:'Professional summary', skills:'Technical skills', exp:'Professional experience',
-      edu:'Education', idiomas:'Languages', projetos:'Personal / open-source projects', certs:'Certifications'
-    },
-    resumo: 'Full-stack developer with almost two years maintaining production management systems used by more than 100 staff and a member app used by around 9,000 people: contract management, billing, management reporting and integrations with the Sicoob and Itaú banking APIs. Works across the full stack, from MySQL/PostgreSQL data modeling to React/Next.js interfaces, with PHP and TypeScript at the core, plus Linux deployment, automation and maintenance of Java/JBoss legacy applications. B2 English. Available to start immediately in a junior full-time or contractor role, on-site in Goiânia or remote.',
+    secoes: { resumo:'Summary', skills:'Technical skills', exp:'Professional experience', projetos:'Projects (live)', edu:'Education and languages' },
+    resumo: 'Full-stack developer with almost two years maintaining production management systems at ASSEGO, used by more than 100 staff and around 9,000 members: contracts, billing integrated with Sicoob and Itaú banks, reporting and a member app. PHP, TypeScript, React and Next.js from database to front end. B2 English. Available immediately, on-site in Goiânia (Brazil) or remote.',
     skills: [
-      ['Core', 'PHP, TypeScript, JavaScript, HTML, CSS.'],
-      ['Daily use', 'React, Next.js, MySQL, PostgreSQL, Docker, Linux, Git.'],
-      ['Back end & integrations', 'REST APIs, Webhooks, Node.js, Express, JWT, PHPMailer, Cron, Prisma, CNAB 240/400.'],
-      ['Developing proficiency', 'Java 7/8, Spring Boot, Angular, Flutter, JBoss EAP 6/7.'],
-      ['Other', 'PWA, Scrum.']
+      ['Core', 'PHP, TypeScript, JavaScript, React, Next.js, HTML, CSS.'],
+      ['Data and back end', 'MySQL, PostgreSQL, Node.js, Express, Prisma, REST APIs, Webhooks, JWT, CNAB 240/400.'],
+      ['Infra and tools', 'Linux, Docker, Git, GitHub Actions (CI), Cron.'],
+      ['Developing', 'Java 7/8, Spring Boot, Angular, JBoss EAP 6/7, Flutter.']
     ],
     exp: [
-      { org:'ASSEGO - Associação dos Subtenentes e Sargentos do Estado de Goiás',
-        cargo:'Development Intern | Jan 2025 - Oct 2026 | Goiânia, GO, Brazil',
+      { org:'ASSEGO - Association of Warrant Officers and Sergeants of Goiás',
+        cargo:'Development Intern | Jan 2025 - Oct 2026 | Goiânia, Brazil',
         pts:[
-          'Built a contract management system with multi-step approvals, data modeling, PDF generation and full change history, replacing a workflow previously handled through spreadsheets and email.',
-          'Delivered management systems, dashboards and reports used by more than 100 administrative and finance staff, with combined filters and PDF/Excel exports, so teams no longer had to request figures from IT.',
-          'Integrated the Sicoob and Itaú payment APIs for boleto issuance, payment return processing, automatic settlement and collection workflows; typed API contracts in TypeScript to reduce integration errors.',
-          'Developed the mobile-first PWA used by around 9,000 members, with Next.js and TypeScript, covering routing, authentication, responsive UI and offline caching.',
-          'Automated file imports, scheduled reporting and email delivery with PHPMailer/Cron, removing hours of manual work each month; also maintained Java 7/8 applications on JBoss EAP 6/7, fixed Angular screens and handled Git/Linux deployment.'
+          'Integrated the Sicoob and Itaú payment APIs: boleto issuance, payment return processing, automatic settlement and collection workflows, with API contracts typed in TypeScript.',
+          'Built the contract management system (multi-step approval, PDF, change history) and dashboards with PDF/Excel export used by more than 100 staff.',
+          'Built the mobile-first PWA used by around 9,000 members, in Next.js and TypeScript.',
+          'Automated imports, reports and emails (PHPMailer/Cron) and maintained Java 7/8 apps on JBoss EAP and Angular screens.'
         ] },
       { org:'JHON CODE - web development agency',
         cargo:'Development Intern | Jul 2023 - Apr 2024',
         pts:[
-          'Developed custom web systems for multiple clients, covering MySQL data modeling, PHP back-end logic and JavaScript/HTML/CSS front-end delivery.',
-          'Built admin panels that let clients manage their own content and system routines without developer assistance.',
-          'Implemented password hashing, session-based authentication and role-based access control, connecting security rules to the application UI.',
-          'Designed database structures and system diagrams before implementation and integrated REST APIs across delivered projects.'
+          'Developed custom web systems for clients, from MySQL to PHP and JavaScript front ends.',
+          'Built admin panels and authentication with password hashing, sessions and role-based access control.',
+          'Designed databases and system diagrams before implementation and integrated REST APIs.'
         ] },
-      { org:'FIO GUIA - financial management product for physicians',
+      { org:'FIO GUIA - financial product for physicians',
         cargo:'Development Intern | Jan 2023 - Jun 2023',
         pts:[
-          'Contributed to a real financial software product for physicians in a first professional development role.',
-          'Implemented SQL queries and data routines and supported API integrations used by the client application.',
-          'Worked on Flutter screens and application flows, connecting the user interface with integrations and application data.'
+          'First professional role: SQL queries, API integrations and Flutter screens on a real financial product.'
         ] }
-    ],
-    edu: { titulo:'Technology Degree in Systems Analysis and Development - Faculdade Senac Goiás (Brazilian college)', quando:'Jan 2023 - Jun 2025, completed',
-           desc:'Coursework included software engineering, software quality, databases and agile methodologies.' },
-    idiomas: [
-      ['Portuguese', 'Native.'],
-      ['English', 'B2 (CEFR), 480 hours at Centro de Línguas da UFG (Brazilian university language center), completed in 2026; lived experience in Germany.']
     ],
     projetos: [
+      { nome:'HipocratIA', link:['hipocratia.com.br', 'https://hipocratia.com.br'],
+        texto:'My own exam-prep product for health-sector civil service: AI-explained questions (Claude API), mock exams and Mercado Pago subscriptions, on a hand-rolled PHP 8.1 MVC of about 30,000 lines.' },
+      { nome:'FreelaManager', link:['app.matheusmorais.com', 'https://app.matheusmorais.com'],
+        texto:'Client, contract and payment management: React, Express, PostgreSQL and Prisma, with 95 tests in CI and a live demo.' },
+      { nome:'Bella Napoli', link:['pizzaria.matheusmorais.com', 'https://pizzaria.matheusmorais.com'],
+        texto:'Pizzeria delivery system in PHP and MySQL with a kanban dashboard and table QR codes. Security-reviewed before launch (XSS, CSRF, unauthorized order access).' },
       { nome:'Payment tools', link:['matheusmorais.com/ferramentas', 'https://matheusmorais.com/ferramentas/'],
-        pts:[
-          'Pix payment code and QR generator (BR Code, CRC16), boleto validator (modulo 10/11, FEBRABAN standard) and a CNAB 240/400 bank return file reader that lists payments, credits and rejections and checks the file totals.',
-          'Plain JavaScript running in the browser without sending any data, backed by an automated test suite.'
-        ] },
-      { nome:'freelamanager', link:['github.com/MatheusMorais1234/freelamanager', 'https://github.com/MatheusMorais1234/freelamanager'],
-        pts:[
-          'Full-stack client and contract manager for freelancers with JWT authentication, an Express API, Prisma on PostgreSQL and a React/Vite front end.',
-          'Also maintains Java repositories focused on object-oriented programming and SOLID principles.'
-        ] }
+        texto:'Pix QR code generator, boleto validator and CNAB bank return file reader, in JavaScript with automated tests.' }
     ],
-    certs: [
-      'Technology Degree in Systems Analysis and Development - Faculdade Senac Goiás - diploma, 2025.',
-      'B2 English - UFG, Centro de Línguas (university language center) - 480h, 2026.',
-      'Web Programming - Cursa/IFRO - 14h37, 2025.',
-      'Systems Analysis and Design - Cursa/IFRO - 11h02, 2025.',
-      'Programming Language and Logic - Cursa/IFRO - 09h32, 2025.',
-      'Complete Databases - Cursa/IFRO - 06h16, 2025.',
-      'Data Structures - Cursa/IFRO - 04h27, 2025.',
-      'Information Technology Security - Fundação Bradesco/Escola Virtual - 12h, 2025.',
-      'IT Fundamentals: Hardware and Software - Fundação Bradesco/Escola Virtual - 7h, 2025.',
-      'SharePoint - Fundação Bradesco/Escola Virtual - 2h, 2025.'
-    ]
+    edu: [
+      ['Technology Degree in Systems Analysis and Development', 'Faculdade Senac Goiás (Brazilian college), completed 2025.'],
+      ['English B2 (CEFR)', 'UFG Language Center, 480 hours, completed 2026; lived in Germany.']
+    ],
+    rodape: 'Other courses and certificates at matheusmorais.com'
   }
 };
 
@@ -191,21 +145,23 @@ const a = ([texto, href]) => `<a href="${esc(href)}">${esc(texto)}</a>`;
 const lista = pts => `<ul>${pts.map(p => `<li>${esc(p)}</li>`).join('')}</ul>`;
 
 const CSS = `
-@page{ size:A4; margin:16mm 17mm 16mm 17mm; }
+@page{ size:A4; margin:13mm 15mm 12mm 15mm; }
 *{ box-sizing:border-box; margin:0; padding:0; }
-body{ font-family:Arial, Helvetica, sans-serif; font-size:9.6pt; line-height:1.32; color:#1a1a1a; }
+body{ font-family:Arial, Helvetica, sans-serif; font-size:9.4pt; line-height:1.3; color:#1a1a1a; }
 a{ color:inherit; text-decoration:none; }
 h1{ font-size:21pt; line-height:1.1; color:#111; }
 .tit{ font-size:11pt; color:#555; margin-top:2pt; }
 .ct{ margin-top:2pt; color:#222; }
 h2{ font-size:11.5pt; text-transform:uppercase; color:#1f4e66; letter-spacing:.01em;
-    border-bottom:.8pt solid #9fb3c0; padding-bottom:1.5pt; margin:11pt 0 4pt; break-after:avoid; }
+    border-bottom:.8pt solid #9fb3c0; padding-bottom:1.5pt; margin:9pt 0 3.5pt; break-after:avoid; }
 .org{ font-weight:bold; margin-top:5pt; break-after:avoid; }
 .cargo{ color:#555; break-after:avoid; }
 ul{ list-style:none; }
 li{ padding-left:9pt; text-indent:-6pt; margin-top:1.2pt; }
 li::before{ content:'- '; }
 .job, .proj{ break-inside:avoid; }
+.proj{ margin-top:2.5pt; }
+.rod{ margin-top:8pt; font-size:8.5pt; color:#666; }
 p + p{ margin-top:1pt; }
 `;
 
@@ -227,18 +183,13 @@ ${c.skills.map(([k, v]) => `<p><b>${esc(k)}:</b> ${esc(v)}</p>`).join('')}
 <h2>${s.exp}</h2>
 ${c.exp.map(e => `<div class="job"><p class="org">${esc(e.org)}</p><p class="cargo">${esc(e.cargo)}</p>${lista(e.pts)}</div>`).join('')}
 
-<h2>${s.edu}</h2>
-<p><b>${esc(c.edu.titulo)}</b> | ${esc(c.edu.quando)}</p>
-<p>${esc(c.edu.desc)}</p>
-
-<h2>${s.idiomas}</h2>
-${c.idiomas.map(([k, v]) => `<p><b>${esc(k)}:</b> ${esc(v)}</p>`).join('')}
-
 <h2>${s.projetos}</h2>
-${c.projetos.map(p => `<div class="proj"><p class="org"><b>${esc(p.nome)}</b> <span style="font-weight:normal">- ${a(p.link)}</span></p>${lista(p.pts)}</div>`).join('')}
+${c.projetos.map(p => `<p class="proj"><b>${esc(p.nome)}</b> (${a(p.link)}): ${esc(p.texto)}</p>`).join('')}
 
-<h2>${s.certs}</h2>
-${c.certs.map(x => `<p>${esc(x)}</p>`).join('')}
+<h2>${s.edu}</h2>
+${c.edu.map(([k, v]) => `<p><b>${esc(k)}</b> - ${esc(v)}</p>`).join('')}
+
+<p class="rod">${a([c.rodape, 'https://matheusmorais.com/#certificados'])}</p>
 </body></html>`;
 }
 
