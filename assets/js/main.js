@@ -67,7 +67,7 @@ function applyStrings(){
   // o curriculo acompanha o idioma: todos os links marcados com .js-cv
   const pt = lang === 'pt';
   $$('.js-cv').forEach(cv => {
-    cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261019' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261019';
+    cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261020' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261020';
     cv.setAttribute('download', pt ? 'Matheus-Morais-Curriculo.pdf' : 'Matheus-Morais-Resume.pdf');
   });
   $$('.lang__opt').forEach(o => o.classList.toggle('is-on', o.dataset.lang === lang));
@@ -118,7 +118,7 @@ function renderServices(){
 
 function renderProjects(){
   $('#projGrid').innerHTML = RENDER.projects(lang);
-  mostraData(ultimoCommit || PROJECTS.find(p => p.live)?.live.fallbackDate);
+  PROJECTS.filter(p => p.live).forEach(p => mostraData(p.live.repo, ultimoCommit[p.live.repo] || p.live.fallbackDate));
 }
 
 function renderCerts(){
@@ -147,41 +147,45 @@ function renderAll(){
    compartilhada isso estoura. A resposta fica guardada por 6h; se tudo
    falhar, vale a data fixa do data.js.
    --------------------------------------------------------------------- */
-let ultimoCommit = null;
+let ultimoCommit = {};
 const COMMIT_CACHE = 'mm-commit';
 const COMMIT_TTL = 6 * 60 * 60 * 1000;
 
-function mostraData(iso){
+function mostraData(repo, iso){
   if (!iso) return;
   const fmt = new Intl.DateTimeFormat(lang === 'pt' ? 'pt-BR' : 'en-GB',
     { day:'numeric', month:'long', year:'numeric' }).format(new Date(iso));
-  $$('[data-live]').forEach(el => { el.textContent = `${I18N[lang]['code.updated']} ${fmt}`; });
+  $$(`[data-live="${repo}"]`).forEach(el => { el.textContent = `${I18N[lang]['code.updated']} ${fmt}`; });
 }
 
-function lerCache(){
+function lerCache(repo){
   try {
-    const raw = localStorage.getItem(COMMIT_CACHE);
+    const raw = localStorage.getItem(`${COMMIT_CACHE}:${repo}`);
     if (!raw) return null;
     const { iso, at } = JSON.parse(raw);
     return (iso && Date.now() - at < COMMIT_TTL) ? iso : null;
   } catch { return null; }
 }
 
-async function buscaUltimoCommit(){
-  const cache = lerCache();
-  if (cache) { ultimoCommit = cache; return mostraData(cache); }
+async function buscaCommitDe(repo){
+  const cache = lerCache(repo);
+  if (cache) { ultimoCommit[repo] = cache; return mostraData(repo, cache); }
 
   try {
-    const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${PROJECTS.find(p => p.live).live.repo}`,
+    const r = await fetch(`https://api.github.com/repos/${GITHUB_USER}/${repo}`,
                           { headers:{ Accept:'application/vnd.github+json' } });
     if (!r.ok) return;
     const j = await r.json();
     if (!j.pushed_at) return;
-    ultimoCommit = j.pushed_at;
-    mostraData(ultimoCommit);
-    try { localStorage.setItem(COMMIT_CACHE, JSON.stringify({ iso:ultimoCommit, at:Date.now() })); }
+    ultimoCommit[repo] = j.pushed_at;
+    mostraData(repo, j.pushed_at);
+    try { localStorage.setItem(`${COMMIT_CACHE}:${repo}`, JSON.stringify({ iso:j.pushed_at, at:Date.now() })); }
     catch { /* modo privado */ }
   } catch { /* mantém a data do data.js */ }
+}
+
+function buscaUltimoCommit(){
+  PROJECTS.filter(p => p.live).forEach(p => buscaCommitDe(p.live.repo));
 }
 
 /* ---------------------------------------------------------------------
@@ -333,7 +337,7 @@ function initMenu(){
   burger.addEventListener('click', () => set(!open));
   $$('a', menu).forEach(a => a.addEventListener('click', () => set(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && open) set(false); });
-  window.addEventListener('resize', () => { if (open && window.innerWidth > 960) set(false); });
+  window.addEventListener('resize', () => { if (open && window.innerWidth > 1080) set(false); });
 }
 
 /* ---------------------------------------------------------------------
