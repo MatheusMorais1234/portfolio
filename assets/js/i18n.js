@@ -17,6 +17,7 @@ const I18N = {
 
     'nav.about':'Sobre',
     'nav.path':'Experiência',
+    'nav.systems':'Sistemas',
     'nav.work':'Projetos',
     'nav.tools':'Ferramentas',
     'nav.stack':'Tecnologias',
@@ -84,6 +85,7 @@ const I18N = {
 
     'certs.h':'Certificados',
     'certs.sub':'Formação e cursos. Clique em um certificado para ampliar.',
+    'certs.more':'Também concluí cinco cursos curtos do IFRO pela Cursa em 2025: Programação para Web, Análise e projeto de sistemas, Lógica de programação, Banco de dados e Estrutura de dados.',
     'certs.enlarge':'Ampliar',
 
     'contact.h':'Contato',
@@ -131,6 +133,7 @@ const I18N = {
 
     'nav.about':'About',
     'nav.path':'Experience',
+    'nav.systems':'Systems',
     'nav.work':'Projects',
     'nav.tools':'Tools',
     'nav.stack':'Technologies',
@@ -198,6 +201,7 @@ const I18N = {
 
     'certs.h':'Certificates',
     'certs.sub':'Education and courses. Click a certificate to enlarge it.',
+    'certs.more':'I also completed five short IFRO courses on Cursa in 2025: Web Programming, Systems Analysis and Design, Programming Logic, Databases and Data Structures.',
     'certs.enlarge':'Enlarge',
 
     'contact.h':'Contact',

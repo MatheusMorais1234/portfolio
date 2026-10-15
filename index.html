@@ -31,8 +31,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
-<link rel="stylesheet" href="assets/css/fonts.css?v=20261019">
-<link rel="stylesheet" href="assets/css/style.css?v=20261019">
+<link rel="stylesheet" href="assets/css/fonts.css?v=20261020">
+<link rel="stylesheet" href="assets/css/style.css?v=20261020">
 
 <script type="application/ld+json">
 {
@@ -62,6 +62,7 @@
     <nav class="nav__links" aria-label="Seções">
       <a href="#sobre" data-i18n="nav.about">Sobre</a>
       <a href="#experiencia" data-i18n="nav.path">Experiência</a>
+      <a href="#sistemas" data-i18n="nav.systems">Sistemas</a>
       <a href="#projetos" data-i18n="nav.work">Projetos</a>
       <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
       <!--g:navServices--><!--/g:navServices-->
@@ -75,7 +76,7 @@
         <span class="lang__opt is-on" data-lang="pt">PT</span>
         <span class="lang__opt" data-lang="en">EN</span>
       </button>
-      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261019" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
+      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261020" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
         <i aria-hidden="true"></i><i aria-hidden="true"></i>
       </button>
@@ -88,14 +89,15 @@
   <nav class="menu__links" aria-label="Seções (menu)">
     <a href="#sobre" data-i18n="nav.about">Sobre</a>
     <a href="#experiencia" data-i18n="nav.path">Experiência</a>
+    <a href="#sistemas" data-i18n="nav.systems">Sistemas</a>
     <a href="#projetos" data-i18n="nav.work">Projetos</a>
-      <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
+    <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
     <!--g:menuServices--><!--/g:menuServices-->
     <a href="#tecnologias" data-i18n="nav.stack">Tecnologias</a>
     <a href="#certificados" data-i18n="nav.certs">Certificados</a>
     <a href="#contato" data-i18n="nav.cta">Contato</a>
   </nav>
-  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261019" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261020" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
 </div>
 
 <main id="main">
@@ -109,8 +111,12 @@
       <p class="hero__lede" data-i18n="hero.lede">Sou Matheus Morais, desenvolvedor full-stack em Goiânia. Na ASSEGO, criei e mantive os sistemas de gestão usados por mais de 100 funcionários e o aplicativo de cerca de 9 mil associados, com cobrança integrada ao Sicoob e ao Itaú.</p>
       <div class="hero__cta">
         <a class="btn btn--solid" href="#contato" data-i18n="hero.ctaPrimary">Entrar em contato</a>
-        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261019" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261020" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
       </div>
+      <p class="hero__social">
+        <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
     </div>
 
     <figure class="hero__photo">
@@ -199,53 +205,6 @@
   </div>
 </section>
 
-<!-- ===== PROJETOS ===== -->
-<section class="sec sec--projects" id="projetos">
-  <div class="wrap">
-    <header class="phead">
-      <h2 class="sec__h" data-i18n="proj.h">Projetos</h2>
-      <p class="sec__sub" data-i18n="proj.sub">Três sistemas que construí por conta própria. Todos estão no ar.</p>
-    </header>
-    <ul class="pgrid" id="projGrid"><!--g:projects-->
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/freelamanager.jpg" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" loading="lazy" width="800" height="500"></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Full-stack · código aberto</p>
-          <h3 class="pcard__name">FreelaManager</h3>
-          <p class="pcard__tag">Clientes, contratos e recebimentos para freelancers</p>
-          <p class="pcard__desc">API em Express com JWT, PostgreSQL via Prisma e front em React. 95 testes rodam no CI a cada commit. Tem landing page e conta de demonstração que entra com um clique.</p>
-          <ul class="pcard__stack"><li>React</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li></ul>
-          <p class="pcard__live" data-live="freelamanager"></p>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://app.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/freelamanager" target="_blank" rel="noopener">Código</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/pizzaria.jpg" alt="Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos" loading="lazy" width="800" height="500"></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">PHP · código aberto</p>
-          <h3 class="pcard__name">Bella Napoli</h3>
-          <p class="pcard__tag">Delivery para pizzaria, do cardápio ao kanban</p>
-          <p class="pcard__desc">Pedido pelo celular com cupom, fidelidade e QR Code de mesa; a pizzaria acompanha tudo num kanban. Antes de publicar, revisei a segurança e corrigi XSS, CSRF e acesso a pedidos de terceiros.</p>
-          <ul class="pcard__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>Tailwind</li></ul>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://pizzaria.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/pizzaria-delivery" target="_blank" rel="noopener">Código</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/hipocratia.jpg" alt="Página inicial da HipocratIA com uma questão de legislação comentada pela IA" loading="lazy" width="800" height="500"></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Produto próprio · pré-lançamento</p>
-          <h3 class="pcard__name">HipocratIA</h3>
-          <p class="pcard__tag">Legislação da saúde para concursos, com IA</p>
-          <p class="pcard__desc">Questões comentadas por IA, simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas. Está no ar, ainda sem assinantes; o código é privado.</p>
-          <ul class="pcard__stack"><li>PHP 8.1</li><li>MySQL</li><li>Claude API</li><li>Mercado Pago</li></ul>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://hipocratia.com.br" target="_blank" rel="noopener">Visitar o site</a><a class="btn btn--sm btn--line" href="#contato">Pedir o código</a></div>
-        </div>
-      </li><!--/g:projects--></ul>
-    <p class="pmore"><span data-i18n="proj.more">Também há repositórios de estudo de POO e princípios SOLID em Java.</span>
-      <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener" data-i18n="code.profile">Todos os repositórios</a></p>
-  </div>
-</section>
-
 <!-- ===== SISTEMAS EM PRODUCAO (trabalho) ===== -->
 <section class="sec" id="sistemas">
   <div class="wrap sec__grid">
@@ -287,6 +246,54 @@
       </li><!--/g:work--></ul>
 
     </div>
+  </div>
+</section>
+
+<!-- ===== PROJETOS ===== -->
+<section class="sec sec--projects" id="projetos">
+  <div class="wrap">
+    <header class="phead">
+      <h2 class="sec__h" data-i18n="proj.h">Projetos</h2>
+      <p class="sec__sub" data-i18n="proj.sub">Três sistemas que construí por conta própria. Todos estão no ar.</p>
+    </header>
+    <ul class="pgrid" id="projGrid"><!--g:projects-->
+      <li class="pcard">
+        <figure class="pcard__shot"><img src="assets/img/projetos/freelamanager.jpg" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" loading="lazy" width="800" height="500"></figure>
+        <div class="pcard__body">
+          <p class="pcard__kicker">Full-stack · código aberto</p>
+          <h3 class="pcard__name">FreelaManager</h3>
+          <p class="pcard__tag">Clientes, contratos e recebimentos para freelancers</p>
+          <p class="pcard__desc">API em Express com JWT, PostgreSQL via Prisma e front em React. 95 testes rodam no CI a cada commit. Tem landing page e conta de demonstração que entra com um clique.</p>
+          <ul class="pcard__stack"><li>React</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li></ul>
+          <p class="pcard__live" data-live="freelamanager"></p>
+          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://app.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/freelamanager" target="_blank" rel="noopener">Código</a></div>
+        </div>
+      </li>
+      <li class="pcard">
+        <figure class="pcard__shot"><img src="assets/img/projetos/pizzaria.jpg" alt="Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos" loading="lazy" width="800" height="500"></figure>
+        <div class="pcard__body">
+          <p class="pcard__kicker">PHP · código aberto</p>
+          <h3 class="pcard__name">Bella Napoli</h3>
+          <p class="pcard__tag">Delivery para pizzaria, do cardápio ao kanban</p>
+          <p class="pcard__desc">Pedido pelo celular com cupom, fidelidade e QR Code de mesa; a pizzaria acompanha tudo num kanban. Antes de publicar, revisei a segurança e corrigi XSS, CSRF e acesso a pedidos de terceiros.</p>
+          <ul class="pcard__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>Tailwind</li></ul>
+          <p class="pcard__live" data-live="pizzaria-delivery"></p>
+          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://pizzaria.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/pizzaria-delivery" target="_blank" rel="noopener">Código</a></div>
+        </div>
+      </li>
+      <li class="pcard">
+        <figure class="pcard__shot"><img src="assets/img/projetos/hipocratia.jpg" alt="Página inicial da HipocratIA com uma questão de legislação comentada pela IA" loading="lazy" width="800" height="500"></figure>
+        <div class="pcard__body">
+          <p class="pcard__kicker">Produto próprio · pré-lançamento</p>
+          <h3 class="pcard__name">HipocratIA</h3>
+          <p class="pcard__tag">Legislação da saúde para concursos, com IA</p>
+          <p class="pcard__desc">Questões comentadas por IA, simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas. Está no ar, ainda sem assinantes; o código é privado.</p>
+          <ul class="pcard__stack"><li>PHP 8.1</li><li>MySQL</li><li>Claude API</li><li>Mercado Pago</li></ul>
+          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://hipocratia.com.br" target="_blank" rel="noopener">Visitar o site</a><a class="btn btn--sm btn--line" href="#contato">Pedir o código</a></div>
+        </div>
+      </li><!--/g:projects--></ul>
+    <p class="pmore"><span data-i18n="proj.more">Também há repositórios de estudo de POO e princípios SOLID em Java.</span>
+      <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener" data-i18n="code.profile">Todos os repositórios</a></p>
   </div>
 </section>
 
@@ -468,60 +475,12 @@
       </li>
       <li>
         <button class="cert" type="button" data-i="2">
-          <span class="cert__shot"><img src="assets/img/certificados/ifro-web.webp" alt="" loading="lazy" class="is-top"></span>
-          <span class="cert__title">Programação para Web</span>
-          <span class="cert__meta">Cursa, IFRO, 14h37, 2025</span>
-        </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="3">
-          <span class="cert__shot"><img src="assets/img/certificados/ifro-analise-projeto.webp" alt="" loading="lazy" class="is-top"></span>
-          <span class="cert__title">Análise e projeto de sistemas</span>
-          <span class="cert__meta">Cursa, IFRO, 11h02, 2025</span>
-        </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="4">
-          <span class="cert__shot"><img src="assets/img/certificados/ifro-logica.webp" alt="" loading="lazy" class="is-top"></span>
-          <span class="cert__title">Linguagem e lógica de programação</span>
-          <span class="cert__meta">Cursa, IFRO, 09h32, 2025</span>
-        </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="5">
-          <span class="cert__shot"><img src="assets/img/certificados/ifro-banco-de-dados.webp" alt="" loading="lazy" class="is-top"></span>
-          <span class="cert__title">Banco de dados completo</span>
-          <span class="cert__meta">Cursa, IFRO, 06h16, 2025</span>
-        </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="6">
-          <span class="cert__shot"><img src="assets/img/certificados/ifro-estrutura-dados.webp" alt="" loading="lazy" class="is-top"></span>
-          <span class="cert__title">Estrutura de dados</span>
-          <span class="cert__meta">Cursa, IFRO, 04h27, 2025</span>
-        </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="7">
           <span class="cert__shot"><img src="assets/img/certificados/ev-seguranca-ti.webp" alt="" loading="lazy"></span>
           <span class="cert__title">Segurança em Tecnologia da Informação</span>
           <span class="cert__meta">Fundação Bradesco, Escola Virtual, 12h, 2025</span>
         </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="8">
-          <span class="cert__shot"><img src="assets/img/certificados/ev-hardware-software.webp" alt="" loading="lazy"></span>
-          <span class="cert__title">Fundamentos de TI: hardware e software</span>
-          <span class="cert__meta">Fundação Bradesco, Escola Virtual, 7h, 2025</span>
-        </button>
-      </li>
-      <li>
-        <button class="cert" type="button" data-i="9">
-          <span class="cert__shot"><img src="assets/img/certificados/ev-sharepoint.webp" alt="" loading="lazy"></span>
-          <span class="cert__title">SharePoint</span>
-          <span class="cert__meta">Fundação Bradesco, Escola Virtual, 2h, 2025</span>
-        </button>
       </li><!--/g:certs--></ul>
+      <p class="certs__more" data-i18n="certs.more">Também concluí cinco cursos curtos do IFRO pela Cursa em 2025: Programação para Web, Análise e projeto de sistemas, Lógica de programação, Banco de dados e Estrutura de dados.</p>
     </div>
   </div>
 </section>
@@ -541,7 +500,7 @@
         <div><dt>GitHub</dt><dd><a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">MatheusMorais1234</a></dd></div>
       </dl>
 
-      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261019" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
+      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261020" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
     </header>
 
     <div class="sec__body">
@@ -622,9 +581,9 @@
   </button>
 </div>
 
-<script src="assets/js/data.js?v=20261019" defer></script>
-<script src="assets/js/i18n.js?v=20261019" defer></script>
-<script src="assets/js/render.js?v=20261019" defer></script>
-<script src="assets/js/main.js?v=20261019" defer></script>
+<script src="assets/js/data.js?v=20261020" defer></script>
+<script src="assets/js/i18n.js?v=20261020" defer></script>
+<script src="assets/js/render.js?v=20261020" defer></script>
+<script src="assets/js/main.js?v=20261020" defer></script>
 </body>
 </html>

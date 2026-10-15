@@ -204,6 +204,9 @@ const WORK = [
    Se o arquivo não existir, o card mostra um placeholder — sem quebrar.
    fit:'top' -> para certificado em pé (A4 retrato), o card mostra o topo,
    onde ficam o nome do curso e a carga horária. O clique abre a imagem inteira.
+   Só entra card o que pesa para recrutador. Os cursos curtos (Cursa/IFRO)
+   viraram uma linha de texto: chave 'certs.more' no i18n.js. As imagens
+   continuam em assets/img/certificados/ caso queira voltar com eles.
    --------------------------------------------------------------------- */
 const CERTS = [
   { img:'assets/img/certificados/diploma-ads-senac.webp',
@@ -214,37 +217,9 @@ const CERTS = [
     title:{ pt:'Inglês — nível B2', en:'English — CEFR B2' },
     meta:'UFG, Centro de Línguas, 480h, 2026' },
 
-  { img:'assets/img/certificados/ifro-web.webp', fit:'top',
-    title:{ pt:'Programação para Web', en:'Web Programming' },
-    meta:'Cursa, IFRO, 14h37, 2025' },
-
-  { img:'assets/img/certificados/ifro-analise-projeto.webp', fit:'top',
-    title:{ pt:'Análise e projeto de sistemas', en:'Systems Analysis and Design' },
-    meta:'Cursa, IFRO, 11h02, 2025' },
-
-  { img:'assets/img/certificados/ifro-logica.webp', fit:'top',
-    title:{ pt:'Linguagem e lógica de programação', en:'Programming Logic and Languages' },
-    meta:'Cursa, IFRO, 09h32, 2025' },
-
-  { img:'assets/img/certificados/ifro-banco-de-dados.webp', fit:'top',
-    title:{ pt:'Banco de dados completo', en:'Complete Database Course' },
-    meta:'Cursa, IFRO, 06h16, 2025' },
-
-  { img:'assets/img/certificados/ifro-estrutura-dados.webp', fit:'top',
-    title:{ pt:'Estrutura de dados', en:'Data Structures' },
-    meta:'Cursa, IFRO, 04h27, 2025' },
-
   { img:'assets/img/certificados/ev-seguranca-ti.webp',
     title:{ pt:'Segurança em Tecnologia da Informação', en:'Information Technology Security' },
-    meta:'Fundação Bradesco, Escola Virtual, 12h, 2025' },
-
-  { img:'assets/img/certificados/ev-hardware-software.webp',
-    title:{ pt:'Fundamentos de TI: hardware e software', en:'IT Fundamentals: Hardware and Software' },
-    meta:'Fundação Bradesco, Escola Virtual, 7h, 2025' },
-
-  { img:'assets/img/certificados/ev-sharepoint.webp',
-    title:{ pt:'SharePoint', en:'SharePoint' },
-    meta:'Fundação Bradesco, Escola Virtual, 2h, 2025' }
+    meta:'Fundação Bradesco, Escola Virtual, 12h, 2025' }
 ];
 
 
@@ -290,6 +265,7 @@ const PROJECTS = [
     desc:{ pt:'Pedido pelo celular com cupom, fidelidade e QR Code de mesa; a pizzaria acompanha tudo num kanban. Antes de publicar, revisei a segurança e corrigi XSS, CSRF e acesso a pedidos de terceiros.',
            en:'Orders from the phone with coupons, loyalty points and table QR codes; the pizzeria runs everything from a kanban. Before publishing I reviewed security and fixed XSS, CSRF and access to other customers’ orders.' },
     stack:['PHP 8','MySQL','JavaScript','Tailwind'],
+    live:{ repo:'pizzaria-delivery', fallbackDate:'2026-10-13' },
     links:[
       { label:{ pt:'Abrir a demo', en:'Open the demo' }, href:'https://pizzaria.matheusmorais.com' },
       { label:{ pt:'Código', en:'Code' }, href:'https://github.com/MatheusMorais1234/pizzaria-delivery' }
