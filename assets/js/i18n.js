@@ -14,6 +14,7 @@ const I18N = {
     'meta.ogDesc':'Desenvolvedor full-stack júnior em Goiânia. Sistemas de gestão, relatórios financeiros e integrações bancárias em produção desde 2023.',
 
     'skip':'Pular para o conteúdo',
+    'theme.light':'Tema claro',
 
     'nav.about':'Sobre',
     'nav.path':'Experiência',
@@ -130,6 +131,7 @@ const I18N = {
     'meta.ogDesc':'Junior full-stack developer in Goiânia, Brazil. Management systems, financial reporting and banking integrations in production since 2023.',
 
     'skip':'Skip to content',
+    'theme.light':'Light theme',
 
     'nav.about':'About',
     'nav.path':'Experience',
