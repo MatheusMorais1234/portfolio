@@ -152,7 +152,9 @@ a{ color:inherit; text-decoration:none; }
 h1{ font-size:21pt; line-height:1.1; color:#111; }
 .tit{ font-size:11pt; color:#555; margin-top:2pt; }
 .ct{ margin-top:2pt; color:#222; }
-h2{ font-size:11.5pt; text-transform:uppercase; color:#1f4e66; letter-spacing:.01em;
+/* word-spacing: com o espaço padrão, leitores de PDF (e triagens automáticas)
+   colavam "EXPERIÊNCIAPROFISSIONAL" e "emmatheusmorais.com" */
+h2{ font-size:11.5pt; text-transform:uppercase; color:#1f4e66; letter-spacing:.01em; word-spacing:.15em;
     border-bottom:.8pt solid #9fb3c0; padding-bottom:1.5pt; margin:9pt 0 3.5pt; break-after:avoid; }
 .org{ font-weight:bold; margin-top:5pt; break-after:avoid; }
 .cargo{ color:#555; break-after:avoid; }
@@ -161,7 +163,7 @@ li{ padding-left:9pt; text-indent:-6pt; margin-top:1.2pt; }
 li::before{ content:'- '; }
 .job, .proj{ break-inside:avoid; }
 .proj{ margin-top:2.5pt; }
-.rod{ margin-top:8pt; font-size:8.5pt; color:#666; }
+.rod{ margin-top:8pt; font-size:8.5pt; color:#666; word-spacing:.15em; }
 p + p{ margin-top:1pt; }
 `;
 
