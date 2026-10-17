@@ -3,20 +3,62 @@
    Direção: perfil institucional. Papel branco, tinta azul-marinho, um
    azul de destaque e uma só família tipográfica. Seções organizadas como
    relatório: título na coluna da esquerda, conteúdo na da direita.
+
+   Tema: o escuro é o padrão. O claro entra com data-theme="light" no
+   <html>, colocado pelo theme.js antes da página pintar.
    ===================================================================== */
 
 :root{
+  color-scheme:dark;
+  --paper:  #0b1220;
+  --wash:   #121b2d;   /* fundo de faixas e painéis */
+  --ink:    #e7ecf4;   /* texto principal — 15.8:1 sobre o papel */
+  --slate:  #a9b4c6;   /* texto secundário — 8.9:1 */
+  --quiet:  #8794aa;   /* legendas — 5.9:1 */
+  --rule:   #1f2a3f;
+  --rule-2: #2f3c55;
+  --blue:   #86a4ff;   /* ação e link — 7.6:1 */
+  --blue-2: #a9bfff;
+  --on-blue:#0b1220;   /* texto sobre o botão azul */
+  --green:  #3fcf8e;
+  --red:    #f97066;
+  --nav-bg: rgba(11,18,32,.88);
+  --select: #2b4185;
+  --shadow: rgba(0,0,0,.6);
+  --focus:  rgba(134,164,255,.25);
+  --hint:   #66738b;   /* placeholder */
+  --logo-filter: invert(1);   /* logos pretos (Next.js) */
+  /* selos das ferramentas */
+  --ok-bg:#0f2e20;  --ok-fg:#75e0a7;
+  --bad-bg:#3a1714; --bad-fg:#fda29b;
+  --info-bg:#17244a; --warn:#fdb022;
+}
+:root[data-theme="light"]{
+  color-scheme:light;
   --paper:  #ffffff;
-  --wash:   #f4f6f9;   /* fundo de faixas e painéis */
-  --ink:    #0e1a2b;   /* texto principal — 16.9:1 sobre o papel */
-  --slate:  #475467;   /* texto secundário — 7.6:1 */
-  --quiet:  #667085;   /* legendas — 4.9:1, AA para texto pequeno */
+  --wash:   #f4f6f9;
+  --ink:    #0e1a2b;   /* 16.9:1 sobre o papel */
+  --slate:  #475467;   /* 7.6:1 */
+  --quiet:  #667085;   /* 4.9:1, AA para texto pequeno */
   --rule:   #e1e5eb;
   --rule-2: #cdd3dc;
-  --blue:   #1f3f9e;   /* ação e link — 9.1:1 */
+  --blue:   #1f3f9e;   /* 9.1:1 */
   --blue-2: #172f77;
+  --on-blue:#ffffff;
   --green:  #1a7f4b;
+  --red:    #b42318;
+  --nav-bg: rgba(255,255,255,.92);
+  --select: #d6e0fb;
+  --shadow: rgba(14,26,43,.35);
+  --focus:  rgba(31,63,158,.15);
+  --hint:   #98a2b3;
+  --logo-filter: none;
+  --ok-bg:#ecfdf3;  --ok-fg:#054f31;
+  --bad-bg:#fef3f2; --bad-fg:#7a271a;
+  --info-bg:#eff4ff; --warn:#93370d;
+}
 
+:root{
   --font: 'Schibsted Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --maxw: 1200px;
@@ -59,7 +101,7 @@ a{ color:inherit; }
 button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; padding:0; }
 h1,h2,h3,p,ul,ol,dl,dd,figure{ margin:0; }
 ul,ol{ padding:0; list-style:none; }
-::selection{ background:#d6e0fb; color:var(--ink); }
+::selection{ background:var(--select); color:var(--ink); }
 
 :focus-visible{
   outline:2px solid var(--blue);
@@ -76,7 +118,7 @@ ul,ol{ padding:0; list-style:none; }
 
 .skip{
   position:fixed; top:-100px; left:1rem; z-index:999;
-  background:var(--ink); color:#fff;
+  background:var(--ink); color:var(--paper);
   padding:.6rem 1rem; border-radius:var(--r);
   font-size:.875rem; text-decoration:none;
 }
@@ -92,7 +134,7 @@ ul,ol{ padding:0; list-style:none; }
   border:1px solid transparent;
   transition:background-color .15s, border-color .15s, color .15s;
 }
-.btn--solid{ background:var(--blue); color:#fff; }
+.btn--solid{ background:var(--blue); color:var(--on-blue); }
 .btn--solid:hover{ background:var(--blue-2); }
 .btn--line{ border-color:var(--rule-2); color:var(--ink); background:var(--paper); }
 .btn--line:hover{ border-color:var(--ink); }
@@ -104,11 +146,11 @@ ul,ol{ padding:0; list-style:none; }
    ===================================================================== */
 .nav{
   position:sticky; top:0; z-index:50;
-  background:rgba(255,255,255,.92);
+  background:var(--nav-bg);
   backdrop-filter:saturate(1.4) blur(10px);
   -webkit-backdrop-filter:saturate(1.4) blur(10px);
   border-bottom:1px solid transparent;
-  transition:border-color .2s;
+  transition:border-color .2s, background-color .2s;
 }
 .nav.is-stuck{ border-bottom-color:var(--rule); }
 .nav__in{
@@ -142,6 +184,20 @@ ul,ol{ padding:0; list-style:none; }
   padding:.3rem .5rem; border-radius:4px; line-height:1;
 }
 .lang__opt.is-on{ background:var(--wash); color:var(--ink); }
+
+/* botão de tema: mostra a lua no escuro e o sol no claro */
+.theme{
+  display:inline-grid; place-items:center;
+  width:36px; height:36px;
+  border:1px solid var(--rule); border-radius:var(--r);
+  color:var(--slate);
+  transition:color .15s, border-color .15s;
+}
+.theme:hover{ color:var(--ink); border-color:var(--rule-2); }
+.theme svg{ width:18px; height:18px; }
+.theme__sun{ display:none; }
+:root[data-theme="light"] .theme__sun{ display:block; }
+:root[data-theme="light"] .theme__moon{ display:none; }
 
 .burger{
   display:none; width:40px; height:40px;
@@ -188,7 +244,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .hero__dot{
   width:8px; height:8px; border-radius:50%; background:var(--green);
-  box-shadow:0 0 0 4px rgba(26,127,75,.14);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--green) 18%, transparent);
 }
 .hero__title{
   font-size:clamp(2.25rem, 1.2rem + 3.6vw, 4rem);
@@ -357,7 +413,7 @@ ul,ol{ padding:0; list-style:none; }
   background:var(--paper); border:1px solid var(--rule); border-radius:10px;
   transition:border-color .2s, box-shadow .2s, transform .2s;
 }
-.pcard:hover{ border-color:var(--rule-2); box-shadow:0 18px 40px -24px rgba(14,26,43,.35); transform:translateY(-2px); }
+.pcard:hover{ border-color:var(--rule-2); box-shadow:0 18px 40px -24px var(--shadow); transform:translateY(-2px); }
 .pcard__shot{ aspect-ratio:16 / 10; overflow:hidden; background:var(--wash); border-bottom:1px solid var(--rule); }
 .pcard__shot img{ display:block; width:100%; height:100%; object-fit:cover; object-position:left top; }
 .pcard__body{ flex:1; display:flex; flex-direction:column; padding:1.35rem 1.4rem 1.4rem; }
@@ -395,6 +451,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .tech summary::-webkit-details-marker{ display:none; }
 .tech summary img{ width:20px; height:20px; flex:none; }
+.tech summary img[src*="nextjs"]{ filter:var(--logo-filter); }
 .tech summary::after{
   content:''; margin-left:auto; flex:none;
   width:8px; height:8px;
@@ -491,17 +548,17 @@ ul,ol{ padding:0; list-style:none; }
   background-size:5px 5px; background-repeat:no-repeat;
   padding-right:2.25rem;
 }
-.field ::placeholder{ color:#98a2b3; }
+.field ::placeholder{ color:var(--hint); }
 .field input:focus,.field select:focus,.field textarea:focus{
   outline:none; border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(31,63,158,.15);
+  box-shadow:0 0 0 3px var(--focus);
 }
 .form__trap{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 .form__foot{ display:flex; align-items:center; flex-wrap:wrap; gap:1rem 1.5rem; margin-top:.5rem; }
 .form__privacy{ font-size:.8125rem; color:var(--quiet); max-width:34ch; }
 .form__status{ margin-top:1rem; font-size:.9375rem; min-height:1.5em; }
 .form__status.is-ok{ color:var(--green); }
-.form__status.is-err{ color:#b42318; }
+.form__status.is-err{ color:var(--red); }
 .form__status.is-wait{ color:var(--quiet); }
 
 /* =====================================================================
@@ -623,6 +680,11 @@ ul,ol{ padding:0; list-style:none; }
    IMPRESSÃO
    ===================================================================== */
 @media print{
+  /* no papel vale sempre o tema claro */
+  :root{
+    --paper:#fff; --wash:#f4f6f9; --ink:#0e1a2b; --slate:#475467; --quiet:#667085;
+    --rule:#e1e5eb; --rule-2:#cdd3dc; --blue:#1f3f9e; --green:#1a7f4b; --logo-filter:none;
+  }
   .nav,.menu,.lbox,.skip,.form,.hero__cta,.hero__dot{ display:none !important; }
   .sec{ padding:1.5rem 0; }
   .sec__head{ position:static; }

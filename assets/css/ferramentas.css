@@ -66,10 +66,10 @@
 .panel__h{ font-size:1.125rem; font-weight:600; margin-bottom:1.25rem; }
 
 .field__hint{ font-size:.8125rem; color:var(--quiet); }
-.field__err{ font-size:.8125rem; color:#b42318; min-height:0; }
+.field__err{ font-size:.8125rem; color:var(--red); min-height:0; }
 .field__err:empty{ display:none; }
 .field input[aria-invalid="true"],
-.field textarea[aria-invalid="true"]{ border-color:#b42318; }
+.field textarea[aria-invalid="true"]{ border-color:var(--red); }
 .field--mono input,
 .field--mono textarea,
 .code{
@@ -105,7 +105,7 @@
 .actions{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
 .note{ margin-top:1rem; font-size:.875rem; color:var(--slate); }
 .note:empty{ display:none; }
-.note--warn{ color:#93370d; }
+.note--warn{ color:var(--warn); }
 
 /* ---------- lista de dados lidos ---------- */
 .facts-list{ border-top:1px solid var(--rule); }
@@ -127,8 +127,8 @@
 .status svg{ flex:none; margin-top:.1rem; }
 .status strong{ display:block; font-weight:600; }
 .status span{ display:block; font-size:.9375rem; margin-top:.15rem; }
-.status--ok{ background:#ecfdf3; color:#054f31; }
-.status--bad{ background:#fef3f2; color:#7a271a; }
+.status--ok{ background:var(--ok-bg); color:var(--ok-fg); }
+.status--bad{ background:var(--bad-bg); color:var(--bad-fg); }
 
 .checks{ margin-top:1.5rem; }
 .checks h3{ font-size:1rem; font-weight:600; margin-bottom:.5rem; }
@@ -138,10 +138,11 @@
   font-size:.9375rem;
 }
 .checks .ok{ color:var(--green); font-weight:600; }
-.checks .bad{ color:#b42318; font-weight:600; }
+.checks .bad{ color:var(--red); font-weight:600; }
 
 .barcode{
   margin-top:1.5rem;
+  color:#0e1a2b;   /* fundo branco nos dois temas: o leitor precisa dele */
   background:#fff; border:1px solid var(--rule); border-radius:var(--r);
   padding:1.25rem 1rem .75rem;
 }
@@ -241,7 +242,7 @@
   font-size:.8125rem; font-weight:500; color:var(--slate);
 }
 .chip:hover{ color:var(--ink); border-color:var(--ink); }
-.chip[aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:#fff; }
+.chip[aria-pressed="true"]{ background:var(--ink); border-color:var(--ink); color:var(--paper); }
 
 .tablewrap{
   overflow-x:auto; background:var(--paper);
@@ -257,9 +258,9 @@
 .rtable .none{ text-align:center; color:var(--quiet); padding:1.5rem; }
 
 .tag{ display:inline-block; padding:.1rem .5rem; border-radius:4px; font-size:.8125rem; font-weight:500; white-space:nowrap; }
-.tag--pago{ background:#ecfdf3; color:#054f31; }
-.tag--rejeitado{ background:#fef3f2; color:#7a271a; }
-.tag--entrada{ background:#eff4ff; color:var(--blue-2); }
+.tag--pago{ background:var(--ok-bg); color:var(--ok-fg); }
+.tag--rejeitado{ background:var(--bad-bg); color:var(--bad-fg); }
+.tag--entrada{ background:var(--info-bg); color:var(--blue-2); }
 .tag--baixa, .tag--outro{ background:var(--wash); color:var(--slate); }
 
 @media (max-width: 960px){
