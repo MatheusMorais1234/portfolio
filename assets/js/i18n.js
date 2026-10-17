@@ -27,7 +27,7 @@ const I18N = {
     'nav.cta':'Contato',
     'nav.cv':'Currículo',
 
-    'hero.status':'Disponível para início imediato em vagas de desenvolvedor júnior',
+    'hero.status':'Procurando vaga de dev júnior',
     'hero.title':'Sistemas de gestão, relatórios financeiros e integrações bancárias em produção desde 2023.',
     'hero.lede':'Sou Matheus Morais, desenvolvedor full-stack em Goiânia. Na ASSEGO, criei e mantive os sistemas de gestão usados por mais de 100 funcionários e o aplicativo de cerca de 9 mil associados, com cobrança integrada ao Sicoob e ao Itaú.',
     'hero.ctaPrimary':'Entrar em contato',
@@ -144,7 +144,7 @@ const I18N = {
     'nav.cta':'Contact',
     'nav.cv':'Résumé',
 
-    'hero.status':'Available now for junior developer roles',
+    'hero.status':'Looking for a junior dev role',
     'hero.title':'Management systems, financial reporting and banking integrations in production since 2023.',
     'hero.lede':'I am Matheus Morais, a full-stack developer in Goiânia, Brazil. At ASSEGO I built and maintained the management systems used by more than 100 staff and the app used by around 9,000 members, with billing integrated with Sicoob and Itaú.',
     'hero.ctaPrimary':'Get in touch',
