@@ -32,7 +32,7 @@
 
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
 <link rel="stylesheet" href="assets/css/fonts.css?v=20261020">
-<link rel="stylesheet" href="assets/css/style.css?v=20261024">
+<link rel="stylesheet" href="assets/css/style.css?v=20261025">
 <script src="assets/js/theme.js?v=20261023"></script>
 
 <script type="application/ld+json">
@@ -322,6 +322,18 @@
       <p class="sec__sub" data-i18n="tools.sub">Utilitários de pagamento que qualquer pessoa pode usar. Rodam no navegador, sem enviar dados, com as mesmas regras das integrações bancárias que faço no trabalho.</p>
     </header>
     <div class="sec__body">
+      <!-- bancada: a linha do boleto do hero, editável. O main.js confere
+           os dígitos com o mesmo pagamentos.js das ferramentas. -->
+      <div class="demo" id="demo">
+        <label class="demo__label" for="demoLinha" data-i18n="demo.label">Troque qualquer número da linha do boleto lá de cima e veja qual dígito verificador acusa o erro.</label>
+        <input class="demo__input" id="demoLinha" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" translate="no" value="34191.09206 23010.166298 92014.463001 1 92180000000000">
+        <ol class="demo__checks" id="demoChecks"></ol>
+        <div class="demo__foot">
+          <p class="demo__sum" id="demoSum" aria-live="polite"></p>
+          <button class="btn btn--line btn--sm" id="demoReset" type="button" data-i18n="demo.reset" hidden>Voltar ao original</button>
+        </div>
+      </div>
+
       <ul class="projs">
         <li class="proj">
           <h3 class="proj__h"><a class="proj__link" href="/ferramentas/pix/" data-i18n="tools.pixH">Gerador de Pix copia e cola e QR Code</a></h3>
@@ -599,8 +611,9 @@
 </div>
 
 <script src="assets/js/data.js?v=20261020" defer></script>
-<script src="assets/js/i18n.js?v=20261023" defer></script>
+<script src="assets/js/i18n.js?v=20261025" defer></script>
+<script src="assets/js/ferramentas/pagamentos.js?v=20261020" defer></script>
 <script src="assets/js/render.js?v=20261024" defer></script>
-<script src="assets/js/main.js?v=20261024" defer></script>
+<script src="assets/js/main.js?v=20261025" defer></script>
 </body>
 </html>
