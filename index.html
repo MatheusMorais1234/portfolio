@@ -25,15 +25,15 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="Matheus Morais">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0b1220">
+<meta name="theme-color" content="#0d1b17">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
 <link rel="stylesheet" href="assets/css/fonts.css?v=20261020">
-<link rel="stylesheet" href="assets/css/style.css?v=20261021">
-<script src="assets/js/theme.js?v=20261021"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=20261023">
+<script src="assets/js/theme.js?v=20261023"></script>
 
 <script type="application/ld+json">
 {
@@ -114,11 +114,11 @@
       <div class="hero__cta">
         <a class="btn btn--solid" href="#contato" data-i18n="hero.ctaPrimary">Entrar em contato</a>
         <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261022" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+        <p class="hero__social">
+          <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
       </div>
-      <p class="hero__social">
-        <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">LinkedIn</a>
-      </p>
     </div>
 
     <figure class="hero__photo">
@@ -127,6 +127,21 @@
   </div>
 
   <div class="wrap">
+    <!-- Boleto fictício do Itaú, montado pelo montarBoletoBancario() do
+         pagamentos.js: dígitos válidos, vencimento 02/01/2023 (o primeiro
+         estágio), valor zero e o WhatsApp no campo livre. -->
+    <div class="boleto" id="boleto">
+      <p class="boleto__banco" aria-hidden="true">341-7</p>
+      <p class="boleto__linha" id="boletoLinha"><span class="sr" data-i18n="boleto.linha">Linha digitável:</span> 34191.09206 23010.166298 92014.463001 1 92180000000000</p>
+      <div class="boleto__foot">
+        <a class="boleto__barras" href="/ferramentas/boleto/?codigo=34191092062301016629892014463001192180000000000" data-i18n-label="boleto.aria" aria-label="Conferir este boleto no validador">
+          <svg viewBox="0 0 405 50" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true"><path d="M0 0h1v50h-1zM2 0h1v50h-1zM4 0h3v50h-3zM8 0h3v50h-3zM12 0h1v50h-1zM16 0h1v50h-1zM18 0h1v50h-1zM22 0h3v50h-3zM26 0h1v50h-1zM30 0h1v50h-1zM32 0h1v50h-1zM36 0h3v50h-3zM40 0h3v50h-3zM44 0h1v50h-1zM48 0h1v50h-1zM50 0h1v50h-1zM54 0h3v50h-3zM58 0h1v50h-1zM62 0h3v50h-3zM66 0h1v50h-1zM68 0h1v50h-1zM70 0h3v50h-3zM76 0h3v50h-3zM80 0h1v50h-1zM82 0h1v50h-1zM86 0h3v50h-3zM92 0h1v50h-1zM94 0h1v50h-1zM96 0h1v50h-1zM98 0h3v50h-3zM104 0h3v50h-3zM110 0h1v50h-1zM112 0h1v50h-1zM114 0h1v50h-1zM116 0h3v50h-3zM122 0h3v50h-3zM128 0h1v50h-1zM130 0h1v50h-1zM132 0h1v50h-1zM134 0h3v50h-3zM140 0h3v50h-3zM146 0h1v50h-1zM148 0h1v50h-1zM150 0h1v50h-1zM152 0h3v50h-3zM158 0h3v50h-3zM164 0h1v50h-1zM166 0h1v50h-1zM170 0h1v50h-1zM172 0h3v50h-3zM176 0h3v50h-3zM180 0h1v50h-1zM184 0h1v50h-1zM186 0h1v50h-1zM190 0h3v50h-3zM194 0h3v50h-3zM200 0h1v50h-1zM202 0h1v50h-1zM204 0h3v50h-3zM208 0h1v50h-1zM212 0h1v50h-1zM216 0h3v50h-3zM220 0h1v50h-1zM224 0h3v50h-3zM230 0h1v50h-1zM232 0h1v50h-1zM234 0h3v50h-3zM238 0h1v50h-1zM242 0h1v50h-1zM244 0h3v50h-3zM248 0h3v50h-3zM252 0h1v50h-1zM256 0h1v50h-1zM260 0h1v50h-1zM262 0h3v50h-3zM266 0h3v50h-3zM270 0h1v50h-1zM274 0h1v50h-1zM276 0h3v50h-3zM282 0h3v50h-3zM288 0h1v50h-1zM290 0h1v50h-1zM292 0h1v50h-1zM294 0h3v50h-3zM300 0h1v50h-1zM302 0h1v50h-1zM306 0h3v50h-3zM310 0h1v50h-1zM312 0h3v50h-3zM318 0h1v50h-1zM320 0h3v50h-3zM324 0h1v50h-1zM328 0h1v50h-1zM332 0h1v50h-1zM334 0h3v50h-3zM338 0h3v50h-3zM342 0h1v50h-1zM346 0h1v50h-1zM348 0h1v50h-1zM350 0h3v50h-3zM356 0h1v50h-1zM358 0h3v50h-3zM364 0h1v50h-1zM368 0h3v50h-3zM374 0h3v50h-3zM378 0h1v50h-1zM380 0h1v50h-1zM382 0h1v50h-1zM384 0h1v50h-1zM386 0h3v50h-3zM392 0h3v50h-3zM398 0h1v50h-1zM400 0h3v50h-3zM404 0h1v50h-1z"/></svg>
+          <span class="boleto__laser" aria-hidden="true"></span>
+        </a>
+        <p class="boleto__nota"><span data-i18n="boleto.nota">Um boleto de exemplo, montado pelo mesmo código das minhas ferramentas de pagamento. Os dígitos verificadores conferem.</span> <a href="/ferramentas/boleto/?codigo=34191092062301016629892014463001192180000000000" data-i18n="boleto.link">Conferir no validador</a></p>
+      </div>
+    </div>
+
     <dl class="facts">
       <div><dt data-i18n="facts.now">Disponibilidade</dt><dd data-i18n="facts.nowV">Imediata, em Goiânia ou remoto</dd></div>
       <div><dt data-i18n="facts.exp">Experiência</dt><dd data-i18n="facts.expV">Desde 2023, em três empresas</dd></div>
@@ -260,7 +275,7 @@
     </header>
     <ul class="pgrid" id="projGrid"><!--g:projects-->
       <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/freelamanager.jpg" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" loading="lazy" width="800" height="500"></figure>
+        <figure class="pcard__shot"><img src="assets/img/projetos/freelamanager.jpg" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
         <div class="pcard__body">
           <p class="pcard__kicker">Full-stack · código aberto</p>
           <h3 class="pcard__name">FreelaManager</h3>
@@ -272,7 +287,7 @@
         </div>
       </li>
       <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/pizzaria.jpg" alt="Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos" loading="lazy" width="800" height="500"></figure>
+        <figure class="pcard__shot"><img src="assets/img/projetos/pizzaria.jpg" alt="Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
         <div class="pcard__body">
           <p class="pcard__kicker">PHP · código aberto</p>
           <h3 class="pcard__name">Bella Napoli</h3>
@@ -284,7 +299,7 @@
         </div>
       </li>
       <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/hipocratia.jpg" alt="Página inicial da HipocratIA com uma questão de legislação comentada pela IA" loading="lazy" width="800" height="500"></figure>
+        <figure class="pcard__shot"><img src="assets/img/projetos/hipocratia.jpg" alt="Página inicial da HipocratIA com uma questão de legislação comentada pela IA" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
         <div class="pcard__body">
           <p class="pcard__kicker">Produto próprio · pré-lançamento</p>
           <h3 class="pcard__name">HipocratIA</h3>
@@ -584,8 +599,8 @@
 </div>
 
 <script src="assets/js/data.js?v=20261020" defer></script>
-<script src="assets/js/i18n.js?v=20261022" defer></script>
-<script src="assets/js/render.js?v=20261020" defer></script>
-<script src="assets/js/main.js?v=20261022" defer></script>
+<script src="assets/js/i18n.js?v=20261023" defer></script>
+<script src="assets/js/render.js?v=20261023" defer></script>
+<script src="assets/js/main.js?v=20261023" defer></script>
 </body>
 </html>

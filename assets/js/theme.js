@@ -7,8 +7,10 @@
 'use strict';
 
 const KEY = 'mm-theme';
-const COR = { dark:'#0b1220', light:'#ffffff' };   // barra do navegador no celular
+const COR = { dark:'#0d1b17', light:'#f3f7f3' };   // barra do navegador no celular
 const root = document.documentElement;
+
+root.classList.add('js');
 
 let tema = 'dark';
 try { if (localStorage.getItem(KEY) === 'light') tema = 'light'; } catch { /* modo privado */ }
@@ -26,9 +28,22 @@ aplica();
 document.addEventListener('DOMContentLoaded', () => {
   aplica();
   document.querySelectorAll('.theme').forEach(b => b.addEventListener('click', () => {
-    tema = tema === 'light' ? 'dark' : 'light';
-    try { localStorage.setItem(KEY, tema); } catch { /* modo privado */ }
-    aplica();
+    const troca = () => {
+      tema = tema === 'light' ? 'dark' : 'light';
+      try { localStorage.setItem(KEY, tema); } catch { /* modo privado */ }
+      aplica();
+    };
+    if (!document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return troca();
+
+    // o tema novo cresce em círculo a partir do botão até cobrir a tela
+    const r = b.getBoundingClientRect();
+    const x = r.left + r.width / 2;
+    const y = r.top + r.height / 2;
+    root.style.setProperty('--vt-x', `${x}px`);
+    root.style.setProperty('--vt-y', `${y}px`);
+    root.style.setProperty('--vt-r', `${Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y))}px`);
+    root.classList.add('is-theming');
+    document.startViewTransition(troca).finished.finally(() => root.classList.remove('is-theming'));
   }));
 });
 })();

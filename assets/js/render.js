@@ -61,7 +61,7 @@ const RENDER = (() => {
      Link externo abre em outra aba; ancora (#contato) fica na pagina. */
   const projects = lang => PROJECTS.map(p => `
       <li class="pcard">
-        <figure class="pcard__shot"><img src="${esc(p.img)}" alt="${esc(p.alt[lang])}" loading="lazy" width="800" height="500"></figure>
+        <figure class="pcard__shot"><img src="${esc(p.img)}" alt="${esc(p.alt[lang])}" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">${esc(I18N[lang]['proj.stamp'])}</span></figure>
         <div class="pcard__body">
           <p class="pcard__kicker">${esc(p.kicker[lang])}</p>
           <h3 class="pcard__name">${esc(p.name)}</h3>

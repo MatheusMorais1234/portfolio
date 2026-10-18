@@ -1,6 +1,7 @@
 /* =====================================================================
    main.js — idioma, render, navegação, lightbox e formulário.
-   Sem biblioteca: a marcação vem do render.js e o movimento é só CSS.
+   Sem biblioteca: a marcação vem do render.js e o movimento é CSS — o
+   script só decide quando ele começa.
    ===================================================================== */
 (() => {
 'use strict';
@@ -8,6 +9,7 @@
 const $  = (s, ctx = document) => ctx.querySelector(s);
 const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const VT = !REDUCED && 'startViewTransition' in document;   // transição entre dois estados da tela
 
 /* ---------------------------------------------------------------------
    Idioma
@@ -128,7 +130,12 @@ function renderCerts(){
     const hide = () => el.classList.add('is-empty');
     img.addEventListener('error', hide, { once:true });
     if (img.complete && img.naturalWidth === 0) hide();
-    el.addEventListener('click', () => { lboxOpener = el; openLbox(Number(el.dataset.i)); });
+    el.addEventListener('click', () => {
+      lboxOpener = el;
+      const i = Number(el.dataset.i);
+      if (el.classList.contains('is-empty')) return openLbox(i);
+      morph(img, () => $('#lboxImg'), () => openLbox(i));
+    });
   });
 }
 
@@ -245,11 +252,32 @@ function openLbox(i){
 
 function closeLbox(){
   const box = $('#lbox');
-  box.classList.remove('is-open');
-  document.body.classList.remove('is-locked');
-  if (lboxRelease) { lboxRelease(); lboxRelease = null; }
-  if (lboxOpener) { lboxOpener.focus(); lboxOpener = null; }
-  setTimeout(() => { box.hidden = true; }, REDUCED ? 0 : 200);
+  const fecha = imediato => {
+    box.classList.remove('is-open');
+    document.body.classList.remove('is-locked');
+    if (lboxRelease) { lboxRelease(); lboxRelease = null; }
+    if (lboxOpener) { lboxOpener.focus(); lboxOpener = null; }
+    if (imediato) box.hidden = true;
+    else setTimeout(() => { box.hidden = true; }, REDUCED ? 0 : 200);
+  };
+  // volta para a miniatura do certificado que está aberto agora, que pode
+  // não ser o clicado se a pessoa navegou com as setas
+  const thumb = $(`#certsGrid .cert[data-i="${lboxIndex}"]:not(.is-empty) img`);
+  if (!thumb) return fecha(false);
+  morph($('#lboxImg'), () => thumb, () => fecha(true));
+}
+
+/* A imagem "de" ganha o nome da transição, o navegador fotografa, a tela
+   troca e a imagem "para" herda o nome: ele anima uma até a outra. */
+function morph(de, para, troca){
+  if (!VT) return troca();
+  de.style.viewTransitionName = 'cert';
+  const t = document.startViewTransition(() => {
+    de.style.viewTransitionName = '';
+    troca();
+    para().style.viewTransitionName = 'cert';
+  });
+  t.finished.finally(() => { para().style.viewTransitionName = ''; });
 }
 
 function stepLbox(dir){
@@ -303,6 +331,46 @@ function initNav(){
   window.addEventListener('scroll', onScroll, { passive:true });
   window.addEventListener('resize', () => { measure(); onScroll(); });
   window.addEventListener('load', remeasureNav);
+}
+
+/* ---------------------------------------------------------------------
+   Ficha de compensação do hero
+   Cada dígito da linha vira um <i> com o próprio atraso, para aparecer
+   quando o laser passa por ele. O leitor de tela lê a linha inteira.
+   --------------------------------------------------------------------- */
+function initBoleto(){
+  const boleto = $('#boleto');
+  const linha = $('#boletoLinha');
+  if (!boleto || !linha) return;
+  linha.classList.add('is-split');
+  if (REDUCED) return;
+
+  const texto = linha.lastChild;
+  const digitos = texto.textContent.trim();
+  const visivel = document.createElement('span');
+  visivel.setAttribute('aria-hidden', 'true');
+  visivel.innerHTML = [...digitos].map((c, i) => `<i style="--i:${i}">${c}</i>`).join('');
+  const lido = document.createElement('span');
+  lido.className = 'sr';
+  lido.textContent = digitos;
+  texto.replaceWith(' ', visivel, lido);
+
+  $('.boleto__laser', boleto).addEventListener('animationend', () => boleto.classList.add('is-read'), { once:true });
+}
+
+/* ---------------------------------------------------------------------
+   Carimbo dos projetos: bate quando a grade aparece na tela
+   --------------------------------------------------------------------- */
+function initStamps(){
+  const grid = $('#projGrid');
+  if (!grid || REDUCED || !('IntersectionObserver' in window)) return;
+  grid.classList.add('is-waiting');
+  const io = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting) return;
+    grid.classList.replace('is-waiting', 'is-seen');
+    io.disconnect();
+  }, { threshold:.35 });
+  io.observe(grid);
 }
 
 /* ---------------------------------------------------------------------
@@ -439,6 +507,8 @@ function boot(){
     if (e.key === 'ArrowRight') stepLbox(1);
   });
 
+  initBoleto();
+  initStamps();
   initNav();
   initMenu();
   initForm();

@@ -155,4 +155,8 @@ $('#bExemplo').addEventListener('click', () => {
   atualiza();
 });
 
+// link vindo do portfólio: ?codigo= já abre conferido
+const doLink = new URLSearchParams(location.search).get('codigo');
+if (doLink) { $('#b-codigo').value = doLink; atualiza(); }
+
 })();
