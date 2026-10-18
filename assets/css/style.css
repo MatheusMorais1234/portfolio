@@ -1,8 +1,9 @@
 /* =====================================================================
    matheusmorais.com — folha de estilo
-   Direção: perfil institucional. Papel branco, tinta azul-marinho, um
-   azul de destaque e uma só família tipográfica. Seções organizadas como
-   relatório: título na coluna da esquerda, conteúdo na da direita.
+   Direção: papel de segurança bancário. O verde de cheque é o papel, a
+   tinta é verde-petróleo e o vermelho só aparece no carimbo. O hero traz
+   uma ficha de compensação com um boleto válido de verdade — o assunto do
+   meu trabalho virou a identidade visual.
 
    Tema: o escuro é o padrão. O claro entra com data-theme="light" no
    <html>, colocado pelo theme.js antes da página pintar.
@@ -10,23 +11,24 @@
 
 :root{
   color-scheme:dark;
-  --paper:  #0b1220;
-  --wash:   #121b2d;   /* fundo de faixas e painéis */
-  --ink:    #e7ecf4;   /* texto principal — 15.8:1 sobre o papel */
-  --slate:  #a9b4c6;   /* texto secundário — 8.9:1 */
-  --quiet:  #8794aa;   /* legendas — 5.9:1 */
-  --rule:   #1f2a3f;
-  --rule-2: #2f3c55;
-  --blue:   #86a4ff;   /* ação e link — 7.6:1 */
-  --blue-2: #a9bfff;
-  --on-blue:#0b1220;   /* texto sobre o botão azul */
-  --green:  #3fcf8e;
+  --paper:  #0d1b17;
+  --wash:   #13241f;   /* fundo de faixas e painéis */
+  --ink:    #e6efe9;   /* texto principal — 15:1 sobre o papel */
+  --slate:  #a4b8ae;   /* texto secundário — 8.5:1 */
+  --quiet:  #83998e;   /* legendas — 5.8:1 */
+  --rule:   #1d3129;
+  --rule-2: #2b463b;
+  --accent:   #6fd8c4;   /* ação e link — 10:1 */
+  --accent-2: #9ae6d7;
+  --on-accent:#0d1b17;   /* texto sobre o botão de destaque */
+  --stamp:  #ff8a75;   /* tinta de carimbo — só no "No ar" e no laser */
+  --green:  #5fd38f;
   --red:    #f97066;
-  --nav-bg: rgba(11,18,32,.88);
-  --select: #2b4185;
+  --nav-bg: rgba(13,27,23,.88);
+  --select: #1f5a4e;
   --shadow: rgba(0,0,0,.6);
-  --focus:  rgba(134,164,255,.25);
-  --hint:   #66738b;   /* placeholder */
+  --focus:  rgba(111,216,196,.25);
+  --hint:   #627a6f;   /* placeholder */
   --logo-filter: invert(1);   /* logos pretos (Next.js) */
   /* selos das ferramentas */
   --ok-bg:#0f2e20;  --ok-fg:#75e0a7;
@@ -35,23 +37,24 @@
 }
 :root[data-theme="light"]{
   color-scheme:light;
-  --paper:  #ffffff;
-  --wash:   #f4f6f9;
-  --ink:    #0e1a2b;   /* 16.9:1 sobre o papel */
-  --slate:  #475467;   /* 7.6:1 */
-  --quiet:  #667085;   /* 4.9:1, AA para texto pequeno */
-  --rule:   #e1e5eb;
-  --rule-2: #cdd3dc;
-  --blue:   #1f3f9e;   /* 9.1:1 */
-  --blue-2: #172f77;
-  --on-blue:#ffffff;
+  --paper:  #f3f7f3;   /* verde-claro de cheque, não branco */
+  --wash:   #e7efe9;
+  --ink:    #10231d;   /* 15:1 sobre o papel */
+  --slate:  #3d5249;   /* 7.8:1 */
+  --quiet:  #566a61;   /* 5.3:1, AA para texto pequeno */
+  --rule:   #d3ded7;
+  --rule-2: #b9c9bf;
+  --accent:   #0b6658;   /* 6.3:1 */
+  --accent-2: #084f44;
+  --on-accent:#ffffff;
+  --stamp:  #c0341d;
   --green:  #1a7f4b;
   --red:    #b42318;
-  --nav-bg: rgba(255,255,255,.92);
-  --select: #d6e0fb;
-  --shadow: rgba(14,26,43,.35);
-  --focus:  rgba(31,63,158,.15);
-  --hint:   #98a2b3;
+  --nav-bg: rgba(243,247,243,.92);
+  --select: #bfe3da;
+  --shadow: rgba(16,35,29,.35);
+  --focus:  rgba(11,102,88,.18);
+  --hint:   #8a9b93;
   --logo-filter: none;
   --ok-bg:#ecfdf3;  --ok-fg:#054f31;
   --bad-bg:#fef3f2; --bad-fg:#7a271a;
@@ -104,7 +107,7 @@ ul,ol{ padding:0; list-style:none; }
 ::selection{ background:var(--select); color:var(--ink); }
 
 :focus-visible{
-  outline:2px solid var(--blue);
+  outline:2px solid var(--accent);
   outline-offset:3px;
   border-radius:2px;
 }
@@ -114,6 +117,12 @@ ul,ol{ padding:0; list-style:none; }
   max-width:calc(var(--maxw) + var(--gut) * 2);
   margin:0 auto;
   padding:0 var(--gut);
+}
+
+/* só para leitor de tela */
+.sr{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip-path:inset(50%); white-space:nowrap;
 }
 
 .skip{
@@ -134,8 +143,8 @@ ul,ol{ padding:0; list-style:none; }
   border:1px solid transparent;
   transition:background-color .15s, border-color .15s, color .15s;
 }
-.btn--solid{ background:var(--blue); color:var(--on-blue); }
-.btn--solid:hover{ background:var(--blue-2); }
+.btn--solid{ background:var(--accent); color:var(--on-accent); }
+.btn--solid:hover{ background:var(--accent-2); }
 .btn--line{ border-color:var(--rule-2); color:var(--ink); background:var(--paper); }
 .btn--line:hover{ border-color:var(--ink); }
 .btn--sm{ min-height:36px; padding:0 .9rem; font-size:.875rem; }
@@ -171,7 +180,7 @@ ul,ol{ padding:0; list-style:none; }
 .nav__links a.is-active{ color:var(--ink); }
 .nav__links a.is-active::after{
   content:''; position:absolute; left:0; right:0; bottom:-2px;
-  height:2px; background:var(--blue);
+  height:2px; background:var(--accent);
 }
 .nav__right{ display:flex; align-items:center; gap:.75rem; }
 
@@ -230,40 +239,40 @@ ul,ol{ padding:0; list-style:none; }
 /* =====================================================================
    HERO
    ===================================================================== */
-.hero{ padding:clamp(3rem, 7vw, 6rem) 0 0; }
+.hero{ padding:clamp(2rem, 4.5vw, 3.75rem) 0 0; }
 .hero__grid{
   display:grid;
-  grid-template-columns:minmax(0, 7fr) minmax(0, 4fr);
+  grid-template-columns:minmax(0, 7fr) minmax(0, 3fr);
   gap:clamp(2rem, 6vw, 5.5rem);
   align-items:end;
 }
 .hero__status{
   display:inline-flex; align-items:center; gap:.6rem;
   font-size:.9375rem; color:var(--slate);
-  margin-bottom:1.75rem;
+  margin-bottom:1.25rem;
 }
 .hero__dot{
   width:8px; height:8px; border-radius:50%; background:var(--green);
   box-shadow:0 0 0 4px color-mix(in srgb, var(--green) 18%, transparent);
 }
 .hero__title{
-  font-size:clamp(2.25rem, 1.2rem + 3.6vw, 4rem);
+  font-size:clamp(2.125rem, 1.2rem + 2.9vw, 3.5rem);
   line-height:1.04;
   font-weight:700;
   letter-spacing:-.032em;
-  max-width:21ch;
+  max-width:22ch;
   text-wrap:balance;
 }
 .hero__lede{
-  margin-top:1.75rem;
-  font-size:clamp(1.0625rem, 1rem + .3vw, 1.25rem);
+  margin-top:1.25rem;
+  font-size:clamp(1.0625rem, 1rem + .3vw, 1.1875rem);
   line-height:1.55;
   color:var(--slate);
   max-width:56ch;
 }
-.hero__cta{ display:flex; flex-wrap:wrap; gap:.75rem; margin-top:2.25rem; }
-.hero__social{ display:flex; gap:1.25rem; margin-top:1.25rem; font-size:.9375rem; }
-.hero__social a{ color:var(--blue); font-weight:600; text-decoration:none; }
+.hero__cta{ display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; margin-top:1.75rem; }
+.hero__social{ display:flex; gap:1.25rem; margin-left:.75rem; font-size:.9375rem; }
+.hero__social a{ color:var(--accent); font-weight:600; text-decoration:none; }
 .hero__social a:hover{ text-decoration:underline; }
 
 .hero__photo{
@@ -277,20 +286,92 @@ ul,ol{ padding:0; list-style:none; }
   object-fit:cover; object-position:50% 12%;
 }
 
-/* o único movimento que não depende de clique: a abertura da página */
-@keyframes rise{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
-.hero__text > *{ animation:rise .7s cubic-bezier(.2,.7,.2,1) both; }
-.hero__status{ animation-delay:.05s; }
-.hero__title { animation-delay:.12s; }
-.hero__lede  { animation-delay:.22s; }
-.hero__cta   { animation-delay:.3s; }
-.hero__social{ animation-delay:.36s; }
-.hero__photo { animation:rise .9s cubic-bezier(.2,.7,.2,1) .2s both; }
+/* ---------- ficha de compensação ----------
+   O único movimento que não depende de clique: as barras são impressas,
+   o laser do leitor passa e a linha digitável aparece conforme é lida.
+   Os tempos das três etapas saem das variáveis abaixo. */
+.boleto{
+  --print:.2s; --read:1.05s; --scan:.9s;
+  margin-top:clamp(2rem, 4vw, 3rem);
+  display:grid;
+  grid-template-columns:auto minmax(0, 1fr);
+  border-top:2px solid var(--ink);
+  border-bottom:1px solid var(--rule-2);
+}
+.boleto__banco,
+.boleto__linha{
+  padding:.85rem 0;
+  font-variant-numeric:tabular-nums;
+  font-weight:700; line-height:1.2;
+}
+.boleto__banco{
+  padding-right:1.25rem; margin-right:1.25rem;
+  border-right:2px solid var(--ink);
+  font-size:clamp(1.25rem, 1rem + .8vw, 1.625rem);
+}
+.boleto__linha{
+  align-self:center;
+  font-size:clamp(.9375rem, .7rem + .9vw, 1.375rem);
+  letter-spacing:.02em;
+  word-spacing:.35em;
+}
+.boleto__linha i{ font-style:normal; animation:ink .01s linear both; animation-delay:calc(var(--read) + var(--i) * var(--scan) / 54); }
+@keyframes ink{ from{ opacity:0; } to{ opacity:1; } }
+/* até o main.js separar os dígitos a linha fica escondida; se ele não
+   rodar, ela aparece sozinha depois da leitura */
+.js .boleto__linha:not(.is-split){ animation:ink .01s linear 2s both; }
+
+.boleto__foot{
+  grid-column:1 / -1;
+  display:grid; grid-template-columns:minmax(0, 27rem) minmax(0, 1fr);
+  gap:1.25rem 2.5rem; align-items:end;
+  padding:1.25rem 0 1.5rem;
+  border-top:1px solid var(--rule-2);
+}
+.boleto__barras{
+  position:relative; display:block;
+  color:var(--ink);
+  overflow:hidden;
+}
+.boleto__barras svg{
+  display:block; width:100%; height:clamp(3.25rem, 2.5rem + 2vw, 4.25rem);
+  fill:currentColor;
+  animation:print .8s steps(36, end) var(--print) both;
+}
+@keyframes print{ from{ clip-path:inset(0 100% 0 0); } to{ clip-path:inset(0 0 0 0); } }
+
+/* o laser: uma linha vertical que varre as barras uma vez */
+.boleto__laser{
+  position:absolute; top:-6px; bottom:-6px; left:0; width:2px;
+  background:var(--stamp);
+  box-shadow:0 0 10px 2px color-mix(in srgb, var(--stamp) 70%, transparent);
+  opacity:0;
+  animation:scan var(--scan) cubic-bezier(.45,.05,.55,.95) var(--read) both;
+  pointer-events:none;
+}
+@keyframes scan{
+  0%  { opacity:0; left:0; }
+  8%  { opacity:1; }
+  92% { opacity:1; }
+  100%{ opacity:0; left:calc(100% - 2px); }
+}
+/* depois da primeira leitura (o main.js marca .is-read), passar o mouse
+   lê de novo — o mesmo efeito, agora como resposta */
+.boleto.is-read .boleto__laser{ animation:none; }
+.boleto .boleto__barras:hover .boleto__laser,
+.boleto .boleto__barras:focus-visible .boleto__laser{ animation:scan2 var(--scan) cubic-bezier(.45,.05,.55,.95) both; }
+@keyframes scan2{
+  0%  { opacity:0; left:0; }
+  8%  { opacity:1; }
+  92% { opacity:1; }
+  100%{ opacity:0; left:calc(100% - 2px); }
+}
+
+.boleto__nota{ font-size:.9375rem; color:var(--slate); max-width:52ch; }
+.boleto__nota a{ color:var(--accent); font-weight:600; text-underline-offset:3px; }
 
 .facts{
   display:grid; grid-template-columns:repeat(4, minmax(0,1fr));
-  margin-top:clamp(3rem, 6vw, 5rem);
-  border-top:1px solid var(--ink);
 }
 .facts > div{
   padding:1.25rem 1.5rem 1.5rem 0;
@@ -368,7 +449,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .proj__h{ font-size:1.1875rem; font-weight:600; letter-spacing:-.01em; line-height:1.3; }
 .proj__link{ text-decoration:none; }
-.proj__link:hover{ color:var(--blue); text-decoration:underline; text-underline-offset:3px; }
+.proj__link:hover{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
 .proj__p{ margin-top:.6rem; color:var(--slate); font-size:1rem; flex:1; }
 .proj__stack{ margin-top:1rem; font-size:.875rem; color:var(--quiet); }
 
@@ -379,7 +460,7 @@ ul,ol{ padding:0; list-style:none; }
   border-radius:var(--r);
 }
 .oss__main{ padding:clamp(1.5rem, 3vw, 2.5rem); }
-.oss__kicker{ font-size:.9375rem; color:var(--blue); font-weight:600; }
+.oss__kicker{ font-size:.9375rem; color:var(--accent); font-weight:600; }
 .oss__name{ margin-top:.35rem; font-size:1.625rem; font-weight:700; letter-spacing:-.02em; }
 .oss__tagline{ margin-top:.15rem; color:var(--slate); }
 .oss__desc{ margin-top:1rem; color:var(--slate); font-size:1rem; max-width:60ch; }
@@ -411,13 +492,38 @@ ul,ol{ padding:0; list-style:none; }
 .pcard{
   display:flex; flex-direction:column; overflow:hidden;
   background:var(--paper); border:1px solid var(--rule); border-radius:10px;
-  transition:border-color .2s, box-shadow .2s, transform .2s;
+  transition:border-color .2s;
 }
-.pcard:hover{ border-color:var(--rule-2); box-shadow:0 18px 40px -24px var(--shadow); transform:translateY(-2px); }
-.pcard__shot{ aspect-ratio:16 / 10; overflow:hidden; background:var(--wash); border-bottom:1px solid var(--rule); }
+.pcard:hover{ border-color:var(--rule-2); }
+.pcard__shot{ position:relative; aspect-ratio:16 / 10; overflow:hidden; background:var(--wash); border-bottom:1px solid var(--rule); }
+
+/* carimbo de "No ar": tinta falhada pela máscara de ruído, torto como
+   carimbo batido à mão. O main.js esconde e bate quando o card aparece. */
+.pcard__stamp{
+  position:absolute; top:1rem; right:1rem;
+  padding:.4rem .75rem .35rem;
+  border:3px double var(--stamp); border-radius:5px;
+  color:var(--stamp); background:color-mix(in srgb, var(--paper) 82%, transparent);
+  font-size:1.0625rem; font-weight:800; line-height:1; letter-spacing:.14em; text-transform:uppercase;
+  transform:rotate(var(--tilt, -8deg));
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 2.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+          mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 2.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.pcard:nth-child(2) .pcard__stamp{ --tilt:5deg; }
+.pcard:nth-child(3) .pcard__stamp{ --tilt:-4deg; }
+.pgrid.is-waiting .pcard__stamp{ opacity:0; }
+.pgrid.is-seen .pcard__stamp{ animation:stamp .42s cubic-bezier(.3,1.5,.55,1) both; }
+.pgrid.is-seen .pcard:nth-child(2) .pcard__stamp{ animation-delay:.22s; }
+.pgrid.is-seen .pcard:nth-child(3) .pcard__stamp{ animation-delay:.44s; }
+@keyframes stamp{
+  0%  { opacity:0; transform:rotate(var(--tilt, -8deg)) scale(2.1); }
+  55% { opacity:1; transform:rotate(var(--tilt, -8deg)) scale(.92); }
+  100%{ opacity:1; transform:rotate(var(--tilt, -8deg)) scale(1); }
+}
 .pcard__shot img{ display:block; width:100%; height:100%; object-fit:cover; object-position:left top; }
 .pcard__body{ flex:1; display:flex; flex-direction:column; padding:1.35rem 1.4rem 1.4rem; }
-.pcard__kicker{ font-size:.8125rem; font-weight:600; color:var(--blue); }
+.pcard__kicker{ font-size:.8125rem; font-weight:600; color:var(--accent); }
 .pcard__name{ margin-top:.3rem; font-size:1.375rem; font-weight:700; letter-spacing:-.02em; line-height:1.2; }
 .pcard__tag{ margin-top:.2rem; font-size:.9375rem; color:var(--ink); font-weight:500; }
 .pcard__desc{ margin-top:.75rem; font-size:.9375rem; color:var(--slate); }
@@ -430,7 +536,7 @@ ul,ol{ padding:0; list-style:none; }
 .pcard__live:empty{ display:none; }
 .pcard__links{ margin-top:auto; padding-top:1.25rem; display:flex; flex-wrap:wrap; gap:.5rem; }
 .pmore{ margin-top:1.75rem; font-size:.9375rem; color:var(--slate); }
-.pmore a{ color:var(--blue); font-weight:600; margin-left:.25rem; }
+.pmore a{ color:var(--accent); font-weight:600; margin-left:.25rem; }
 
 /* ---------- tecnologias ---------- */
 .techgroups{ display:grid; gap:2.5rem; }
@@ -460,10 +566,20 @@ ul,ol{ padding:0; list-style:none; }
   transition:transform .2s;
 }
 .tech[open] summary::after{ transform:translateY(2px) rotate(-135deg); }
-.tech summary:hover span{ color:var(--blue); }
+.tech summary:hover span{ color:var(--accent); }
 .tech p{
   padding:0 0 1.1rem 2rem;
   font-size:.9375rem; color:var(--slate);
+}
+/* abrir e fechar com altura animada onde o navegador sabe (Chrome 131+);
+   nos outros o <details> só abre, como antes */
+@supports (interpolate-size:allow-keywords){
+  .techs{ interpolate-size:allow-keywords; }
+  .tech::details-content{
+    block-size:0; overflow:hidden;
+    transition:block-size .28s cubic-bezier(.2,.7,.2,1), content-visibility .28s allow-discrete;
+  }
+  .tech[open]::details-content{ block-size:auto; }
 }
 
 /* ---------- certificados ---------- */
@@ -487,7 +603,7 @@ ul,ol{ padding:0; list-style:none; }
 .cert:hover .cert__shot{ border-color:var(--ink); }
 .cert.is-empty .cert__shot img{ display:none; }
 .cert__title{ margin-top:.85rem; font-size:1rem; font-weight:600; line-height:1.35; }
-.cert:hover .cert__title{ color:var(--blue); }
+.cert:hover .cert__title{ color:var(--accent); }
 .cert__meta{ margin-top:.25rem; font-size:.875rem; color:var(--quiet); }
 
 /* ---------- serviços (desligados por padrão) ---------- */
@@ -519,7 +635,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .clinks dt{ color:var(--quiet); }
 .clinks a{ text-decoration:none; font-weight:500; overflow-wrap:anywhere; }
-.clinks a:hover{ color:var(--blue); text-decoration:underline; text-underline-offset:3px; }
+.clinks a:hover{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
 
 .form{
   background:var(--paper);
@@ -550,7 +666,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .field ::placeholder{ color:var(--hint); }
 .field input:focus,.field select:focus,.field textarea:focus{
-  outline:none; border-color:var(--blue);
+  outline:none; border-color:var(--accent);
   box-shadow:0 0 0 3px var(--focus);
 }
 .form__trap{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
@@ -604,6 +720,23 @@ ul,ol{ padding:0; list-style:none; }
 .lbox__nav--next{ right:1rem; }
 
 /* =====================================================================
+   TRANSIÇÕES DE VISUALIZAÇÃO
+   Troca de tema: o tema novo cresce em círculo a partir do botão (o
+   theme.js passa o centro em --vt-x/--vt-y). Certificado: a miniatura
+   cresce até virar a imagem do lightbox.
+   ===================================================================== */
+:root.is-theming::view-transition-old(root),
+:root.is-theming::view-transition-new(root){ animation:none; mix-blend-mode:normal; }
+:root.is-theming::view-transition-new(root){
+  animation:reveal .55s cubic-bezier(.4,0,.2,1);
+}
+@keyframes reveal{
+  from{ clip-path:circle(0 at var(--vt-x, 100%) var(--vt-y, 0)); }
+  to  { clip-path:circle(var(--vt-r, 150vmax) at var(--vt-x, 100%) var(--vt-y, 0)); }
+}
+::view-transition-group(cert){ animation-duration:.38s; animation-timing-function:cubic-bezier(.2,.7,.2,1); }
+
+/* =====================================================================
    404
    ===================================================================== */
 .nf{
@@ -641,6 +774,7 @@ ul,ol{ padding:0; list-style:none; }
 
   .hero__grid{ grid-template-columns:minmax(0,1fr) 15rem; align-items:start; }
   .facts{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .boleto__foot{ grid-template-columns:minmax(0,1fr); }
   .facts > div:nth-child(3){ padding-left:0; border-left:0; }
   .facts > div:nth-child(n+3){ border-top:1px solid var(--rule); }
 
@@ -657,6 +791,11 @@ ul,ol{ padding:0; list-style:none; }
   .hero__photo{ grid-row:1; width:8rem; aspect-ratio:1; border-radius:50%; }
   .hero__photo img{ object-position:50% 18%; }
   .hero__cta .btn{ flex:1 1 100%; }
+
+  .boleto{ grid-template-columns:minmax(0,1fr); }
+  .boleto__banco{ border-right:0; margin:0; padding-bottom:0; }
+  .boleto__linha{ padding-top:.35rem; }
+  .boleto__foot{ grid-template-columns:minmax(0,1fr); }
 
   .facts{ grid-template-columns:minmax(0,1fr); }
   .facts > div,
@@ -683,13 +822,14 @@ ul,ol{ padding:0; list-style:none; }
   /* no papel vale sempre o tema claro */
   :root{
     --paper:#fff; --wash:#f4f6f9; --ink:#0e1a2b; --slate:#475467; --quiet:#667085;
-    --rule:#e1e5eb; --rule-2:#cdd3dc; --blue:#1f3f9e; --green:#1a7f4b; --logo-filter:none;
+    --rule:#e1e5eb; --rule-2:#cdd3dc; --accent:#0b6658; --stamp:#c0341d; --green:#1a7f4b; --logo-filter:none;
   }
-  .nav,.menu,.lbox,.skip,.form,.hero__cta,.hero__dot{ display:none !important; }
+  .nav,.menu,.lbox,.skip,.form,.hero__cta .btn,.hero__dot{ display:none !important; }
   .sec{ padding:1.5rem 0; }
   .sec__head{ position:static; }
   .sec--contact{ background:none; }
   .tech p{ display:block; }
   a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:.8em; color:#555; }
-  .hero__text > *,.hero__photo{ animation:none; }
+  .boleto *{ animation:none !important; }
+  .boleto__laser{ display:none; }
 }

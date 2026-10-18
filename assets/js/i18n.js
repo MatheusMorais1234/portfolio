@@ -34,6 +34,11 @@ const I18N = {
     'hero.ctaSecondary':'Baixar currículo (PDF)',
     'hero.photo':'Matheus Morais',
 
+    'boleto.linha':'Linha digitável:',
+    'boleto.nota':'Um boleto de exemplo, montado pelo mesmo código das minhas ferramentas de pagamento. Os dígitos verificadores conferem.',
+    'boleto.link':'Conferir no validador',
+    'boleto.aria':'Conferir este boleto no validador',
+
     'facts.now':'Disponibilidade',
     'facts.nowV':'Imediata, em Goiânia ou remoto',
     'facts.exp':'Experiência',
@@ -74,6 +79,7 @@ const I18N = {
     'stack.sub':'Agrupadas pelo quanto eu uso hoje. Abra qualquer uma para ver onde ela entrou no trabalho.',
 
     'proj.h':'Projetos',
+    'proj.stamp':'No ar',
     'proj.sub':'Três sistemas que construí por conta própria. Todos estão no ar.',
     'proj.more':'Também há repositórios de estudo de POO e princípios SOLID em Java.',
     'code.h':'Código aberto',
@@ -151,6 +157,11 @@ const I18N = {
     'hero.ctaSecondary':'Download résumé (PDF)',
     'hero.photo':'Matheus Morais',
 
+    'boleto.linha':'Typeable line:',
+    'boleto.nota':'A sample boleto, the Brazilian bank slip, built with the same code as my payment tools. Its check digits are valid.',
+    'boleto.link':'Check it in the validator',
+    'boleto.aria':'Check this boleto in the validator',
+
     'facts.now':'Availability',
     'facts.nowV':'Immediate, in Goiânia or remote',
     'facts.exp':'Experience',
@@ -191,6 +202,7 @@ const I18N = {
     'stack.sub':'Grouped by how much I use them today. Open any of them to see where it came into my work.',
 
     'proj.h':'Projects',
+    'proj.stamp':'Live',
     'proj.sub':'Three systems I built on my own. All of them are live.',
     'proj.more':'There are also study repositories on OOP and SOLID principles in Java.',
     'code.h':'Open source',
