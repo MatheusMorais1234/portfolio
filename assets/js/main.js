@@ -29,7 +29,7 @@ let lang = (() => {
   if (fromUrl === 'pt' || fromUrl === 'en') { store.set('mm-lang', fromUrl); return fromUrl; }
   const saved = store.get('mm-lang');
   if (saved === 'pt' || saved === 'en') return saved;
-  return (navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en';
+  return ((navigator.languages && navigator.languages[0]) || navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en';
 })();
 
 const langUrl = l => (l === 'pt' ? SITE : `${SITE}?lang=en`);

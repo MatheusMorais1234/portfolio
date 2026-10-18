@@ -51,7 +51,7 @@ const RENDER = (() => {
   const certs = lang => CERTS.map((c, i) => `
       <li>
         <button class="cert" type="button" data-i="${i}">
-          <span class="cert__shot"><img src="${esc(c.img)}" alt="" loading="lazy"${c.fit === 'top' ? ' class="is-top"' : ''}></span>
+          <span class="cert__shot"><img src="${esc(c.img)}" alt="" loading="lazy" width="400" height="300"${c.fit === 'top' ? ' class="is-top"' : ''}></span>
           <span class="cert__title">${esc(c.title[lang])}</span>
           <span class="cert__meta">${esc(c.meta)}</span>
         </button>
