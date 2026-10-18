@@ -88,6 +88,7 @@ function setLang(next){
 
   applyStrings();
   renderAll();
+  confereDemo();
   remeasureNav();
 }
 
@@ -359,6 +360,53 @@ function initBoleto(){
 }
 
 /* ---------------------------------------------------------------------
+   Bancada da seção Ferramentas
+   A cada tecla o pagamentos.js refaz os quatro dígitos verificadores. O
+   que mudou de estado ganha .is-flip para a troca ser vista, não só lida.
+   --------------------------------------------------------------------- */
+const DEMO_ORIGINAL = '34191.09206 23010.166298 92014.463001 1 92180000000000';
+let demoAnterior = [];
+
+function confereDemo(){
+  const input = $('#demoLinha');
+  const lista = $('#demoChecks');
+  const soma = $('#demoSum');
+  if (!input || typeof Pagamentos === 'undefined') return;
+  const d = I18N[lang];
+
+  $('#demoReset').hidden = input.value === DEMO_ORIGINAL;
+
+  const r = Pagamentos.analisarBoleto(input.value);
+  if (r.erro || r.tipo !== 'bancario') {
+    lista.innerHTML = '';
+    demoAnterior = [];
+    soma.className = 'demo__sum is-bad';
+    soma.textContent = d['demo.len'].replace('{n}', Pagamentos.soDigitos(input.value).length);
+    return;
+  }
+
+  const nomes = ['demo.c1', 'demo.c2', 'demo.c3', 'demo.g'].map(k => d[k]);
+  lista.innerHTML = r.verificacoes.map((v, i) => {
+    const mudou = demoAnterior.length && demoAnterior[i] !== v.ok;
+    const texto = v.ok ? d['demo.ok'] : d['demo.bad'].replace('{e}', v.esperado).replace('{i}', v.informado);
+    return `<li class="${v.ok ? 'is-ok' : 'is-bad'}${mudou ? ' is-flip' : ''}"><span>${RENDER.esc(nomes[i])}</span><strong>${RENDER.esc(texto)}</strong></li>`;
+  }).join('');
+  demoAnterior = r.verificacoes.map(v => v.ok);
+
+  const falhas = r.verificacoes.map((v, i) => (v.ok ? null : nomes[i].toLowerCase())).filter(Boolean);
+  soma.className = `demo__sum ${falhas.length ? 'is-bad' : 'is-ok'}`;
+  soma.textContent = falhas.length ? d['demo.someBad'].replace('{n}', falhas.join(', ')) : d['demo.allOk'];
+}
+
+function initDemo(){
+  const input = $('#demoLinha');
+  if (!input) return;
+  input.addEventListener('input', confereDemo);
+  $('#demoReset').addEventListener('click', () => { input.value = DEMO_ORIGINAL; confereDemo(); input.focus(); });
+  confereDemo();
+}
+
+/* ---------------------------------------------------------------------
    Carimbo dos projetos: bate quando a grade aparece na tela
    --------------------------------------------------------------------- */
 function initStamps(){
@@ -440,6 +488,7 @@ function initForm(){
   const send   = $('#formSend');
 
   const diz = (chave, tipo) => {
+    delete status.dataset.stamp;
     status.textContent = I18N[lang][chave];
     status.className = `form__status is-${tipo}`;
   };
@@ -477,7 +526,11 @@ function initForm(){
         })
       });
       const j = await r.json().catch(() => ({}));
-      if (r.ok && j.success !== false) { f.reset(); diz('form.ok', 'ok'); }
+      if (r.ok && j.success !== false) {
+        f.reset();
+        diz('form.ok', 'ok');
+        status.dataset.stamp = I18N[lang]['form.stamp'];   // o carimbo do comprovante
+      }
       else diz('form.err', 'err');
     } catch {
       diz('form.err', 'err');
@@ -508,6 +561,7 @@ function boot(){
   });
 
   initBoleto();
+  initDemo();
   initStamps();
   initNav();
   initMenu();
