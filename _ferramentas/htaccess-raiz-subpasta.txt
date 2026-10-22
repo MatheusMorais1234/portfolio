@@ -1,4 +1,3 @@
-# ===================================================================
 # OPCIONAL — só use se o site tiver de ficar em public_html/matheus/
 #
 # Este arquivo vai em  public_html/.htaccess  (a RAIZ).
@@ -9,7 +8,6 @@
 #
 # Melhor que isto: mover os arquivos para a raiz, ou trocar o diretorio
 # raiz do dominio no hPanel. Use isto so se nenhum dos dois for possivel.
-# ===================================================================
 
 RewriteEngine On
 

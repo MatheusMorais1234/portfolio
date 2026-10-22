@@ -1,4 +1,4 @@
-/* =====================================================================
+/*
    cnab.js — leitura do arquivo de retorno de cobrança (CNAB), em funções
    puras.
 
@@ -15,13 +15,11 @@
    Posições nos mapas abaixo são as dos manuais: começam em 1 e incluem o
    fim. Tipos: 'n' número (fica como texto, para não perder zero à
    esquerda), 'a' texto, 'v' valor em centavos, 'd8' DDMMAAAA, 'd6' DDMMAA.
-   ===================================================================== */
+   */
 
 const Cnab = (() => {
 
-/* ---------------------------------------------------------------------
-   Leitura e escrita de campos
-   --------------------------------------------------------------------- */
+/* Leitura e escrita de campos */
 const corta = (linha, ini, fim) => linha.slice(ini - 1, fim);
 
 function dataIso(dd, mm, aaaa){
@@ -73,9 +71,7 @@ function escrever(tamanho, mapa, dados){
   return l.join('');
 }
 
-/* ---------------------------------------------------------------------
-   CNAB 240 — FEBRABAN
-   --------------------------------------------------------------------- */
+/* Cnab 240 — febraban */
 const C240 = {
   header: {
     banco:[1,3], lote:[4,7], tipo:[8,8], tipoInscricao:[18,18], inscricao:[19,32],
@@ -120,9 +116,7 @@ const MOV_240 = {
 };
 const GRUPO_240 = { pago:['06', '17'], entrada:['02'], baixa:['09', '25'], rejeitado:['03', '26', '30'] };
 
-/* ---------------------------------------------------------------------
-   CNAB 400 — Itaú
-   --------------------------------------------------------------------- */
+/* CNAB 400 — Itaú */
 const I400 = {
   header: {
     tipo:[1,1], remessaRetorno:[2,2], literal:[3,9,'a'], agencia:[27,30], conta:[33,37],
@@ -165,9 +159,7 @@ const BANCOS = {
   '422':'Safra', '748':'Sicredi', '756':'Sicoob'
 };
 
-/* ---------------------------------------------------------------------
-   Leitura do arquivo
-   --------------------------------------------------------------------- */
+/* Leitura do arquivo */
 function linhasDo(texto){
   const linhas = String(texto || '').split(/\r?\n/);
   while (linhas.length && !linhas[linhas.length - 1].trim()) linhas.pop();
@@ -346,9 +338,7 @@ function lerRetorno(texto){
   return { ...arq, linhas: linhas.length, verificacoes, valido: verificacoes.every(v => v.ok), resumo: resumo(arq.titulos) };
 }
 
-/* ---------------------------------------------------------------------
-   Exportação
-   --------------------------------------------------------------------- */
+/* Exportação */
 const reais = c => (c / 100).toFixed(2).replace('.', ',');
 const dataBr = iso => (iso ? iso.split('-').reverse().join('/') : '');
 
@@ -370,9 +360,9 @@ function csv(arquivo){
   return '﻿' + [cab.join(';'), ...linhas].join('\r\n') + '\r\n';
 }
 
-/* ---------------------------------------------------------------------
+/*
    Arquivo de exemplo — CNAB 240 fictício, com uma ocorrência de cada tipo.
-   --------------------------------------------------------------------- */
+   */
 function exemplo240(hoje = Date.now()){
   const dia = n => {
     const d = new Date(hoje + n * 86400000);

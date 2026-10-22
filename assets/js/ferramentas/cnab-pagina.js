@@ -1,7 +1,7 @@
-/* =====================================================================
+/*
    cnab-pagina.js — tela do leitor de arquivo de retorno.
    As regras moram no cnab.js; aqui é só entrada e desenho.
-   ===================================================================== */
+   */
 (() => {
 'use strict';
 

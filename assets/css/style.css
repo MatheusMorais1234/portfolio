@@ -1,4 +1,4 @@
-/* =====================================================================
+/*
    matheusmorais.com — folha de estilo
    Direção: papel de segurança bancário. O verde de cheque é o papel, a
    tinta é verde-petróleo e o vermelho só aparece no carimbo. O hero traz
@@ -7,7 +7,7 @@
 
    Tema: o escuro é o padrão. O claro entra com data-theme="light" no
    <html>, colocado pelo theme.js antes da página pintar.
-   ===================================================================== */
+   */
 
 :root{
   color-scheme:dark;
@@ -134,7 +134,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .skip:focus{ top:1rem; }
 
-/* ---------- botões ---------- */
+/* botões */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   min-height:44px; padding:0 1.25rem;
@@ -151,9 +151,7 @@ ul,ol{ padding:0; list-style:none; }
 .btn--sm{ min-height:36px; padding:0 .9rem; font-size:.875rem; }
 .btn:disabled{ opacity:.6; cursor:progress; }
 
-/* =====================================================================
-   NAV
-   ===================================================================== */
+/* Nav */
 .nav{
   position:sticky; top:0; z-index:50;
   background:var(--nav-bg);
@@ -239,9 +237,7 @@ ul,ol{ padding:0; list-style:none; }
   padding:.85rem 0; border-bottom:1px solid var(--rule);
 }
 
-/* =====================================================================
-   HERO
-   ===================================================================== */
+/* Hero */
 .hero{ padding:clamp(2rem, 4.5vw, 3.75rem) 0 0; }
 .hero__grid{
   display:grid;
@@ -289,7 +285,7 @@ ul,ol{ padding:0; list-style:none; }
   object-fit:cover; object-position:50% 12%;
 }
 
-/* ---------- ficha de compensação ----------
+/* ficha de compensação
    O único movimento que não depende de clique: as barras são impressas,
    o laser do leitor passa e a linha digitável aparece conforme é lida.
    Os tempos das três etapas saem das variáveis abaixo. */
@@ -394,9 +390,7 @@ ul,ol{ padding:0; list-style:none; }
 .facts dt{ font-size:.875rem; color:var(--quiet); margin-bottom:.35rem; }
 .facts dd{ font-size:1rem; font-weight:500; line-height:1.4; }
 
-/* =====================================================================
-   SEÇÕES
-   ===================================================================== */
+/* Seções */
 .sec{ padding:clamp(4rem, 9vw, 7.5rem) 0; }
 .sec + .sec{ border-top:1px solid var(--rule); }
 .sec__grid{
@@ -414,7 +408,7 @@ ul,ol{ padding:0; list-style:none; }
   margin-top:1rem; color:var(--slate); font-size:1rem; max-width:36ch;
 }
 
-/* ---------- sobre ---------- */
+/* sobre */
 .prose{ max-width:64ch; }
 .prose p + p{ margin-top:1.25rem; }
 .prose p{ color:var(--slate); }
@@ -425,7 +419,7 @@ ul,ol{ padding:0; list-style:none; }
   margin-bottom:.5rem;
 }
 
-/* ---------- experiência ---------- */
+/* experiência */
 .xps{ border-top:1px solid var(--ink); }
 .xp{
   display:grid; grid-template-columns:11rem minmax(0,1fr); gap:2rem;
@@ -450,7 +444,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 .xp__tags{ margin-top:1rem; font-size:.875rem; color:var(--quiet); }
 
-/* ---------- projetos ---------- */
+/* projetos */
 .projs{
   display:grid; grid-template-columns:repeat(2, minmax(0,1fr));
   column-gap:2.5rem;
@@ -467,7 +461,7 @@ ul,ol{ padding:0; list-style:none; }
 .proj__p{ margin-top:.6rem; color:var(--slate); font-size:1rem; flex:1; }
 .proj__stack{ margin-top:1rem; font-size:.875rem; color:var(--quiet); }
 
-/* ---------- projetos: cards lado a lado ---------- */
+/* projetos: cards lado a lado */
 .phead .sec__sub{ max-width:52ch; }
 .pgrid{
   margin-top:clamp(2rem, 4vw, 3rem);
@@ -536,7 +530,7 @@ ul,ol{ padding:0; list-style:none; }
 .pmore{ margin-top:1.75rem; font-size:.9375rem; color:var(--slate); }
 .pmore a{ color:var(--accent); font-weight:600; margin-left:.25rem; }
 
-/* ---------- bancada (demo do validador) ---------- */
+/* bancada (demo do validador) */
 .demo{
   margin-bottom:2.5rem;
   border-top:2px solid var(--ink);
@@ -577,7 +571,7 @@ ul,ol{ padding:0; list-style:none; }
 .demo__sum.is-ok{ color:var(--slate); }
 .demo__sum.is-bad{ color:var(--stamp); }
 
-/* ---------- tecnologias ---------- */
+/* tecnologias */
 .techgroups{ display:grid; gap:2.5rem; }
 .techs__h{
   font-size:1rem; font-weight:600;
@@ -621,7 +615,7 @@ ul,ol{ padding:0; list-style:none; }
   .tech[open]::details-content{ block-size:auto; }
 }
 
-/* ---------- certificados ---------- */
+/* certificados */
 .certs{
   display:grid; grid-template-columns:repeat(3, minmax(0,1fr));
   gap:2.25rem 1.5rem;
@@ -645,7 +639,7 @@ ul,ol{ padding:0; list-style:none; }
 .cert:hover .cert__title{ color:var(--accent); }
 .cert__meta{ margin-top:.25rem; font-size:.875rem; color:var(--quiet); }
 
-/* ---------- serviços (desligados por padrão) ---------- */
+/* serviços (desligados por padrão) */
 .svcs{ border-top:1px solid var(--ink); }
 .svc{ padding:2rem 0; border-bottom:1px solid var(--rule); }
 .svc__h{ font-size:1.25rem; font-weight:600; }
@@ -656,9 +650,7 @@ ul,ol{ padding:0; list-style:none; }
 .svc__cta{ margin-top:1.25rem; }
 .svcs__note{ margin-top:1.5rem; font-size:.9375rem; color:var(--quiet); max-width:62ch; }
 
-/* =====================================================================
-   CONTATO
-   ===================================================================== */
+/* Contato */
 .sec--contact{ background:var(--wash); }
 .sec--contact .sec__head{ position:static; }
 .contact__lead{
@@ -726,9 +718,7 @@ ul,ol{ padding:0; list-style:none; }
 .form__status.is-err{ color:var(--red); }
 .form__status.is-wait{ color:var(--quiet); }
 
-/* =====================================================================
-   RODAPÉ
-   ===================================================================== */
+/* Rodapé */
 .foot{ border-top:1px solid var(--rule); }
 .foot__in{
   display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;
@@ -738,9 +728,7 @@ ul,ol{ padding:0; list-style:none; }
 .foot a{ text-decoration:none; }
 .foot a:hover{ color:var(--ink); }
 
-/* =====================================================================
-   LIGHTBOX
-   ===================================================================== */
+/* Lightbox */
 .lbox{
   position:fixed; inset:0; z-index:100;
   background:rgba(7,16,13,.92);   /* papel escuro, igual nos dois temas */
@@ -769,12 +757,12 @@ ul,ol{ padding:0; list-style:none; }
 .lbox__nav--prev{ left:1rem; }
 .lbox__nav--next{ right:1rem; }
 
-/* =====================================================================
+/*
    TRANSIÇÕES DE VISUALIZAÇÃO
    Troca de tema: o tema novo cresce em círculo a partir do botão (o
    theme.js passa o centro em --vt-x/--vt-y). Certificado: a miniatura
    cresce até virar a imagem do lightbox.
-   ===================================================================== */
+   */
 :root.is-theming::view-transition-old(root),
 :root.is-theming::view-transition-new(root){ animation:none; mix-blend-mode:normal; }
 :root.is-theming::view-transition-new(root){
@@ -786,9 +774,7 @@ ul,ol{ padding:0; list-style:none; }
 }
 ::view-transition-group(cert){ animation-duration:.38s; animation-timing-function:cubic-bezier(.2,.7,.2,1); }
 
-/* =====================================================================
-   404
-   ===================================================================== */
+/* 404 */
 .nf{
   min-height:100vh; display:flex; flex-direction:column; justify-content:center;
   max-width:40rem; margin:0 auto; padding:2rem var(--gut);
@@ -799,9 +785,7 @@ ul,ol{ padding:0; list-style:none; }
 .nf__p span{ display:block; margin-top:.25rem; color:var(--quiet); }
 .nf .btn{ margin-top:2rem; align-self:flex-start; }
 
-/* =====================================================================
-   RESPONSIVO
-   ===================================================================== */
+/* Responsivo */
 @media (max-width: 1240px){
   .nav__links{ gap:1.25rem; }
 }
@@ -880,9 +864,7 @@ ul,ol{ padding:0; list-style:none; }
   .lbox__nav--next{ right:calc(50% - 52px); }
 }
 
-/* =====================================================================
-   IMPRESSÃO
-   ===================================================================== */
+/* Impressão */
 @media print{
   /* no papel vale sempre o tema claro */
   :root{

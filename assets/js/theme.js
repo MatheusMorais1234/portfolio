@@ -1,8 +1,8 @@
-/* =====================================================================
+/*
    theme.js — tema escuro (padrão) ou claro.
    Carregado no <head> sem defer: aplica a escolha salva antes da página
    pintar, para não piscar o tema errado. Qualquer botão .theme alterna.
-   ===================================================================== */
+   */
 (() => {
 'use strict';
 

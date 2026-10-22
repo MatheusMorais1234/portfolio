@@ -1,17 +1,15 @@
-/* =====================================================================
+/*
    pagamentos.js — regras do Pix (BR Code do Banco Central) e do boleto
    (padrão FEBRABAN), em funções puras.
 
    Sem DOM e sem rede: as páginas das ferramentas usam no navegador e o
    _ferramentas/testar-pagamentos.mjs usa no Node. Nada do que a pessoa
    digita sai do computador dela.
-   ===================================================================== */
+   */
 
 const Pagamentos = (() => {
 
-/* ---------------------------------------------------------------------
-   Utilidades
-   --------------------------------------------------------------------- */
+/* Utilidades */
 const soDigitos = s => String(s || '').replace(/\D/g, '');
 
 // Os bancos leem o BR Code em ASCII. Acento vira letra simples e o que
@@ -46,12 +44,12 @@ function cnpjValido(v){
   return true;
 }
 
-/* =====================================================================
+/*
    PIX
    O BR Code é uma sequência de campos TLV (identificador de 2 dígitos,
    tamanho de 2 dígitos, valor) fechada por um CRC16. Manual de referência:
    "Manual de Padrões para Iniciação do Pix", Banco Central do Brasil.
-   ===================================================================== */
+   */
 
 // CRC16-CCITT-FALSE: polinômio 0x1021, valor inicial 0xFFFF.
 function crc16(texto){
@@ -234,13 +232,13 @@ function lerPix(bruto){
   };
 }
 
-/* =====================================================================
+/*
    BOLETO
    Dois mundos com regras diferentes:
    - bancário: 47 dígitos na linha digitável, começa com o código do banco;
    - arrecadação (contas de consumo, tributos): 48 dígitos, começa com 8.
    Os dois têm um código de barras de 44 dígitos por trás.
-   ===================================================================== */
+   */
 
 // Módulo 10: da direita para a esquerda, pesos 2,1,2,1... somando os
 // algarismos de cada produto.
@@ -336,7 +334,7 @@ function montarBoletoBancario({ banco, vencimento, valor, campoLivre }){
 
 const centavos = s => (Number(s) / 100).toFixed(2);
 
-/* --- bancário --- */
+/* bancário */
 function barrasDaLinhaBancaria(l){
   return l.slice(0, 4) + l[32] + l.slice(33, 47) + l.slice(4, 9) + l.slice(10, 20) + l.slice(21, 31);
 }
@@ -390,7 +388,7 @@ function analisaBancario(barras, linha, hoje){
   };
 }
 
-/* --- arrecadação --- */
+/* arrecadação */
 function analisaArrecadacao(barras, linha){
   const referencia = barras[2];
   const usaMod10 = referencia === '6' || referencia === '7';

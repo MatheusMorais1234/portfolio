@@ -1,7 +1,7 @@
-/* =====================================================================
+/*
    ferramentas.css — páginas de /ferramentas.
    Carregado depois do style.css: reaproveita tokens, botões e campos.
-   ===================================================================== */
+   */
 
 .tnav .nav__links{ margin-left:auto; }
 .tnav .nav__links a[aria-current="page"]{ color:var(--ink); }
@@ -31,7 +31,7 @@
 }
 .tool__privacy svg{ flex:none; color:var(--green); }
 
-/* ---------- abas ---------- */
+/* abas */
 .tabs{
   display:flex; gap:.25rem;
   margin-top:2.5rem;
@@ -46,7 +46,7 @@
 .tabs button:hover{ color:var(--ink); }
 .tabs button[aria-selected="true"]{ color:var(--ink); border-bottom-color:var(--accent); }
 
-/* ---------- área de trabalho: formulário + resultado ---------- */
+/* área de trabalho: formulário + resultado */
 .work{
   display:grid;
   grid-template-columns:minmax(0, 5fr) minmax(0, 6fr);
@@ -77,7 +77,7 @@
   font-size:.875rem; letter-spacing:0;
 }
 
-/* ---------- resultado do Pix ---------- */
+/* resultado do Pix */
 .empty{
   display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; gap:.5rem;
@@ -107,7 +107,7 @@
 .note:empty{ display:none; }
 .note--warn{ color:var(--warn); }
 
-/* ---------- lista de dados lidos ---------- */
+/* lista de dados lidos */
 .facts-list{ border-top:1px solid var(--rule); }
 .facts-list > div{
   display:grid; grid-template-columns:11rem minmax(0,1fr); gap:1rem;
@@ -118,7 +118,7 @@
 .facts-list dd{ font-weight:500; overflow-wrap:anywhere; }
 .facts-list dd.code{ border:0; padding:0; background:none; font-weight:400; }
 
-/* ---------- selo de status ---------- */
+/* selo de status */
 .status{
   display:flex; align-items:flex-start; gap:.75rem;
   padding:1rem 1.1rem; border-radius:var(--r);
@@ -154,7 +154,7 @@
   font-size:.875rem; color:var(--slate);
 }
 
-/* ---------- explicação técnica ---------- */
+/* explicação técnica */
 .how{
   margin-top:clamp(3.5rem, 7vw, 5rem);
   padding-top:clamp(2.5rem, 5vw, 3.5rem);
@@ -171,7 +171,7 @@
 }
 .how__body a{ color:var(--accent); }
 
-/* ---------- índice de ferramentas ---------- */
+/* índice de ferramentas */
 .tlist{ margin-top:2.5rem; border-top:1px solid var(--ink); }
 .tlist li{ border-bottom:1px solid var(--rule); }
 .tlist a{
@@ -201,7 +201,7 @@
 
 .barcode p.code{ border:0; padding:0; background:none; }
 
-/* ---------- leitor de retorno CNAB ---------- */
+/* leitor de retorno CNAB */
 .work--stack{ grid-template-columns:minmax(0, 1fr); }
 .work--stack > .panel:first-child{
   display:flex; flex-wrap:wrap; align-items:center; gap:1rem 1.5rem;

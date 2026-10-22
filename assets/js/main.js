@@ -1,8 +1,8 @@
-/* =====================================================================
+/*
    main.js — idioma, render, navegação, lightbox e formulário.
    Sem biblioteca: a marcação vem do render.js e o movimento é CSS — o
    script só decide quando ele começa.
-   ===================================================================== */
+   */
 (() => {
 'use strict';
 
@@ -11,12 +11,12 @@ const $$ = (s, ctx = document) => Array.from(ctx.querySelectorAll(s));
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const VT = !REDUCED && 'startViewTransition' in document;   // transição entre dois estados da tela
 
-/* ---------------------------------------------------------------------
+/*
    Idioma
    Ordem de decisao: ?lang= na URL > escolha salva > idioma do navegador.
    A URL manda porque e ela que torna a versao em ingles compartilhavel:
    matheusmorais.com/?lang=en abre em ingles para qualquer pessoa.
-   --------------------------------------------------------------------- */
+   */
 const SITE = 'https://matheusmorais.com/';
 
 const store = {
@@ -92,9 +92,7 @@ function setLang(next){
   remeasureNav();
 }
 
-/* ---------------------------------------------------------------------
-   Render
-   --------------------------------------------------------------------- */
+/* Render */
 function renderStack(){
   // quem estava aberto continua aberto depois de trocar o idioma
   const open = $$('#stackGrid details[open] summary span').map(s => s.textContent);
@@ -149,12 +147,12 @@ function renderAll(){
   renderCerts();
 }
 
-/* ---------------------------------------------------------------------
+/*
    Data do ultimo commit
    A API publica do GitHub da 60 requisicoes por hora por IP — em rede
    compartilhada isso estoura. A resposta fica guardada por 6h; se tudo
    falhar, vale a data fixa do data.js.
-   --------------------------------------------------------------------- */
+   */
 let ultimoCommit = {};
 const COMMIT_CACHE = 'mm-commit';
 const COMMIT_TTL = 6 * 60 * 60 * 1000;
@@ -196,11 +194,11 @@ function buscaUltimoCommit(){
   PROJECTS.filter(p => p.live).forEach(p => buscaCommitDe(p.live.repo));
 }
 
-/* ---------------------------------------------------------------------
+/*
    Foco preso em camadas sobrepostas
    Enquanto o lightbox ou o menu estao abertos, o resto da pagina fica
    inerte: o Tab nao escapa para os links atras deles.
-   --------------------------------------------------------------------- */
+   */
 const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, summary, [tabindex]:not([tabindex="-1"])';
 
 function trapFocus(zones){
@@ -227,9 +225,7 @@ function trapFocus(zones){
   };
 }
 
-/* ---------------------------------------------------------------------
-   Lightbox dos certificados
-   --------------------------------------------------------------------- */
+/* Lightbox dos certificados */
 let lboxIndex = 0;
 let lboxOpener = null;   // o certificado clicado, para devolver o foco no fim
 let lboxRelease = null;
@@ -285,9 +281,7 @@ function stepLbox(dir){
   openLbox((lboxIndex + dir + CERTS.length) % CERTS.length);
 }
 
-/* ---------------------------------------------------------------------
-   Nav: sombra ao rolar e secao ativa
-   --------------------------------------------------------------------- */
+/* Nav: sombra ao rolar e secao ativa */
 let remeasureNav = () => {};   // redefinido por initNav
 
 function initNav(){
@@ -334,11 +328,11 @@ function initNav(){
   window.addEventListener('load', remeasureNav);
 }
 
-/* ---------------------------------------------------------------------
+/*
    Ficha de compensação do hero
    Cada dígito da linha vira um <i> com o próprio atraso, para aparecer
    quando o laser passa por ele. O leitor de tela lê a linha inteira.
-   --------------------------------------------------------------------- */
+   */
 function initBoleto(){
   const boleto = $('#boleto');
   const linha = $('#boletoLinha');
@@ -359,11 +353,11 @@ function initBoleto(){
   $('.boleto__laser', boleto).addEventListener('animationend', () => boleto.classList.add('is-read'), { once:true });
 }
 
-/* ---------------------------------------------------------------------
+/*
    Bancada da seção Ferramentas
    A cada tecla o pagamentos.js refaz os quatro dígitos verificadores. O
    que mudou de estado ganha .is-flip para a troca ser vista, não só lida.
-   --------------------------------------------------------------------- */
+   */
 const DEMO_ORIGINAL = '34191.09206 23010.166298 92014.463001 1 92180000000000';
 let demoAnterior = [];
 
@@ -406,9 +400,7 @@ function initDemo(){
   confereDemo();
 }
 
-/* ---------------------------------------------------------------------
-   Carimbo dos projetos: bate quando a grade aparece na tela
-   --------------------------------------------------------------------- */
+/* Carimbo dos projetos: bate quando a grade aparece na tela */
 function initStamps(){
   const grid = $('#projGrid');
   if (!grid || REDUCED || !('IntersectionObserver' in window)) return;
@@ -421,9 +413,7 @@ function initStamps(){
   io.observe(grid);
 }
 
-/* ---------------------------------------------------------------------
-   Menu mobile
-   --------------------------------------------------------------------- */
+/* Menu mobile */
 function initMenu(){
   const burger = $('#burger');
   const menu = $('#menu');
@@ -456,12 +446,12 @@ function initMenu(){
   window.addEventListener('resize', () => { if (open && window.innerWidth > 1080) set(false); });
 }
 
-/* ---------------------------------------------------------------------
+/*
    FORMULÁRIO DE CONTATO
    Caminho principal: POST no Web3Forms (ver FORM no data.js).
    Caminho reserva: enquanto a chave nao estiver configurada, a mensagem
    e montada e aberta no WhatsApp. O visitante nunca fica sem saida.
-   --------------------------------------------------------------------- */
+   */
 const CHAVE_VAZIA = 'SUA-CHAVE-WEB3FORMS-AQUI';
 
 function rotuloOpcao(sel){
@@ -539,9 +529,7 @@ function initForm(){
   });
 }
 
-/* ---------------------------------------------------------------------
-   Boot
-   --------------------------------------------------------------------- */
+/* Boot */
 function boot(){
   $('#year').textContent = new Date().getFullYear();
   applyStrings();

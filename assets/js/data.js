@@ -1,15 +1,15 @@
-/* =====================================================================
+/*
    data.js — todo o conteúdo do site em um lugar só.
    Para editar o portfólio, mexa AQUI. Não precisa tocar no HTML.
-   ===================================================================== */
+   */
 
 /* Logos ficam no proprio dominio: sem CDN externo, sem risco de falha. */
 const ICON = 'assets/img/logos';
 
-/* ---------------------------------------------------------------------
+/*
    1. STACK — cada item mostra ONDE a tecnologia foi usada de verdade.
    level: 'solid' (domínio) | 'working' (uso diário) | 'early' (inicial)
-   --------------------------------------------------------------------- */
+   */
 const STACK = [
   { name:'PHP', icon:`${ICON}/php.svg`, level:'solid',
     use:{ pt:'Base dos sistemas internos da ASSEGO e de todos os projetos de cliente na JHON CODE: gestão de contratos, rotinas de cobrança, geração de PDF e envio de e-mail com PHPMailer.',
@@ -82,9 +82,7 @@ const LEVELS = {
   early:   { pt:'Nível inicial',    en:'Early level' }
 };
 
-/* ---------------------------------------------------------------------
-   2. TRAJETÓRIA
-   --------------------------------------------------------------------- */
+/* 2. trajetória */
 const TIMELINE = [
   {
     when:{ pt:'01/2025 — 10/2026', en:'Jan 2025 — Oct 2026' },
@@ -163,9 +161,7 @@ const TIMELINE = [
   }
 ];
 
-/* ---------------------------------------------------------------------
-   3. ENTREGAS
-   --------------------------------------------------------------------- */
+/* 3. entregas */
 const WORK = [
   { title:{ pt:'Gestão de contratos', en:'Contract management' },
     desc:{ pt:'Cadastro, fluxo de aprovação em etapas, geração de documento em PDF e histórico completo de alterações. Substituiu um processo que vivia em planilha e e-mail.',
@@ -198,7 +194,7 @@ const WORK = [
     stack:['Java 7/8','JBoss EAP','Angular'] }
 ];
 
-/* ---------------------------------------------------------------------
+/*
    4. CERTIFICADOS
    Coloque as imagens em assets/img/certificados/ e adicione aqui.
    Se o arquivo não existir, o card mostra um placeholder — sem quebrar.
@@ -207,7 +203,7 @@ const WORK = [
    Só entra card o que pesa para recrutador. Os cursos curtos (Cursa/IFRO)
    viraram uma linha de texto: chave 'certs.more' no i18n.js. As imagens
    continuam em assets/img/certificados/ caso queira voltar com eles.
-   --------------------------------------------------------------------- */
+   */
 const CERTS = [
   { img:'assets/img/certificados/diploma-ads-senac.webp',
     title:{ pt:'Tecnólogo em Análise e Desenvolvimento de Sistemas', en:'Technologist in Systems Analysis and Development' },
@@ -222,20 +218,19 @@ const CERTS = [
     meta:'Fundação Bradesco, Escola Virtual, 12h, 2025' }
 ];
 
-
-/* ---------------------------------------------------------------------
+/*
    4.5 CÓDIGO ABERTO
    O projeto pessoal que qualquer pessoa pode abrir e ler.
    `repo` é usado para buscar a data do último commit na API do GitHub.
-   --------------------------------------------------------------------- */
+   */
 const GITHUB_USER = 'MatheusMorais1234';
 
-/* ---------------------------------------------------------------------
+/*
    4.5 PROJETOS — o que fiz por conta propria e esta no ar.
    img: print 16:10 ou mais largo; o card corta pelo canto superior
    esquerdo. live: repositorio cuja data do ultimo commit aparece no card.
    links[0] e o botao principal.
-   --------------------------------------------------------------------- */
+   */
 const PROJECTS = [
   {
     name:'FreelaManager',
@@ -289,7 +284,7 @@ const PROJECTS = [
   }
 ];
 
-/* ---------------------------------------------------------------------
+/*
    6. SERVIÇOS  —  DESLIGADOS NO MOMENTO
 
    O site está apontado para recrutador de empresa, não para cliente de
@@ -299,10 +294,10 @@ const PROJECTS = [
    Para ligar de novo: troque para `true` e rode
        node _ferramentas/gerar-estatico.mjs
    Nada mais precisa ser mexido — o conteúdo continua todo aqui embaixo.
-   --------------------------------------------------------------------- */
+   */
 const MOSTRAR_SERVICOS = false;
 
-/* ---------------------------------------------------------------------
+/*
    6.1 SERVIÇOS
    O que dá para contratar, com escopo, prazo e ponto de partida de preço.
 
@@ -312,7 +307,7 @@ const MOSTRAR_SERVICOS = false;
 
    items: o que entra no pacote (3 a 5 itens, curtos).
    term:  prazo típico, já contando revisão.
-   --------------------------------------------------------------------- */
+   */
 const SERVICES = [
   {
     title:{ pt:'Site institucional', en:'Business website' },
@@ -352,7 +347,7 @@ const SERVICES = [
   }
 ];
 
-/* ---------------------------------------------------------------------
+/*
    7. FORMULÁRIO DE CONTATO
    O site é estático — não há servidor para receber o POST. Então o envio
    passa pelo Web3Forms, que é gratuito e não exige backend.
@@ -363,7 +358,7 @@ const SERVICES = [
    Enquanto a chave for a string 'SUA-CHAVE-WEB3FORMS-AQUI', o formulário
    continua funcionando: ele monta a mensagem e abre o WhatsApp já
    preenchido. Ou seja, o site nunca fica sem caminho de contato.
-   --------------------------------------------------------------------- */
+   */
 const FORM = {
   key: 'eb64cdc3-0d64-4e1b-a908-3bdfc20db800',
   endpoint: 'https://api.web3forms.com/submit',
