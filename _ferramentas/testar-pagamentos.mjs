@@ -1,9 +1,9 @@
-/* =====================================================================
+/*
    testar-pagamentos.mjs — prova as regras do assets/js/ferramentas/pagamentos.js
 
    Uso:  node _ferramentas/testar-pagamentos.mjs
    Sem dependência: roda no Node puro. Sai com código 1 se algo falhar.
-   ===================================================================== */
+   */
 
 import { readFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';
@@ -25,7 +25,7 @@ function igual(a, b, msg = ''){
   if (A !== B) throw new Error(`${msg} esperado ${B}, veio ${A}`);
 }
 
-/* ---------------- Pix ---------------- */
+/* Pix */
 
 t('CRC16 do exemplo do manual do Banco Central', () => {
   const semCrc = '00020126580014br.gov.bcb.pix0136123e4567-e12b-12d1-a456-4266554400005204000053039865802BR5913Fulano de Tal6008BRASILIA62070503***6304';
@@ -104,7 +104,7 @@ t('leitor reconhece Pix dinâmico (URL no lugar da chave)', () => {
   igual(lido.crcValido, true);
 });
 
-/* ---------------- Boleto ---------------- */
+/* Boleto */
 
 t('módulo 10 e módulo 11 com valores conhecidos', () => {
   igual(P.mod10('001905009'), 5);
@@ -191,7 +191,7 @@ t('ITF: 44 dígitos geram 4 + 22×10 + 3 larguras', () => {
   igual(P.larguraItf('0'.repeat(44)).length, 227);
 });
 
-/* ---------------- CNAB (retorno de cobrança) ---------------- */
+/* CNAB (retorno de cobrança) */
 
 const ctxC = {};
 runInNewContext(readFileSync(join(raiz, 'assets/js/ferramentas/cnab.js'), 'utf8') + ';globalThis.C = Cnab;', ctxC);

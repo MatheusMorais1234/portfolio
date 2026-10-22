@@ -1,16 +1,16 @@
-/* =====================================================================
+/*
    pix-pagina.js — tela do gerador e leitor de Pix.
    As regras moram no pagamentos.js; aqui é só formulário e desenho.
-   ===================================================================== */
+   */
 (() => {
 'use strict';
 
 const $ = s => document.querySelector(s);
 const P = Pagamentos;
 
-/* ---------------------------------------------------------------------
+/*
    Abas (padrão WAI-ARIA: setas trocam de aba, Tab entra no painel)
-   --------------------------------------------------------------------- */
+   */
 const abas = [...document.querySelectorAll('[role="tab"]')];
 
 function ativa(aba, foco = false){
@@ -32,9 +32,7 @@ abas.forEach((aba, i) => {
   });
 });
 
-/* ---------------------------------------------------------------------
-   QR Code em SVG — um único <path>, nítido em qualquer tamanho
-   --------------------------------------------------------------------- */
+/* QR Code em SVG — um único <path>, nítido em qualquer tamanho */
 const SVG = 'http://www.w3.org/2000/svg';
 const MARGEM = 2;
 
@@ -102,9 +100,7 @@ async function copia(texto, campo){
   return true;
 }
 
-/* ---------------------------------------------------------------------
-   Gerar
-   --------------------------------------------------------------------- */
+/* Gerar */
 const form = $('#formPix');
 const CAMPOS = ['chave', 'nome', 'cidade', 'valor', 'descricao', 'txid'];
 const tocado = new Set();   // só mostra erro de campo que a pessoa já mexeu
@@ -178,9 +174,7 @@ $('#pixBaixar').addEventListener('click', () => {
   baixaPng(matrizAtual, `pix${txid ? '-' + txid : ''}.png`);
 });
 
-/* ---------------------------------------------------------------------
-   Ler
-   --------------------------------------------------------------------- */
+/* Ler */
 const TIPOS = { cpf:'CPF', cnpj:'CNPJ', celular:'Celular', email:'E-mail', aleatoria:'Chave aleatória', desconhecido:'Não reconhecido' };
 
 const brl = v => Number(v).toLocaleString('pt-BR', { style:'currency', currency:'BRL' });

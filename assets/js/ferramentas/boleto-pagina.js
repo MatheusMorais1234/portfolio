@@ -1,7 +1,7 @@
-/* =====================================================================
+/*
    boleto-pagina.js — tela do validador de boleto.
    As regras moram no pagamentos.js; aqui é só entrada e desenho.
-   ===================================================================== */
+   */
 (() => {
 'use strict';
 

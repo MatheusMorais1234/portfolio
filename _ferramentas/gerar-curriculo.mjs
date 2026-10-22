@@ -1,4 +1,4 @@
-/* =====================================================================
+/*
    gerar-curriculo.mjs — monta os dois currículos em PDF (PT e EN).
 
    Uso:  node _ferramentas/gerar-curriculo.mjs
@@ -9,7 +9,7 @@
 
    Para mudar o currículo, edite o texto em CV logo abaixo — as duas
    línguas lado a lado, como no data.js.
-   ===================================================================== */
+   */
 
 import { writeFileSync, existsSync, mkdtempSync, rmSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -19,9 +19,7 @@ import { tmpdir } from 'node:os';
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-/* ---------------------------------------------------------------------
-   Conteúdo
-   --------------------------------------------------------------------- */
+/* Conteúdo */
 const CONTATO = {
   local: { pt:'Goiânia - GO, Brasil', en:'Goiânia - GO, Brazil' },
   fone: ['+55 62 99201-4463', 'https://wa.me/5562992014463'],
@@ -137,9 +135,7 @@ const CV = {
   }
 };
 
-/* ---------------------------------------------------------------------
-   HTML
-   --------------------------------------------------------------------- */
+/* Html */
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const a = ([texto, href]) => `<a href="${esc(href)}">${esc(texto)}</a>`;
 const lista = pts => `<ul>${pts.map(p => `<li>${esc(p)}</li>`).join('')}</ul>`;
@@ -195,9 +191,7 @@ ${c.edu.map(([k, v]) => `<p><b>${esc(k)}</b> - ${esc(v)}</p>`).join('')}
 </body></html>`;
 }
 
-/* ---------------------------------------------------------------------
-   Impressão
-   --------------------------------------------------------------------- */
+/* Impressão */
 const NAVEGADORES = [
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',

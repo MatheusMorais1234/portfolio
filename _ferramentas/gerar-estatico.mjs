@@ -1,4 +1,4 @@
-/* =====================================================================
+/*
    gerar-estatico.mjs — "assa" o conteudo do data.js dentro do index.html.
 
    Por que existe: tecnologias, experiencia, projetos e certificados sao montados
@@ -13,7 +13,7 @@
    Uso:  node _ferramentas/gerar-estatico.mjs
    Rode depois de editar o assets/js/data.js e antes de subir para o servidor.
    Esta pasta NAO deve ir para o servidor.
-   ===================================================================== */
+   */
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { runInNewContext } from 'node:vm';

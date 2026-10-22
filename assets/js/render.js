@@ -1,11 +1,11 @@
-/* =====================================================================
+/*
    render.js — a marcação de cada bloco montado a partir do data.js.
 
    Funções puras: recebem o idioma e devolvem HTML em texto. Sem DOM.
    O main.js usa no navegador e o _ferramentas/gerar-estatico.mjs usa no
    Node para escrever a versão em português dentro do index.html — por
    isso a marcação existe em um lugar só e as duas saídas nunca divergem.
-   ===================================================================== */
+   */
 
 const RENDER = (() => {
   const esc = v => String(v)

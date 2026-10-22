@@ -1,10 +1,10 @@
-/* =====================================================================
+/*
    i18n.js — textos fixos em português e inglês.
    Qualquer elemento com data-i18n="chave" é traduzido automaticamente.
    Os textos em português também estão escritos no index.html, para quem
    lê a página sem rodar JavaScript (robô de ATS, preview de link).
    Se editar um aqui, edite o mesmo trecho lá.
-   ===================================================================== */
+   */
 
 const I18N = {
   pt:{
