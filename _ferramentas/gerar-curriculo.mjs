@@ -45,13 +45,20 @@ const CV = {
       ['Em evolução', 'Java 7/8, Spring Boot, Angular, JBoss EAP 6/7, Flutter.']
     ],
     exp: [
+      { org:'StudioSports - plataforma de inscrições para provas esportivas (freelance)',
+        cargo:'Desenvolvedor Full-Stack | Ago 2026 - atual',
+        pts:[
+          'Mantém o sistema em produção (PHP/MySQL): inscrições, lotes, cupons e duplas, com PIX pela API do Itaú.',
+          'Criou avisos por WhatsApp (senha, SOS, lembrete) e o painel do organizador com financeiro e apuração ao vivo.',
+          'Fez a revisão de segurança: controle de acesso no admin, sessões assinadas e CPF mascarado (LGPD).'
+        ] },
       { org:'ASSEGO - Associação dos Subtenentes e Sargentos do Estado de Goiás',
         cargo:'Estagiário de Desenvolvimento | Jan 2025 - Out 2026 | Goiânia, GO',
         pts:[
           'Integrou as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, leitura do retorno, baixa automática e régua de cobrança, com contratos de API tipados em TypeScript.',
           'Criou o sistema de gestão de contratos (aprovação em etapas, PDF e histórico) e dashboards com exportação PDF/Excel usados por mais de 100 funcionários.',
           'Construiu a PWA mobile-first usada por cerca de 9 mil associados, em Next.js e TypeScript.',
-          'Automatizou importações, relatórios e e-mails (PHPMailer/Cron) e manteve aplicações Java 7/8 em JBoss EAP e telas Angular.'
+          'Automatizou importações, relatórios e e-mails (PHPMailer/Cron) e manteve Java 7/8 em JBoss EAP e telas Angular.'
         ] },
       { org:'JHON CODE - agência de desenvolvimento web',
         cargo:'Estagiário de Desenvolvimento | Jul 2023 - Abr 2024',
@@ -68,7 +75,7 @@ const CV = {
     ],
     projetos: [
       { nome:'HipocratIA', link:['hipocratia.com.br', 'https://hipocratia.com.br'],
-        texto:'Produto próprio de estudo para concursos da saúde: questões comentadas por IA (API do Claude), simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas.' },
+        texto:'Produto próprio de estudo para concursos da saúde: questões comentadas por IA (API do Claude), simulados e assinatura pelo Mercado Pago, num MVC próprio em PHP 8.1 (cerca de 30 mil linhas).' },
       { nome:'FreelaManager', link:['app.matheusmorais.com', 'https://app.matheusmorais.com'],
         texto:'Gestão de clientes, contratos e recebimentos: React, Express, PostgreSQL e Prisma, com 95 testes no CI e demonstração no ar.' },
       { nome:'Bella Napoli', link:['pizzaria.matheusmorais.com', 'https://pizzaria.matheusmorais.com'],
@@ -96,13 +103,20 @@ const CV = {
       ['Developing', 'Java 7/8, Spring Boot, Angular, JBoss EAP 6/7, Flutter.']
     ],
     exp: [
+      { org:'StudioSports - registration platform for sports events (freelance)',
+        cargo:'Full-Stack Developer | Aug 2026 - present',
+        pts:[
+          'Maintains the live PHP/MySQL system: registrations, price tiers, coupons, pairs and Pix via the Itaú API.',
+          'Built WhatsApp notices (password, SOS, reminders) and the organizer dashboard with finances and live results.',
+          'Ran the security review: admin access control, signed sessions and masked CPF (LGPD).'
+        ] },
       { org:'ASSEGO - Association of Warrant Officers and Sergeants of Goiás',
         cargo:'Development Intern | Jan 2025 - Oct 2026 | Goiânia, Brazil',
         pts:[
           'Integrated the Sicoob and Itaú payment APIs: boleto issuance, payment return processing, automatic settlement and collection workflows, with API contracts typed in TypeScript.',
           'Built the contract management system (multi-step approval, PDF, change history) and dashboards with PDF/Excel export used by more than 100 staff.',
           'Built the mobile-first PWA used by around 9,000 members, in Next.js and TypeScript.',
-          'Automated imports, reports and emails (PHPMailer/Cron) and maintained Java 7/8 apps on JBoss EAP and Angular screens.'
+          'Automated imports, reports and emails (PHPMailer/Cron) and maintained Java 7/8 on JBoss EAP and Angular screens.'
         ] },
       { org:'JHON CODE - web development agency',
         cargo:'Development Intern | Jul 2023 - Apr 2024',
@@ -128,7 +142,7 @@ const CV = {
         texto:'Pix QR code generator, boleto validator and CNAB bank return file reader, in JavaScript with automated tests.' }
     ],
     edu: [
-      ['Technology Degree in Systems Analysis and Development', 'Faculdade Senac Goiás (Brazilian college), completed 2025.'],
+      ['Technology Degree in Systems Analysis and Development', 'Faculdade Senac Goiás (Brazil), completed 2025.'],
       ['English B2 (CEFR)', 'UFG Language Center, 480 hours, completed 2026; lived in Germany.']
     ],
     rodape: 'Other courses and certificates at matheusmorais.com'
