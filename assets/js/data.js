@@ -85,6 +85,25 @@ const LEVELS = {
 /* 2. trajetória */
 const TIMELINE = [
   {
+    when:{ pt:'08/2026 — atual', en:'Aug 2026 — present' },
+    where:'StudioSports',
+    org:{ pt:'Plataforma de inscrições para provas esportivas (freelance)', en:'Registration platform for sports events (freelance)' },
+    role:{ pt:'Desenvolvedor Full-Stack', en:'Full-Stack Developer' },
+    points:{
+      pt:[ 'Manutenção e evolução do sistema inteiro em PHP e MySQL: inscrições, lotes de preço, cupons e provas em dupla.',
+           'Pagamento por PIX pela API do Itaú, com conferência automática e histórico de cobranças.',
+           'Avisos automáticos por WhatsApp: recuperação de senha, alerta do SOS Atleta para os contatos de emergência e lembrete do evento.',
+           'Painel do organizador com inscritos, relatório financeiro, PDF do acerto, apuração ao vivo e rastro de acessos com marca d’água.',
+           'Revisão de segurança: controle de acesso em todas as telas administrativas, sessões assinadas e CPF mascarado nas exportações (LGPD).' ],
+      en:[ 'Maintaining and extending the whole system in PHP and MySQL: registrations, price tiers, coupons and pair events.',
+           'Pix payments through the Itaú API, with automatic confirmation and charge history.',
+           'Automated WhatsApp notices: password recovery, SOS alerts to the athlete’s emergency contacts and event reminders.',
+           'Organizer dashboard with registrations, financial report, settlement PDF, live results and a watermarked access trail.',
+           'Security review: access control on every admin screen, signed sessions and masked CPF in exports (LGPD).' ]
+    },
+    tags:['PHP','MySQL','JavaScript','jQuery','Pix Itaú','WhatsApp','Linux']
+  },
+  {
     when:{ pt:'01/2025 — 10/2026', en:'Jan 2025 — Oct 2026' },
     where:'ASSEGO',
     org:{ pt:'Associação dos Subtenentes e Sargentos do Estado de Goiás', en:'Association of Warrant Officers and Sergeants of Goiás' },
@@ -232,6 +251,21 @@ const GITHUB_USER = 'MatheusMorais1234';
    links[0] e o botao principal.
    */
 const PROJECTS = [
+  {
+    name:'StudioSports',
+    img:'assets/img/projetos/studiosports.jpg',
+    alt:{ pt:'Página de eventos da StudioSports com cards de provas de ciclismo, data, horário e cidade',
+          en:'StudioSports events page with cycling race cards showing date, time and city' },
+    kicker:{ pt:'Cliente · freelance', en:'Client · freelance' },
+    tagline:{ pt:'Inscrições, PIX e SOS para provas esportivas',
+              en:'Registrations, Pix and SOS for sports events' },
+    desc:{ pt:'Sistema em produção que mantenho para um cliente: inscrição paga por PIX pela API do Itaú, painel do organizador com relatório financeiro e apuração ao vivo, tag SOS com QR Code que avisa os contatos do atleta pelo WhatsApp e classificados de bikes. O código é do cliente.',
+           en:'A production system I maintain for a client: registrations paid by Pix through the Itaú API, an organizer dashboard with financial reports and live results, an SOS tag with a QR code that alerts the athlete’s contacts on WhatsApp, and bike classifieds. The code belongs to the client.' },
+    stack:['PHP','MySQL','jQuery','Pix Itaú'],
+    links:[
+      { label:{ pt:'Visitar o site', en:'Visit the site' }, href:'https://www.studiosports.com.br' }
+    ]
+  },
   {
     name:'FreelaManager',
     img:'assets/img/projetos/freelamanager.jpg',

@@ -50,7 +50,7 @@ const I18N = {
 
     'about.h':'Sobre',
     'about.p1':'Comecei em 2023 e passei a maior parte desse tempo dentro de sistemas que já existiam: código legado, banco cheio de dado real e usuário esperando do outro lado. Foi assim que aprendi a ler antes de escrever.',
-    'about.p2':'Até outubro de 2026 trabalhei na ASSEGO, uma associação com cerca de 9 mil associados, mantendo e criando os sistemas internos usados por mais de 100 funcionários: contratos, financeiro, relatórios, cobrança e o aplicativo dos associados. No último ano lá passei a atuar também em Java corporativo (Java 7/8 em JBoss EAP) e em telas Angular — em nível inicial, mas já entregando manutenção com autonomia.',
+    'about.p2':'Até outubro de 2026 trabalhei na ASSEGO, uma associação com cerca de 9 mil associados, mantendo e criando os sistemas internos usados por mais de 100 funcionários: contratos, financeiro, relatórios, cobrança e o aplicativo dos associados. No último ano lá passei a atuar também em Java corporativo (Java 7/8 em JBoss EAP) e em telas Angular — em nível inicial, mas já entregando manutenção com autonomia. Hoje atendo como freelancer a StudioSports, plataforma de inscrições para provas esportivas, e cuido do sistema inteiro: do pagamento por PIX ao painel do organizador.',
     'about.p3':'Sou formado em Análise e Desenvolvimento de Sistemas pelo Senac Goiás e tenho certificado de inglês nível B2 pelo Centro de Línguas da UFG (480 horas), além de vivência na Alemanha. Procuro uma vaga de desenvolvedor júnior onde eu possa aprofundar essa stack e crescer junto com um time que revisa código.',
 
     'services.h':'Serviços',
@@ -80,7 +80,7 @@ const I18N = {
 
     'proj.h':'Projetos',
     'proj.stamp':'No ar',
-    'proj.sub':'Três sistemas que construí por conta própria. Todos estão no ar.',
+    'proj.sub':'Um sistema que mantenho para cliente e três que construí por conta própria. Todos estão no ar.',
     'proj.more':'Também há repositórios de estudo de POO e princípios SOLID em Java.',
     'code.h':'Código aberto',
     'code.sub':'Os sistemas do trabalho são fechados. Este não é.',
@@ -186,7 +186,7 @@ const I18N = {
 
     'about.h':'About',
     'about.p1':'I started in 2023 and spent most of that time inside systems that already existed: legacy code, a database full of real data and a user waiting on the other side. That is how I learned to read before writing.',
-    'about.p2':'Until October 2026 I worked at ASSEGO, an association with around 9,000 members, maintaining and building the internal systems used by more than 100 staff: contracts, finance, reporting, billing and the members’ app. In my last year there I also worked on corporate Java (Java 7/8 on JBoss EAP) and Angular screens — early level, but already handling maintenance on my own.',
+    'about.p2':'Until October 2026 I worked at ASSEGO, an association with around 9,000 members, maintaining and building the internal systems used by more than 100 staff: contracts, finance, reporting, billing and the members’ app. In my last year there I also worked on corporate Java (Java 7/8 on JBoss EAP) and Angular screens — early level, but already handling maintenance on my own. Today I work freelance for StudioSports, a registration platform for sports events, looking after the whole system: from Pix payments to the organizer dashboard.',
     'about.p3':'I hold a degree in Systems Analysis and Development from Senac Goiás and a B2 English certificate from the UFG Language Centre (480 hours), and I have lived in Germany. I am looking for a junior developer role where I can go deeper into this stack and grow with a team that reviews code.',
 
     'services.h':'Services',
@@ -216,7 +216,7 @@ const I18N = {
 
     'proj.h':'Projects',
     'proj.stamp':'Live',
-    'proj.sub':'Three systems I built on my own. All of them are live.',
+    'proj.sub':'One system I maintain for a client and three I built on my own. All of them are live.',
     'proj.more':'There are also study repositories on OOP and SOLID principles in Java.',
     'code.h':'Open source',
     'code.sub':'The systems I build at work are closed. This one is not.',
