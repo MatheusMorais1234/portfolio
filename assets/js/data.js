@@ -252,6 +252,21 @@ const GITHUB_USER = 'MatheusMorais1234';
    */
 const PROJECTS = [
   {
+    name:'Shopilot',
+    img:'assets/img/projetos/shopilot.jpg',
+    alt:{ pt:'Página do Shopilot com o título "Entenda o que faz seus vídeos do TikTok engajarem e venderem" e um painel de exemplo com seguidores, views e a sugestão da IA',
+          en:'Shopilot page with the headline "Understand what makes your TikTok videos engage and sell" and a sample dashboard with followers, views and the AI suggestion' },
+    kicker:{ pt:'Produto próprio · IA · em testes fechados', en:'My own product · AI · closed beta' },
+    tagline:{ pt:'Métricas do TikTok explicadas por IA para criadores',
+              en:'TikTok metrics explained by AI for creators' },
+    desc:{ pt:'SaaS que conecta a conta do TikTok por OAuth, coleta as métricas dos vídeos todo dia e usa IA (Gemini, com saída estruturada) para explicar por que um vídeo performou e o que testar no próximo. Tem fila de análises em segundo plano, assinatura mensal pelo Mercado Pago com webhook assinado, tokens cifrados, cotas por plano e painel administrativo com 2FA.',
+           en:'A SaaS that connects the TikTok account through OAuth, collects video metrics every day and uses AI (Gemini, with structured output) to explain why a video performed and what to test next. It has a background analysis queue, monthly subscriptions through Mercado Pago with signed webhooks, encrypted tokens, per-plan quotas and an admin panel with 2FA.' },
+    stack:['Python','FastAPI','PostgreSQL','Gemini'],
+    links:[
+      { label:{ pt:'Visitar o site', en:'Visit the site' }, href:'https://shopilot.matheusmorais.com' }
+    ]
+  },
+  {
     name:'StudioSports',
     img:'assets/img/projetos/studiosports.jpg',
     alt:{ pt:'Página de eventos da StudioSports com cards de provas de ciclismo, data, horário e cidade',
@@ -298,6 +313,23 @@ const PROJECTS = [
     links:[
       { label:{ pt:'Abrir a demo', en:'Open the demo' }, href:'https://pizzaria.matheusmorais.com' },
       { label:{ pt:'Código', en:'Code' }, href:'https://github.com/MatheusMorais1234/pizzaria-delivery' }
+    ]
+  },
+  {
+    name:'VitaGesta',
+    img:'assets/img/projetos/vitagesta.jpg',
+    alt:{ pt:'Painel da nutricionista no VitaGesta com pacientes que precisam de atenção, próximas consultas e pedidos aguardando resposta',
+          en:'VitaGesta nutritionist dashboard with patients needing attention, upcoming appointments and pending requests' },
+    kicker:{ pt:'Trabalho acadêmico · código aberto', en:'Academic project · open source' },
+    tagline:{ pt:'Ganho de peso na gestação, com nutricionista',
+              en:'Pregnancy weight gain, with a nutritionist' },
+    desc:{ pt:'Calcula o IMC gestacional pela recomendação do IOM e, se o ganho sai da faixa, encaminha a gestante a nutricionistas. Ela registra o peso e recebe o plano alimentar; a nutricionista tem painel, agenda e fichas. Painel ao vivo para a apresentação do grupo.',
+           en:'Computes pregnancy BMI from the IOM guidelines and, when weight gain falls outside the range, refers the patient to nutritionists. She logs her weight and gets a meal plan; the nutritionist has a dashboard, schedule and patient records. Live board for the group’s presentation.' },
+    stack:['PHP 8','MySQL','JavaScript','PWA'],
+    live:{ repo:'vita-gesta', fallbackDate:'2026-10-27' },
+    links:[
+      { label:{ pt:'Abrir a demo', en:'Open the demo' }, href:'https://vitagesta.matheusmorais.com' },
+      { label:{ pt:'Código', en:'Code' }, href:'https://github.com/MatheusMorais1234/vita-gesta' }
     ]
   },
   {

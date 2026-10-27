@@ -80,7 +80,7 @@ const I18N = {
 
     'proj.h':'Projetos',
     'proj.stamp':'No ar',
-    'proj.sub':'Um sistema que mantenho para cliente e três que construí por conta própria. Todos estão no ar.',
+    'proj.sub':'Um sistema que mantenho para cliente e cinco que construí por conta própria. Todos estão no ar.',
     'proj.more':'Também há repositórios de estudo de POO e princípios SOLID em Java.',
     'code.h':'Código aberto',
     'code.sub':'Os sistemas do trabalho são fechados. Este não é.',
@@ -216,7 +216,7 @@ const I18N = {
 
     'proj.h':'Projects',
     'proj.stamp':'Live',
-    'proj.sub':'One system I maintain for a client and three I built on my own. All of them are live.',
+    'proj.sub':'One system I maintain for a client and five I built on my own. All of them are live.',
     'proj.more':'There are also study repositories on OOP and SOLID principles in Java.',
     'code.h':'Open source',
     'code.sub':'The systems I build at work are closed. This one is not.',

@@ -69,7 +69,7 @@ function applyStrings(){
   // o curriculo acompanha o idioma: todos os links marcados com .js-cv
   const pt = lang === 'pt';
   $$('.js-cv').forEach(cv => {
-    cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261026' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261026';
+    cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261028' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261028';
     cv.setAttribute('download', pt ? 'Matheus-Morais-Curriculo.pdf' : 'Matheus-Morais-Resume.pdf');
   });
   $$('.lang__opt').forEach(o => o.classList.toggle('is-on', o.dataset.lang === lang));
