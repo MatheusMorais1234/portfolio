@@ -31,9 +31,9 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
-<link rel="stylesheet" href="assets/css/fonts.css?v=20261026">
-<link rel="stylesheet" href="assets/css/style.css?v=20261026">
-<script src="assets/js/theme.js?v=20261026"></script>
+<link rel="stylesheet" href="assets/css/fonts.css?v=20261028">
+<link rel="stylesheet" href="assets/css/style.css?v=20261028">
+<script src="assets/js/theme.js?v=20261028"></script>
 
 <script type="application/ld+json">
 {
@@ -78,7 +78,7 @@
         <span class="lang__opt is-on" data-lang="pt">PT</span>
         <span class="lang__opt" data-lang="en">EN</span>
       </button>
-      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261026" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
+      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
       <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
         <i aria-hidden="true"></i><i aria-hidden="true"></i>
       </button>
@@ -99,7 +99,7 @@
     <a href="#certificados" data-i18n="nav.certs">Certificados</a>
     <a href="#contato" data-i18n="nav.cta">Contato</a>
   </nav>
-  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261026" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+  <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
 </div>
 
 <main id="main">
@@ -113,7 +113,7 @@
       <p class="hero__lede" data-i18n="hero.lede">Sou Matheus Morais, desenvolvedor full-stack em Goiânia. Na ASSEGO, criei e mantive os sistemas de gestão usados por mais de 100 funcionários e o aplicativo de cerca de 9 mil associados, com cobrança integrada ao Sicoob e ao Itaú.</p>
       <div class="hero__cta">
         <a class="btn btn--solid" href="#contato" data-i18n="hero.ctaPrimary">Entrar em contato</a>
-        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261026" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
+        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
         <p class="hero__social">
           <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">LinkedIn</a>
@@ -280,9 +280,20 @@
   <div class="wrap">
     <header class="phead">
       <h2 class="sec__h" data-i18n="proj.h">Projetos</h2>
-      <p class="sec__sub" data-i18n="proj.sub">Um sistema que mantenho para cliente e três que construí por conta própria. Todos estão no ar.</p>
+      <p class="sec__sub" data-i18n="proj.sub">Um sistema que mantenho para cliente e cinco que construí por conta própria. Todos estão no ar.</p>
     </header>
     <ul class="pgrid" id="projGrid"><!--g:projects-->
+      <li class="pcard">
+        <figure class="pcard__shot"><img src="assets/img/projetos/shopilot.jpg" alt="Página do Shopilot com o título &quot;Entenda o que faz seus vídeos do TikTok engajarem e venderem&quot; e um painel de exemplo com seguidores, views e a sugestão da IA" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
+        <div class="pcard__body">
+          <p class="pcard__kicker">Produto próprio · IA · em testes fechados</p>
+          <h3 class="pcard__name">Shopilot</h3>
+          <p class="pcard__tag">Métricas do TikTok explicadas por IA para criadores</p>
+          <p class="pcard__desc">SaaS que conecta a conta do TikTok por OAuth, coleta as métricas dos vídeos todo dia e usa IA (Gemini, com saída estruturada) para explicar por que um vídeo performou e o que testar no próximo. Tem fila de análises em segundo plano, assinatura mensal pelo Mercado Pago com webhook assinado, tokens cifrados, cotas por plano e painel administrativo com 2FA.</p>
+          <ul class="pcard__stack"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Gemini</li></ul>
+          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://shopilot.matheusmorais.com" target="_blank" rel="noopener">Visitar o site</a></div>
+        </div>
+      </li>
       <li class="pcard">
         <figure class="pcard__shot"><img src="assets/img/projetos/studiosports.jpg" alt="Página de eventos da StudioSports com cards de provas de ciclismo, data, horário e cidade" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
         <div class="pcard__body">
@@ -316,6 +327,18 @@
           <ul class="pcard__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>Tailwind</li></ul>
           <p class="pcard__live" data-live="pizzaria-delivery"></p>
           <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://pizzaria.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/pizzaria-delivery" target="_blank" rel="noopener">Código</a></div>
+        </div>
+      </li>
+      <li class="pcard">
+        <figure class="pcard__shot"><img src="assets/img/projetos/vitagesta.jpg" alt="Painel da nutricionista no VitaGesta com pacientes que precisam de atenção, próximas consultas e pedidos aguardando resposta" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
+        <div class="pcard__body">
+          <p class="pcard__kicker">Trabalho acadêmico · código aberto</p>
+          <h3 class="pcard__name">VitaGesta</h3>
+          <p class="pcard__tag">Ganho de peso na gestação, com nutricionista</p>
+          <p class="pcard__desc">Calcula o IMC gestacional pela recomendação do IOM e, se o ganho sai da faixa, encaminha a gestante a nutricionistas. Ela registra o peso e recebe o plano alimentar; a nutricionista tem painel, agenda e fichas. Painel ao vivo para a apresentação do grupo.</p>
+          <ul class="pcard__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>PWA</li></ul>
+          <p class="pcard__live" data-live="vita-gesta"></p>
+          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://vitagesta.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/vita-gesta" target="_blank" rel="noopener">Código</a></div>
         </div>
       </li>
       <li class="pcard">
@@ -549,7 +572,7 @@
         <div><dt>GitHub</dt><dd><a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">MatheusMorais1234</a></dd></div>
       </dl>
 
-      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261026" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
+      <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
     </header>
 
     <div class="sec__body">
@@ -630,10 +653,10 @@
   </button>
 </div>
 
-<script src="assets/js/data.js?v=20261026" defer></script>
-<script src="assets/js/i18n.js?v=20261026" defer></script>
-<script src="assets/js/ferramentas/pagamentos.js?v=20261026" defer></script>
-<script src="assets/js/render.js?v=20261026" defer></script>
-<script src="assets/js/main.js?v=20261026" defer></script>
+<script src="assets/js/data.js?v=20261028" defer></script>
+<script src="assets/js/i18n.js?v=20261028" defer></script>
+<script src="assets/js/ferramentas/pagamentos.js?v=20261028" defer></script>
+<script src="assets/js/render.js?v=20261028" defer></script>
+<script src="assets/js/main.js?v=20261028" defer></script>
 </body>
 </html>
