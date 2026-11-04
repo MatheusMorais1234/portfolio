@@ -1,0 +1,67 @@
+/*
+   cinema-motion.css — só o movimento da página.
+   Nada aqui esconde conteúdo por padrão: toda regra depende de uma classe
+   posta por JavaScript e a abertura termina sempre com tudo visível.
+   */
+
+/* 1. Abertura. Protagonista: o título. Apoio: a linha do cargo e a tarja de
+   baixo. Decoração: "Goiânia apresenta", só aparece, sem andar.
+   O intervalo entre as entradas é irregular de propósito, para ler como onda.
+   Só o preenchimento "backwards": ao terminar, a animação solta o elemento.
+   Tudo continua clicável durante a abertura, e rolar no meio não a interrompe. */
+.open__line{ display:block; }
+
+@media (prefers-reduced-motion: no-preference){
+  .is-intro .bar--top{ animation:tarja-cima .5s cubic-bezier(.23,1,.32,1) backwards; }
+  .is-intro .bar--bottom{ animation:tarja-baixo .5s cubic-bezier(.23,1,.32,1) backwards; }
+  .is-intro .open__video{ animation:surge 1.1s cubic-bezier(.23,1,.32,1) .2s backwards; }
+  .is-intro .open__over{ animation:surge .5s cubic-bezier(.23,1,.32,1) .35s backwards; }
+  .is-intro .open__line{ animation:linha .6s cubic-bezier(.23,1,.32,1) .45s backwards; }
+  .is-intro .open__line + .open__line{ animation-delay:.6s; }
+  .is-intro .open__role{ animation:apoio .5s cubic-bezier(.23,1,.32,1) .7s backwards; }
+}
+@keyframes tarja-cima{ from{ transform:translateY(-100%); } }
+@keyframes tarja-baixo{ from{ transform:translateY(100%); } }
+@keyframes surge{ from{ opacity:0; } }
+@keyframes apoio{ from{ opacity:0; transform:translateY(8px); } }
+@keyframes linha{
+  from{ clip-path:inset(0 0 100% 0); transform:translateY(18%); }
+  to{ clip-path:inset(-10% -5% -10% -5%); transform:none; }
+}
+
+/* resposta ao toque: rápida e sem depender de hover */
+@media (prefers-reduced-motion: no-preference){
+  .btn,.bar--bottom a{ transition:transform 160ms cubic-bezier(.23,1,.32,1); }
+  .btn:active,.bar--bottom a:active{ transform:scale(.97); }
+}
+
+/* em telas pequenas e no toque: um corte simples ao entrar na tela */
+@media (prefers-reduced-motion: no-preference){
+  .is-light .scene:not(.is-in) .scene__frame{ clip-path:inset(0 0 100% 0); }
+  .is-light .scene .scene__frame{ transition:clip-path .5s cubic-bezier(.23,1,.32,1); }
+}
+
+/* contador de cenas: linha âmbar e "Cena n de 6" */
+.cine-hud{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  pointer-events:none;
+  opacity:0;
+}
+.cine-hud.is-on{ opacity:1; }
+.cine-hud__line{
+  display:block; height:2px; background:#e8b339;
+  transform:scaleX(0); transform-origin:left;
+}
+.cine-hud__txt{
+  position:absolute; right:0; bottom:2px;
+  padding:.3rem .75rem;
+  background:#000; color:#f2efe6;
+  font-size:.875rem; line-height:1.3; font-variant-numeric:tabular-nums;
+}
+/* se a tarja de baixo fica fixa, o contador mora dentro dela */
+.bar--bottom > .cine-hud{ position:absolute; }
+.cine-hud.so-linha .cine-hud__txt{ display:none; }
+
+@media print{
+  .cine-hud{ display:none !important; }
+}
