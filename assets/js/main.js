@@ -1,7 +1,6 @@
 /*
    main.js — idioma, render, navegação, lightbox e formulário.
-   Sem biblioteca: a marcação vem do render.js e o movimento é CSS — o
-   script só decide quando ele começa.
+   A marcação vem do render.js; o movimento e os vídeos ficam no cinema.js.
    */
 (() => {
 'use strict';
@@ -66,13 +65,17 @@ function applyStrings(){
   if (canon) canon.href = langUrl(lang);
   $('#lbox').setAttribute('aria-label', dict['lbox.label']);
 
-  // o curriculo acompanha o idioma: todos os links marcados com .js-cv
+  atualizaCv();
+  $$('.lang__opt').forEach(o => o.classList.toggle('is-on', o.dataset.lang === lang));
+}
+
+/* o curriculo acompanha o idioma: todos os links marcados com .js-cv */
+function atualizaCv(){
   const pt = lang === 'pt';
   $$('.js-cv').forEach(cv => {
     cv.href = pt ? 'assets/Curriculo_Matheus_Renato.pdf?v=20261028' : 'assets/Matheus_Renato_Resume_EN.pdf?v=20261028';
     cv.setAttribute('download', pt ? 'Matheus-Morais-Curriculo.pdf' : 'Matheus-Morais-Resume.pdf');
   });
-  $$('.lang__opt').forEach(o => o.classList.toggle('is-on', o.dataset.lang === lang));
 }
 
 function setLang(next){
@@ -88,18 +91,15 @@ function setLang(next){
 
   applyStrings();
   renderAll();
-  confereDemo();
   remeasureNav();
+
+  // a marcação dos projetos foi refeita: quem controla os vídeos precisa religar
+  document.dispatchEvent(new CustomEvent('mm:rendered'));
 }
 
 /* Render */
 function renderStack(){
-  // quem estava aberto continua aberto depois de trocar o idioma
-  const open = $$('#stackGrid details[open] summary span').map(s => s.textContent);
   $('#stackGrid').innerHTML = RENDER.stack(lang);
-  $$('#stackGrid details').forEach(d => {
-    if (open.includes($('summary span', d).textContent)) d.open = true;
-  });
 }
 
 function renderServices(){
@@ -119,6 +119,7 @@ function renderServices(){
 
 function renderProjects(){
   $('#projGrid').innerHTML = RENDER.projects(lang);
+  atualizaCv();   // as tarjas das cenas acabaram de nascer com os links do currículo
   PROJECTS.filter(p => p.live).forEach(p => mostraData(p.live.repo, ultimoCommit[p.live.repo] || p.live.fallbackDate));
 }
 
@@ -281,12 +282,11 @@ function stepLbox(dir){
   openLbox((lboxIndex + dir + CERTS.length) % CERTS.length);
 }
 
-/* Nav: sombra ao rolar e secao ativa */
+/* Nav: secao ativa */
 let remeasureNav = () => {};   // redefinido por initNav
 
 function initNav(){
-  const nav = $('#nav');
-  const links = $$('.nav__links a');
+  const links = $$('.bar__links a');
   const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
 
   // medir uma vez e guardar evita forcar layout a cada evento de scroll
@@ -303,7 +303,6 @@ function initNav(){
   const paint = () => {
     queued = false;
     const y = window.scrollY;
-    nav.classList.toggle('is-stuck', y > 8);
 
     // imagem preguicosa que chega muda a altura da pagina e invalida as medidas
     const height = document.documentElement.scrollHeight;
@@ -326,91 +325,6 @@ function initNav(){
   window.addEventListener('scroll', onScroll, { passive:true });
   window.addEventListener('resize', () => { measure(); onScroll(); });
   window.addEventListener('load', remeasureNav);
-}
-
-/*
-   Ficha de compensação do hero
-   Cada dígito da linha vira um <i> com o próprio atraso, para aparecer
-   quando o laser passa por ele. O leitor de tela lê a linha inteira.
-   */
-function initBoleto(){
-  const boleto = $('#boleto');
-  const linha = $('#boletoLinha');
-  if (!boleto || !linha) return;
-  linha.classList.add('is-split');
-  if (REDUCED) return;
-
-  const texto = linha.lastChild;
-  const digitos = texto.textContent.trim();
-  const visivel = document.createElement('span');
-  visivel.setAttribute('aria-hidden', 'true');
-  visivel.innerHTML = [...digitos].map((c, i) => `<i style="--i:${i}">${c}</i>`).join('');
-  const lido = document.createElement('span');
-  lido.className = 'sr';
-  lido.textContent = digitos;
-  texto.replaceWith(' ', visivel, lido);
-
-  $('.boleto__laser', boleto).addEventListener('animationend', () => boleto.classList.add('is-read'), { once:true });
-}
-
-/*
-   Bancada da seção Ferramentas
-   A cada tecla o pagamentos.js refaz os quatro dígitos verificadores. O
-   que mudou de estado ganha .is-flip para a troca ser vista, não só lida.
-   */
-const DEMO_ORIGINAL = '34191.09206 23010.166298 92014.463001 1 92180000000000';
-let demoAnterior = [];
-
-function confereDemo(){
-  const input = $('#demoLinha');
-  const lista = $('#demoChecks');
-  const soma = $('#demoSum');
-  if (!input || typeof Pagamentos === 'undefined') return;
-  const d = I18N[lang];
-
-  $('#demoReset').hidden = input.value === DEMO_ORIGINAL;
-
-  const r = Pagamentos.analisarBoleto(input.value);
-  if (r.erro || r.tipo !== 'bancario') {
-    lista.innerHTML = '';
-    demoAnterior = [];
-    soma.className = 'demo__sum is-bad';
-    soma.textContent = d['demo.len'].replace('{n}', Pagamentos.soDigitos(input.value).length);
-    return;
-  }
-
-  const nomes = ['demo.c1', 'demo.c2', 'demo.c3', 'demo.g'].map(k => d[k]);
-  lista.innerHTML = r.verificacoes.map((v, i) => {
-    const mudou = demoAnterior.length && demoAnterior[i] !== v.ok;
-    const texto = v.ok ? d['demo.ok'] : d['demo.bad'].replace('{e}', v.esperado).replace('{i}', v.informado);
-    return `<li class="${v.ok ? 'is-ok' : 'is-bad'}${mudou ? ' is-flip' : ''}"><span>${RENDER.esc(nomes[i])}</span><strong>${RENDER.esc(texto)}</strong></li>`;
-  }).join('');
-  demoAnterior = r.verificacoes.map(v => v.ok);
-
-  const falhas = r.verificacoes.map((v, i) => (v.ok ? null : nomes[i].toLowerCase())).filter(Boolean);
-  soma.className = `demo__sum ${falhas.length ? 'is-bad' : 'is-ok'}`;
-  soma.textContent = falhas.length ? d['demo.someBad'].replace('{n}', falhas.join(', ')) : d['demo.allOk'];
-}
-
-function initDemo(){
-  const input = $('#demoLinha');
-  if (!input) return;
-  input.addEventListener('input', confereDemo);
-  $('#demoReset').addEventListener('click', () => { input.value = DEMO_ORIGINAL; confereDemo(); input.focus(); });
-  confereDemo();
-}
-
-/* Carimbo dos projetos: bate quando a grade aparece na tela */
-function initStamps(){
-  const grid = $('#projGrid');
-  if (!grid || REDUCED || !('IntersectionObserver' in window)) return;
-  grid.classList.add('is-waiting');
-  const io = new IntersectionObserver(([e]) => {
-    if (!e.isIntersecting) return;
-    grid.classList.replace('is-waiting', 'is-seen');
-    io.disconnect();
-  }, { threshold:.35 });
-  io.observe(grid);
 }
 
 /* Menu mobile */
@@ -443,7 +357,7 @@ function initMenu(){
   burger.addEventListener('click', () => set(!open));
   $$('a', menu).forEach(a => a.addEventListener('click', () => set(false)));
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && open) set(false); });
-  window.addEventListener('resize', () => { if (open && window.innerWidth > 1080) set(false); });
+  window.addEventListener('resize', () => { if (open && window.innerWidth > 860) set(false); });
 }
 
 /*
@@ -478,7 +392,6 @@ function initForm(){
   const send   = $('#formSend');
 
   const diz = (chave, tipo) => {
-    delete status.dataset.stamp;
     status.textContent = I18N[lang][chave];
     status.className = `form__status is-${tipo}`;
   };
@@ -519,7 +432,6 @@ function initForm(){
       if (r.ok && j.success !== false) {
         f.reset();
         diz('form.ok', 'ok');
-        status.dataset.stamp = I18N[lang]['form.stamp'];   // o carimbo do comprovante
       }
       else diz('form.err', 'err');
     } catch {
@@ -547,10 +459,6 @@ function boot(){
     if (e.key === 'ArrowLeft') stepLbox(-1);
     if (e.key === 'ArrowRight') stepLbox(1);
   });
-
-  initBoleto();
-  initDemo();
-  initStamps();
   initNav();
   initMenu();
   initForm();

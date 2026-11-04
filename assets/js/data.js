@@ -246,13 +246,14 @@ const GITHUB_USER = 'MatheusMorais1234';
 
 /*
    4.5 PROJETOS — o que fiz por conta propria e esta no ar.
-   img: print 16:10 ou mais largo; o card corta pelo canto superior
-   esquerdo. live: repositorio cuja data do ultimo commit aparece no card.
+   video: nome dos arquivos em assets/video/projetos/ (<nome>.mp4, <nome>-m.mp4 e <nome>.jpg).
+   img: print 16:10 ou mais largo; aparece embaixo do vídeo, enquanto ele não carrega. live: repositorio cuja data do ultimo commit aparece no card.
    links[0] e o botao principal.
    */
 const PROJECTS = [
   {
     name:'Shopilot',
+    video:'shopilot',
     img:'assets/img/projetos/shopilot.jpg',
     alt:{ pt:'Página do Shopilot com o título "Entenda o que faz seus vídeos do TikTok engajarem e venderem" e um painel de exemplo com seguidores, views e a sugestão da IA',
           en:'Shopilot page with the headline "Understand what makes your TikTok videos engage and sell" and a sample dashboard with followers, views and the AI suggestion' },
@@ -268,6 +269,7 @@ const PROJECTS = [
   },
   {
     name:'StudioSports',
+    video:'studiosports',
     img:'assets/img/projetos/studiosports.jpg',
     alt:{ pt:'Página de eventos da StudioSports com cards de provas de ciclismo, data, horário e cidade',
           en:'StudioSports events page with cycling race cards showing date, time and city' },
@@ -283,6 +285,7 @@ const PROJECTS = [
   },
   {
     name:'FreelaManager',
+    video:'freelamanager',
     img:'assets/img/projetos/freelamanager.jpg',
     alt:{ pt:'Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento',
           en:'FreelaManager dashboard with clients, contracts, receivables and a revenue chart' },
@@ -300,9 +303,10 @@ const PROJECTS = [
   },
   {
     name:'Bella Napoli',
+    video:'pizzaria',
     img:'assets/img/projetos/pizzaria.jpg',
-    alt:{ pt:'Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos',
-          en:'Pizzeria dashboard with orders in a kanban: new, in progress, out for delivery and done' },
+    alt:{ pt:'Cardápio da pizzaria com pizzas, preços e botão para adicionar ao carrinho',
+          en:'Pizzeria menu with pizzas, prices and an add-to-cart button' },
     kicker:{ pt:'PHP · código aberto', en:'PHP · open source' },
     tagline:{ pt:'Delivery para pizzaria, do cardápio ao kanban',
               en:'Pizzeria delivery, from menu to kanban' },
@@ -317,9 +321,10 @@ const PROJECTS = [
   },
   {
     name:'VitaGesta',
+    video:'vitagesta',
     img:'assets/img/projetos/vitagesta.jpg',
-    alt:{ pt:'Painel da nutricionista no VitaGesta com pacientes que precisam de atenção, próximas consultas e pedidos aguardando resposta',
-          en:'VitaGesta nutritionist dashboard with patients needing attention, upcoming appointments and pending requests' },
+    alt:{ pt:'Página do VitaGesta com o que a gestante e a nutricionista encontram em cada área',
+          en:'VitaGesta page showing what the patient and the nutritionist find in each area' },
     kicker:{ pt:'Trabalho acadêmico · código aberto', en:'Academic project · open source' },
     tagline:{ pt:'Ganho de peso na gestação, com nutricionista',
               en:'Pregnancy weight gain, with a nutritionist' },
@@ -334,6 +339,8 @@ const PROJECTS = [
   },
   {
     name:'HipocratIA',
+    video:'hipocratia',
+    footage:{ pt:'maquete com números de exemplo', en:'mock-up with sample numbers' },
     img:'assets/img/projetos/hipocratia.jpg',
     alt:{ pt:'Página inicial da HipocratIA com uma questão de legislação comentada pela IA',
           en:'HipocratIA landing page with a health-law question explained by AI' },

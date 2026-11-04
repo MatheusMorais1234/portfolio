@@ -7,3 +7,6 @@ Thumbs.db
 
 # Configuração local do Claude Code
 .claude/
+
+# Capturas e arquivos de trabalho da revisão de design
+.impeccable/

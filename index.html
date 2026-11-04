@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="docTitle">Matheus Morais — Desenvolvedor Full-Stack</title>
+<title id="docTitle">Matheus Morais — Desenvolvedor Full-Stack Júnior</title>
 <meta name="description" id="docDesc" content="Desenvolvedor full-stack júnior em Goiânia. Sistemas de gestão, dashboards financeiros e integrações de pagamento em produção desde 2023, com PHP, TypeScript, React e Next.js.">
 <meta name="author" content="Matheus Renato Arantes de Morais">
 <link rel="canonical" id="docCanonical" href="https://matheusmorais.com/">
@@ -15,25 +15,27 @@
 
 <meta property="og:type" content="website">
 <meta property="og:url" id="ogUrl" content="https://matheusmorais.com/">
-<meta property="og:title" id="ogTitle" content="Matheus Morais — Desenvolvedor Full-Stack">
+<meta property="og:title" id="ogTitle" content="Matheus Morais — Desenvolvedor Full-Stack Júnior">
 <meta property="og:description" id="ogDesc" content="Desenvolvedor full-stack júnior em Goiânia. Sistemas de gestão, relatórios financeiros e integrações bancárias em produção desde 2023.">
 <meta property="og:image" content="https://matheusmorais.com/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Matheus Morais — Desenvolvedor Full-Stack">
+<meta property="og:image:alt" content="Matheus Morais — Desenvolvedor Full-Stack Júnior">
 <meta property="og:locale" id="ogLocale" content="pt_BR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="Matheus Morais">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0d1b17">
+<meta name="theme-color" content="#050505">
+<meta name="color-scheme" content="dark">
 
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/schibsted-grotesk-latin.woff2">
-<link rel="stylesheet" href="assets/css/fonts.css?v=20261028">
-<link rel="stylesheet" href="assets/css/style.css?v=20261028">
-<script src="assets/js/theme.js?v=20261028"></script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/big-shoulders-latin.woff2">
+<link rel="stylesheet" href="assets/css/cinema.css?v=20261104">
+<link rel="stylesheet" href="assets/css/cinema-motion.css?v=20261104">
+<!-- A política de segurança do .htaccess bloqueia script em linha: a marca .js vem deste arquivo. -->
+<script src="assets/js/cinema-head.js?v=20261104"></script>
 
 <script type="application/ld+json">
 {
@@ -41,7 +43,7 @@
   "@type": "Person",
   "name": "Matheus Renato Arantes de Morais",
   "alternateName": "Matheus Morais",
-  "jobTitle": "Desenvolvedor Full-Stack",
+  "jobTitle": "Desenvolvedor Full-Stack Júnior",
   "url": "https://matheusmorais.com/",
   "email": "matheusrenatoam@gmail.com",
   "address": { "@type": "PostalAddress", "addressLocality": "Goiânia", "addressRegion": "GO", "addressCountry": "BR" },
@@ -55,48 +57,36 @@
 
 <a class="skip" href="#main" data-i18n="skip">Pular para o conteúdo</a>
 
-<!-- Nav -->
-<header class="nav" id="nav">
-  <div class="wrap nav__in">
-    <a href="#top" class="nav__brand" translate="no">Matheus Morais</a>
+<!-- Tarja superior: a navegação do filme -->
+<header class="bar bar--top" id="nav">
+  <a href="#top" class="bar__brand" translate="no">Matheus Morais</a>
 
-    <nav class="nav__links" aria-label="Seções">
-      <a href="#sobre" data-i18n="nav.about">Sobre</a>
-      <a href="#experiencia" data-i18n="nav.path">Experiência</a>
-      <a href="#sistemas" data-i18n="nav.systems">Sistemas</a>
-      <a href="#projetos" data-i18n="nav.work">Projetos</a>
-      <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
-      <!--g:navServices--><!--/g:navServices-->
-      <a href="#tecnologias" data-i18n="nav.stack">Tecnologias</a>
-      <a href="#certificados" data-i18n="nav.certs">Certificados</a>
-      <a href="#contato" data-i18n="nav.cta">Contato</a>
-    </nav>
+  <nav class="bar__links" aria-label="Seções">
+    <a href="#projetos" data-i18n="nav.work">Projetos</a>
+    <a href="#experiencia" data-i18n="nav.path">Experiência</a>
+    <a href="#tecnologias" data-i18n="nav.stack">Tecnologias</a>
+    <!--g:navServices--><!--/g:navServices-->
+    <a href="#contato" data-i18n="nav.cta">Contato</a>
+  </nav>
 
-    <div class="nav__right">
-      <button class="theme" type="button" aria-pressed="false" aria-label="Tema claro" data-i18n-label="theme.light"><svg class="theme__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><svg class="theme__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-      <button class="lang" id="langToggle" type="button" aria-label="Trocar idioma / Switch language">
-        <span class="lang__opt is-on" data-lang="pt">PT</span>
-        <span class="lang__opt" data-lang="en">EN</span>
-      </button>
-      <a class="btn btn--sm btn--solid js-cv nav__cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="nav.cv">Currículo</a>
-      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
-        <i aria-hidden="true"></i><i aria-hidden="true"></i>
-      </button>
-    </div>
+  <div class="bar__right">
+    <button class="lang" id="langToggle" type="button" aria-label="Trocar idioma / Switch language">
+      <span class="lang__opt is-on" data-lang="pt">PT</span>
+      <span class="lang__opt" data-lang="en">EN</span>
+    </button>
+    <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+      <i aria-hidden="true"></i><i aria-hidden="true"></i>
+    </button>
   </div>
 </header>
 
 <!-- Menu mobile -->
 <div class="menu" id="menu" hidden>
   <nav class="menu__links" aria-label="Seções (menu)">
-    <a href="#sobre" data-i18n="nav.about">Sobre</a>
-    <a href="#experiencia" data-i18n="nav.path">Experiência</a>
-    <a href="#sistemas" data-i18n="nav.systems">Sistemas</a>
     <a href="#projetos" data-i18n="nav.work">Projetos</a>
-    <a href="#ferramentas" data-i18n="nav.tools">Ferramentas</a>
-    <!--g:menuServices--><!--/g:menuServices-->
+    <a href="#experiencia" data-i18n="nav.path">Experiência</a>
     <a href="#tecnologias" data-i18n="nav.stack">Tecnologias</a>
-    <a href="#certificados" data-i18n="nav.certs">Certificados</a>
+    <!--g:menuServices--><!--/g:menuServices-->
     <a href="#contato" data-i18n="nav.cta">Contato</a>
   </nav>
   <a class="btn btn--solid js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
@@ -104,466 +94,497 @@
 
 <main id="main">
 
-<!-- Hero -->
-<section class="hero" id="top">
-  <div class="wrap hero__grid">
-    <div class="hero__text">
-      <p class="hero__status"><span class="hero__dot" aria-hidden="true"></span><span data-i18n="hero.status">Procurando vaga de dev júnior</span></p>
-      <h1 class="hero__title" data-i18n="hero.title">Sistemas de gestão, relatórios financeiros e integrações bancárias em produção desde 2023.</h1>
-      <p class="hero__lede" data-i18n="hero.lede">Sou Matheus Morais, desenvolvedor full-stack em Goiânia. Na ASSEGO, criei e mantive os sistemas de gestão usados por mais de 100 funcionários e o aplicativo de cerca de 9 mil associados, com cobrança integrada ao Sicoob e ao Itaú.</p>
-      <div class="hero__cta">
-        <a class="btn btn--solid" href="#contato" data-i18n="hero.ctaPrimary">Entrar em contato</a>
-        <a class="btn btn--line js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.ctaSecondary">Baixar currículo (PDF)</a>
-        <p class="hero__social">
-          <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">LinkedIn</a>
-        </p>
-      </div>
-    </div>
+<!-- Abertura -->
+<section class="open" id="top">
+  <video class="open__video" muted playsinline loop preload="metadata" aria-hidden="true" poster="assets/video/abertura.jpg" data-src="assets/video/abertura.mp4" data-src-m="assets/video/abertura-m.mp4"></video>
 
-    <figure class="hero__photo">
-      <img src="assets/img/matheus.jpeg" alt="Matheus Renato Arantes de Morais" width="720" height="1280" fetchpriority="high">
-    </figure>
+  <p class="open__over" data-i18n="hero.over">Goiânia apresenta</p>
+  <p class="open__role"><strong data-i18n="hero.role">Dev full-stack júnior</strong> <span data-i18n="hero.sub">Em produção desde 2023. Seis projetos no ar.</span></p>
+  <h1 class="open__title" translate="no"><span class="open__line">Matheus</span> <span class="open__line">Morais</span></h1>
+
+  <div class="bar bar--bottom">
+    <a class="btn btn--solid bar__action" href="#projetos">
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 1.5v13l11-6.5z" fill="currentColor"/></svg>
+      <span data-i18n="hero.ctaPrimary">Assistir aos projetos</span>
+    </a>
+    <p class="bar__status"><span data-i18n="hero.status">Procurando vaga de dev júnior</span>. <span data-i18n="facts.nowV">Imediata, em Goiânia ou remoto</span></p>
+    <p class="bar__end">
+      <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/arantes-matheus" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="hero.cv">Currículo PDF</a>
+    </p>
   </div>
+</section>
 
-  <div class="wrap">
-    <!-- Boleto fictício do Itaú, montado pelo montarBoletoBancario() do
-         pagamentos.js: dígitos válidos, vencimento 02/01/2023 (o primeiro
-         estágio), valor zero e o WhatsApp no campo livre. -->
-    <div class="boleto" id="boleto">
-      <p class="boleto__banco" aria-hidden="true" translate="no">341-7</p>
-      <p class="boleto__linha" id="boletoLinha" translate="no"><span class="sr" data-i18n="boleto.linha">Linha digitável:</span> 34191.09206 23010.166298 92014.463001 1 92180000000000</p>
-      <div class="boleto__foot">
-        <a class="boleto__barras" href="/ferramentas/boleto/?codigo=34191092062301016629892014463001192180000000000" data-i18n-label="boleto.aria" aria-label="Conferir este boleto no validador">
-          <svg viewBox="0 0 405 50" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true"><path d="M0 0h1v50h-1zM2 0h1v50h-1zM4 0h3v50h-3zM8 0h3v50h-3zM12 0h1v50h-1zM16 0h1v50h-1zM18 0h1v50h-1zM22 0h3v50h-3zM26 0h1v50h-1zM30 0h1v50h-1zM32 0h1v50h-1zM36 0h3v50h-3zM40 0h3v50h-3zM44 0h1v50h-1zM48 0h1v50h-1zM50 0h1v50h-1zM54 0h3v50h-3zM58 0h1v50h-1zM62 0h3v50h-3zM66 0h1v50h-1zM68 0h1v50h-1zM70 0h3v50h-3zM76 0h3v50h-3zM80 0h1v50h-1zM82 0h1v50h-1zM86 0h3v50h-3zM92 0h1v50h-1zM94 0h1v50h-1zM96 0h1v50h-1zM98 0h3v50h-3zM104 0h3v50h-3zM110 0h1v50h-1zM112 0h1v50h-1zM114 0h1v50h-1zM116 0h3v50h-3zM122 0h3v50h-3zM128 0h1v50h-1zM130 0h1v50h-1zM132 0h1v50h-1zM134 0h3v50h-3zM140 0h3v50h-3zM146 0h1v50h-1zM148 0h1v50h-1zM150 0h1v50h-1zM152 0h3v50h-3zM158 0h3v50h-3zM164 0h1v50h-1zM166 0h1v50h-1zM170 0h1v50h-1zM172 0h3v50h-3zM176 0h3v50h-3zM180 0h1v50h-1zM184 0h1v50h-1zM186 0h1v50h-1zM190 0h3v50h-3zM194 0h3v50h-3zM200 0h1v50h-1zM202 0h1v50h-1zM204 0h3v50h-3zM208 0h1v50h-1zM212 0h1v50h-1zM216 0h3v50h-3zM220 0h1v50h-1zM224 0h3v50h-3zM230 0h1v50h-1zM232 0h1v50h-1zM234 0h3v50h-3zM238 0h1v50h-1zM242 0h1v50h-1zM244 0h3v50h-3zM248 0h3v50h-3zM252 0h1v50h-1zM256 0h1v50h-1zM260 0h1v50h-1zM262 0h3v50h-3zM266 0h3v50h-3zM270 0h1v50h-1zM274 0h1v50h-1zM276 0h3v50h-3zM282 0h3v50h-3zM288 0h1v50h-1zM290 0h1v50h-1zM292 0h1v50h-1zM294 0h3v50h-3zM300 0h1v50h-1zM302 0h1v50h-1zM306 0h3v50h-3zM310 0h1v50h-1zM312 0h3v50h-3zM318 0h1v50h-1zM320 0h3v50h-3zM324 0h1v50h-1zM328 0h1v50h-1zM332 0h1v50h-1zM334 0h3v50h-3zM338 0h3v50h-3zM342 0h1v50h-1zM346 0h1v50h-1zM348 0h1v50h-1zM350 0h3v50h-3zM356 0h1v50h-1zM358 0h3v50h-3zM364 0h1v50h-1zM368 0h3v50h-3zM374 0h3v50h-3zM378 0h1v50h-1zM380 0h1v50h-1zM382 0h1v50h-1zM384 0h1v50h-1zM386 0h3v50h-3zM392 0h3v50h-3zM398 0h1v50h-1zM400 0h3v50h-3zM404 0h1v50h-1z"/></svg>
-          <span class="boleto__laser" aria-hidden="true"></span>
-        </a>
-        <p class="boleto__nota"><span data-i18n="boleto.nota">Um boleto de exemplo, montado pelo mesmo código das minhas ferramentas de pagamento. Os dígitos verificadores conferem.</span> <a href="/ferramentas/boleto/?codigo=34191092062301016629892014463001192180000000000" data-i18n="boleto.link">Conferir no validador</a></p>
-      </div>
-    </div>
-
-    <dl class="facts">
-      <div><dt data-i18n="facts.now">Disponibilidade</dt><dd data-i18n="facts.nowV">Imediata, em Goiânia ou remoto</dd></div>
-      <div><dt data-i18n="facts.exp">Experiência</dt><dd data-i18n="facts.expV">Desde 2023, em três empresas</dd></div>
-      <div><dt data-i18n="facts.edu">Formação</dt><dd data-i18n="facts.eduV">Análise e Desenvolvimento de Sistemas, Senac Goiás</dd></div>
-      <div><dt data-i18n="facts.lang">Idiomas</dt><dd data-i18n="facts.langV">Português nativo, inglês B2</dd></div>
-    </dl>
-  </div>
+<!-- Projetos: cada um é uma cena -->
+<section class="scenes" id="projetos">
+  <header class="scenes__head">
+    <h2 class="sec__h" data-i18n="proj.h">Projetos</h2>
+    <p class="sec__sub" data-i18n="proj.sub">Um sistema que mantenho para cliente e cinco que construí por conta própria. Todos estão no ar.</p>
+  </header>
+  <ol class="scenes__list" id="projGrid"><!--g:projects-->
+      <li class="scene" data-scene="shopilot">
+        <div class="scene__frame">
+          <img class="scene__still" src="assets/img/projetos/shopilot.jpg" alt="Página do Shopilot com o título &quot;Entenda o que faz seus vídeos do TikTok engajarem e venderem&quot; e um painel de exemplo com seguidores, views e a sugestão da IA" loading="lazy" width="800" height="500">
+          <video class="scene__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/projetos/shopilot.jpg" data-src="assets/video/projetos/shopilot.mp4" data-src-m="assets/video/projetos/shopilot-m.mp4" data-poster-m="assets/video/projetos/shopilot-m.jpg"></video>
+          <div class="scene__credits">
+            <div class="scene__id">
+              <h3 class="scene__name">Shopilot</h3>
+              <p class="scene__kicker">Produto próprio · IA · em testes fechados</p>
+              <p class="scene__tag">Métricas do TikTok explicadas por IA para criadores</p>
+            </div>
+            <div class="scene__text">
+              <p class="scene__desc">SaaS que conecta a conta do TikTok por OAuth, coleta as métricas dos vídeos todo dia e usa IA (Gemini, com saída estruturada) para explicar por que um vídeo performou e o que testar no próximo. Tem fila de análises em segundo plano, assinatura mensal pelo Mercado Pago com webhook assinado, tokens cifrados, cotas por plano e painel administrativo com 2FA.</p>
+              <p class="scene__stack">Python, FastAPI, PostgreSQL, Gemini</p>
+            </div>
+          </div>
+        </div>
+        <div class="scene__slate">
+          <span class="slate__n">Cena 1 de 6</span>
+          <span class="slate__id">shopilot.matheusmorais.com</span>
+          <div class="scene__links"><a class="btn btn--solid" href="https://shopilot.matheusmorais.com" target="_blank" rel="noopener">Visitar o site</a></div>
+          <a class="slate__cv js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf">Currículo PDF</a>
+        </div>
+      </li>
+      <li class="scene" data-scene="studiosports">
+        <div class="scene__frame">
+          <img class="scene__still" src="assets/img/projetos/studiosports.jpg" alt="Página de eventos da StudioSports com cards de provas de ciclismo, data, horário e cidade" loading="lazy" width="800" height="500">
+          <video class="scene__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/projetos/studiosports.jpg" data-src="assets/video/projetos/studiosports.mp4" data-src-m="assets/video/projetos/studiosports-m.mp4" data-poster-m="assets/video/projetos/studiosports-m.jpg"></video>
+          <div class="scene__credits">
+            <div class="scene__id">
+              <h3 class="scene__name">StudioSports</h3>
+              <p class="scene__kicker">Cliente · freelance</p>
+              <p class="scene__tag">Inscrições, PIX e SOS para provas esportivas</p>
+            </div>
+            <div class="scene__text">
+              <p class="scene__desc">Sistema em produção que mantenho para um cliente: inscrição paga por PIX pela API do Itaú, painel do organizador com relatório financeiro e apuração ao vivo, tag SOS com QR Code que avisa os contatos do atleta pelo WhatsApp e classificados de bikes. O código é do cliente.</p>
+              <p class="scene__stack">PHP, MySQL, jQuery, Pix Itaú</p>
+            </div>
+          </div>
+        </div>
+        <div class="scene__slate">
+          <span class="slate__n">Cena 2 de 6</span>
+          <span class="slate__id">studiosports.com.br</span>
+          <div class="scene__links"><a class="btn btn--solid" href="https://www.studiosports.com.br" target="_blank" rel="noopener">Visitar o site</a></div>
+          <a class="slate__cv js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf">Currículo PDF</a>
+        </div>
+      </li>
+      <li class="scene" data-scene="freelamanager">
+        <div class="scene__frame">
+          <img class="scene__still" src="assets/img/projetos/freelamanager.jpg" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" loading="lazy" width="800" height="500">
+          <video class="scene__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/projetos/freelamanager.jpg" data-src="assets/video/projetos/freelamanager.mp4" data-src-m="assets/video/projetos/freelamanager-m.mp4" data-poster-m="assets/video/projetos/freelamanager-m.jpg"></video>
+          <div class="scene__credits">
+            <div class="scene__id">
+              <h3 class="scene__name">FreelaManager</h3>
+              <p class="scene__kicker">Full-stack · código aberto</p>
+              <p class="scene__tag">Clientes, contratos e recebimentos para freelancers</p>
+            </div>
+            <div class="scene__text">
+              <p class="scene__desc">API em Express com JWT, PostgreSQL via Prisma e front em React. 95 testes rodam no CI a cada commit. Tem landing page e conta de demonstração que entra com um clique.</p>
+              <p class="scene__stack">React, Express, PostgreSQL, Prisma</p>
+              <p class="scene__live" data-live="freelamanager"></p>
+            </div>
+          </div>
+        </div>
+        <div class="scene__slate">
+          <span class="slate__n">Cena 3 de 6</span>
+          <span class="slate__id">app.matheusmorais.com</span>
+          <div class="scene__links"><a class="btn btn--solid" href="https://app.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--line" href="https://github.com/MatheusMorais1234/freelamanager" target="_blank" rel="noopener">Código</a></div>
+          <a class="slate__cv js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf">Currículo PDF</a>
+        </div>
+      </li>
+      <li class="scene" data-scene="pizzaria">
+        <div class="scene__frame">
+          <img class="scene__still" src="assets/img/projetos/pizzaria.jpg" alt="Cardápio da pizzaria com pizzas, preços e botão para adicionar ao carrinho" loading="lazy" width="800" height="500">
+          <video class="scene__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/projetos/pizzaria.jpg" data-src="assets/video/projetos/pizzaria.mp4" data-src-m="assets/video/projetos/pizzaria-m.mp4" data-poster-m="assets/video/projetos/pizzaria-m.jpg"></video>
+          <div class="scene__credits">
+            <div class="scene__id">
+              <h3 class="scene__name">Bella Napoli</h3>
+              <p class="scene__kicker">PHP · código aberto</p>
+              <p class="scene__tag">Delivery para pizzaria, do cardápio ao kanban</p>
+            </div>
+            <div class="scene__text">
+              <p class="scene__desc">Pedido pelo celular com cupom, fidelidade e QR Code de mesa; a pizzaria acompanha tudo num kanban. Antes de publicar, revisei a segurança e corrigi XSS, CSRF e acesso a pedidos de terceiros.</p>
+              <p class="scene__stack">PHP 8, MySQL, JavaScript, Tailwind</p>
+              <p class="scene__live" data-live="pizzaria-delivery"></p>
+            </div>
+          </div>
+        </div>
+        <div class="scene__slate">
+          <span class="slate__n">Cena 4 de 6</span>
+          <span class="slate__id">pizzaria.matheusmorais.com</span>
+          <div class="scene__links"><a class="btn btn--solid" href="https://pizzaria.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--line" href="https://github.com/MatheusMorais1234/pizzaria-delivery" target="_blank" rel="noopener">Código</a></div>
+          <a class="slate__cv js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf">Currículo PDF</a>
+        </div>
+      </li>
+      <li class="scene" data-scene="vitagesta">
+        <div class="scene__frame">
+          <img class="scene__still" src="assets/img/projetos/vitagesta.jpg" alt="Página do VitaGesta com o que a gestante e a nutricionista encontram em cada área" loading="lazy" width="800" height="500">
+          <video class="scene__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/projetos/vitagesta.jpg" data-src="assets/video/projetos/vitagesta.mp4" data-src-m="assets/video/projetos/vitagesta-m.mp4" data-poster-m="assets/video/projetos/vitagesta-m.jpg"></video>
+          <div class="scene__credits">
+            <div class="scene__id">
+              <h3 class="scene__name">VitaGesta</h3>
+              <p class="scene__kicker">Trabalho acadêmico · código aberto</p>
+              <p class="scene__tag">Ganho de peso na gestação, com nutricionista</p>
+            </div>
+            <div class="scene__text">
+              <p class="scene__desc">Calcula o IMC gestacional pela recomendação do IOM e, se o ganho sai da faixa, encaminha a gestante a nutricionistas. Ela registra o peso e recebe o plano alimentar; a nutricionista tem painel, agenda e fichas. Painel ao vivo para a apresentação do grupo.</p>
+              <p class="scene__stack">PHP 8, MySQL, JavaScript, PWA</p>
+              <p class="scene__live" data-live="vita-gesta"></p>
+            </div>
+          </div>
+        </div>
+        <div class="scene__slate">
+          <span class="slate__n">Cena 5 de 6</span>
+          <span class="slate__id">vitagesta.matheusmorais.com</span>
+          <div class="scene__links"><a class="btn btn--solid" href="https://vitagesta.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--line" href="https://github.com/MatheusMorais1234/vita-gesta" target="_blank" rel="noopener">Código</a></div>
+          <a class="slate__cv js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf">Currículo PDF</a>
+        </div>
+      </li>
+      <li class="scene" data-scene="hipocratia">
+        <div class="scene__frame">
+          <img class="scene__still" src="assets/img/projetos/hipocratia.jpg" alt="Página inicial da HipocratIA com uma questão de legislação comentada pela IA" loading="lazy" width="800" height="500">
+          <video class="scene__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/projetos/hipocratia.jpg" data-src="assets/video/projetos/hipocratia.mp4" data-src-m="assets/video/projetos/hipocratia-m.mp4" data-poster-m="assets/video/projetos/hipocratia-m.jpg"></video>
+          <div class="scene__credits">
+            <div class="scene__id">
+              <h3 class="scene__name">HipocratIA</h3>
+              <p class="scene__kicker">Produto próprio · pré-lançamento</p>
+              <p class="scene__tag">Legislação da saúde para concursos, com IA</p>
+            </div>
+            <div class="scene__text">
+              <p class="scene__desc">Questões comentadas por IA, simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas. Está no ar, ainda sem assinantes; o código é privado.</p>
+              <p class="scene__stack">PHP 8.1, MySQL, Claude API, Mercado Pago</p>
+            </div>
+          </div>
+        </div>
+        <div class="scene__slate">
+          <span class="slate__n">Cena 6 de 6</span>
+          <span class="slate__id">hipocratia.com.br · maquete com números de exemplo</span>
+          <div class="scene__links"><a class="btn btn--solid" href="https://hipocratia.com.br" target="_blank" rel="noopener">Visitar o site</a><a class="btn btn--line" href="#contato">Pedir o código</a></div>
+          <a class="slate__cv js-cv" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf">Currículo PDF</a>
+        </div>
+      </li><!--/g:projects--></ol>
+  <p class="scenes__more"><span data-i18n="proj.more">Também há repositórios de estudo de POO e princípios SOLID em Java.</span>
+    <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener" data-i18n="code.profile">Todos os repositórios</a></p>
 </section>
 
 <!-- Sobre -->
-<section class="sec" id="sobre">
-  <div class="wrap sec__grid">
-    <header class="sec__head">
+<section class="sec about" id="sobre">
+  <div class="wrap about__grid">
+    <figure class="about__photo">
+      <img src="assets/img/matheus.jpeg" alt="Matheus Renato Arantes de Morais" width="720" height="1280" loading="lazy">
+    </figure>
+    <div class="about__text">
       <h2 class="sec__h" data-i18n="about.h">Sobre</h2>
-    </header>
-    <div class="sec__body prose">
-      <p class="prose__lead" data-i18n="about.p1">Comecei em 2023 e passei a maior parte desse tempo dentro de sistemas que já existiam: código legado, banco cheio de dado real e usuário esperando do outro lado. Foi assim que aprendi a ler antes de escrever.</p>
-      <p data-i18n="about.p2">Até outubro de 2026 trabalhei na ASSEGO, uma associação com cerca de 9 mil associados, mantendo e criando os sistemas internos usados por mais de 100 funcionários: contratos, financeiro, relatórios, cobrança e o aplicativo dos associados. No último ano lá passei a atuar também em Java corporativo (Java 7/8 em JBoss EAP) e em telas Angular — em nível inicial, mas já entregando manutenção com autonomia. Hoje atendo como freelancer a StudioSports, plataforma de inscrições para provas esportivas, e cuido do sistema inteiro: do pagamento por PIX ao painel do organizador.</p>
-      <p data-i18n="about.p3">Sou formado em Análise e Desenvolvimento de Sistemas pelo Senac Goiás e tenho certificado de inglês nível B2 pelo Centro de Línguas da UFG (480 horas), além de vivência na Alemanha. Procuro uma vaga de desenvolvedor júnior onde eu possa aprofundar essa stack e crescer junto com um time que revisa código.</p>
+      <div class="prose">
+        <p class="prose__lead" data-i18n="about.p1">Comecei em 2023 e passei a maior parte desse tempo dentro de sistemas que já existiam: código legado, banco cheio de dado real e usuário esperando do outro lado. Foi assim que aprendi a ler antes de escrever.</p>
+        <p data-i18n="about.p2">Até outubro de 2026 trabalhei na ASSEGO, uma associação com cerca de 9 mil associados, mantendo e criando os sistemas internos usados por mais de 100 funcionários: contratos, financeiro, relatórios, cobrança e o aplicativo dos associados. No último ano lá passei a atuar também em Java corporativo (Java 7/8 em JBoss EAP) e em telas Angular — em nível inicial, mas já entregando manutenção com autonomia. Hoje atendo como freelancer a StudioSports, plataforma de inscrições para provas esportivas, e cuido do sistema inteiro: do pagamento por PIX ao painel do organizador.</p>
+        <p data-i18n="about.p3">Sou formado em Análise e Desenvolvimento de Sistemas pelo Senac Goiás e tenho certificado de inglês nível B2 pelo Centro de Línguas da UFG (480 horas), além de vivência na Alemanha. Procuro uma vaga de desenvolvedor júnior onde eu possa aprofundar essa stack e crescer junto com um time que revisa código.</p>
+      </div>
+      <dl class="facts">
+        <div><dt data-i18n="facts.now">Disponibilidade</dt><dd data-i18n="facts.nowV">Imediata, em Goiânia ou remoto</dd></div>
+        <div><dt data-i18n="facts.exp">Experiência</dt><dd data-i18n="facts.expV">Desde 2023, em três empresas</dd></div>
+        <div><dt data-i18n="facts.edu">Formação</dt><dd data-i18n="facts.eduV">Análise e Desenvolvimento de Sistemas, Senac Goiás</dd></div>
+        <div><dt data-i18n="facts.lang">Idiomas</dt><dd data-i18n="facts.langV">Português nativo, inglês B2</dd></div>
+      </dl>
     </div>
   </div>
 </section>
 
-<!-- Experiência -->
-<section class="sec" id="experiencia">
-  <div class="wrap sec__grid">
-    <header class="sec__head">
-      <h2 class="sec__h" data-i18n="path.h">Experiência</h2>
-      <p class="sec__sub" data-i18n="path.sub">Do mais recente ao mais antigo.</p>
-    </header>
-    <div class="sec__body">
-      <ol class="xps" id="timeline"><!--g:timeline-->
-      <li class="xp">
-        <p class="xp__when">08/2026 — atual</p>
-        <div class="xp__body">
-          <h3 class="xp__role">Desenvolvedor Full-Stack</h3>
-          <p class="xp__org"><strong>StudioSports</strong> Plataforma de inscrições para provas esportivas (freelance)</p>
-          <ul class="xp__pts"><li>Manutenção e evolução do sistema inteiro em PHP e MySQL: inscrições, lotes de preço, cupons e provas em dupla.</li><li>Pagamento por PIX pela API do Itaú, com conferência automática e histórico de cobranças.</li><li>Avisos automáticos por WhatsApp: recuperação de senha, alerta do SOS Atleta para os contatos de emergência e lembrete do evento.</li><li>Painel do organizador com inscritos, relatório financeiro, PDF do acerto, apuração ao vivo e rastro de acessos com marca d’água.</li><li>Revisão de segurança: controle de acesso em todas as telas administrativas, sessões assinadas e CPF mascarado nas exportações (LGPD).</li></ul>
-          <p class="xp__tags">PHP, MySQL, JavaScript, jQuery, Pix Itaú, WhatsApp, Linux</p>
+<!-- Experiência: os créditos -->
+<section class="roll" id="experiencia">
+  <div class="roll__track">
+  <header class="roll__head">
+    <h2 class="sec__h" data-i18n="path.h">Experiência</h2>
+    <p class="sec__sub" data-i18n="path.sub">Do mais recente ao mais antigo.</p>
+  </header>
+  <ol class="roll__list" id="timeline"><!--g:timeline-->
+      <li class="credit">
+        <div class="credit__side">
+          <p class="credit__when">08/2026 — atual</p>
+          <h3 class="credit__role">Desenvolvedor Full-Stack</h3>
+        </div>
+        <div class="credit__main">
+          <p class="credit__where">StudioSports</p>
+          <p class="credit__org">Plataforma de inscrições para provas esportivas (freelance)</p>
+          <ul class="credit__pts"><li>Manutenção e evolução do sistema inteiro em PHP e MySQL: inscrições, lotes de preço, cupons e provas em dupla.</li><li>Pagamento por PIX pela API do Itaú, com conferência automática e histórico de cobranças.</li><li>Avisos automáticos por WhatsApp: recuperação de senha, alerta do SOS Atleta para os contatos de emergência e lembrete do evento.</li><li>Painel do organizador com inscritos, relatório financeiro, PDF do acerto, apuração ao vivo e rastro de acessos com marca d’água.</li><li>Revisão de segurança: controle de acesso em todas as telas administrativas, sessões assinadas e CPF mascarado nas exportações (LGPD).</li></ul>
+          <p class="credit__tags">PHP, MySQL, JavaScript, jQuery, Pix Itaú, WhatsApp, Linux</p>
         </div>
       </li>
-      <li class="xp">
-        <p class="xp__when">01/2025 — 10/2026</p>
-        <div class="xp__body">
-          <h3 class="xp__role">Estagiário de Desenvolvimento</h3>
-          <p class="xp__org"><strong>ASSEGO</strong> Associação dos Subtenentes e Sargentos do Estado de Goiás</p>
-          <ul class="xp__pts"><li>Sistema de gestão de contratos com fluxo de aprovação, geração de PDF e histórico de alterações.</li><li>Sistemas de gestão, dashboards e relatórios usados por mais de 100 funcionários do administrativo e do financeiro, com filtros e exportação em PDF/Excel.</li><li>Integração com as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, retorno de pagamentos e rotinas de cobrança.</li><li>PWA usado por cerca de 9 mil associados, com foco em responsividade e uso no celular.</li><li>Manutenção em aplicações Java 7/8 em JBoss EAP 6 e 7 e correções em telas Angular.</li><li>Modelagem MySQL/PostgreSQL, versionamento com Git e deploy em Linux.</li></ul>
-          <p class="xp__tags">PHP, TypeScript, React, Next.js, MySQL, PostgreSQL, Java, JBoss, Docker, Linux</p>
+      <li class="credit">
+        <div class="credit__side">
+          <p class="credit__when">01/2025 — 10/2026</p>
+          <h3 class="credit__role">Estagiário de Desenvolvimento</h3>
+        </div>
+        <div class="credit__main">
+          <p class="credit__where">ASSEGO</p>
+          <p class="credit__org">Associação dos Subtenentes e Sargentos do Estado de Goiás</p>
+          <ul class="credit__pts"><li>Sistema de gestão de contratos com fluxo de aprovação, geração de PDF e histórico de alterações.</li><li>Sistemas de gestão, dashboards e relatórios usados por mais de 100 funcionários do administrativo e do financeiro, com filtros e exportação em PDF/Excel.</li><li>Integração com as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, retorno de pagamentos e rotinas de cobrança.</li><li>PWA usado por cerca de 9 mil associados, com foco em responsividade e uso no celular.</li><li>Manutenção em aplicações Java 7/8 em JBoss EAP 6 e 7 e correções em telas Angular.</li><li>Modelagem MySQL/PostgreSQL, versionamento com Git e deploy em Linux.</li></ul>
+          <p class="credit__tags">PHP, TypeScript, React, Next.js, MySQL, PostgreSQL, Java, JBoss, Docker, Linux</p>
         </div>
       </li>
-      <li class="xp">
-        <p class="xp__when">07/2023 — 04/2024</p>
-        <div class="xp__body">
-          <h3 class="xp__role">Estagiário de Desenvolvimento</h3>
-          <p class="xp__org"><strong>JHON CODE</strong> Agência de desenvolvimento web</p>
-          <ul class="xp__pts"><li>Sistemas web sob medida para diversos clientes, do banco ao front.</li><li>Painéis administrativos para que o cliente gerenciasse o próprio conteúdo sem depender de dev.</li><li>Autenticação segura: hash de senha, sessões e controle de acesso por perfil.</li><li>Modelagem de banco e diagramas de sistema antes de escrever código.</li></ul>
-          <p class="xp__tags">PHP, JavaScript, HTML, CSS, MySQL, APIs REST</p>
+      <li class="credit">
+        <div class="credit__side">
+          <p class="credit__when">07/2023 — 04/2024</p>
+          <h3 class="credit__role">Estagiário de Desenvolvimento</h3>
+        </div>
+        <div class="credit__main">
+          <p class="credit__where">JHON CODE</p>
+          <p class="credit__org">Agência de desenvolvimento web</p>
+          <ul class="credit__pts"><li>Sistemas web sob medida para diversos clientes, do banco ao front.</li><li>Painéis administrativos para que o cliente gerenciasse o próprio conteúdo sem depender de dev.</li><li>Autenticação segura: hash de senha, sessões e controle de acesso por perfil.</li><li>Modelagem de banco e diagramas de sistema antes de escrever código.</li></ul>
+          <p class="credit__tags">PHP, JavaScript, HTML, CSS, MySQL, APIs REST</p>
         </div>
       </li>
-      <li class="xp">
-        <p class="xp__when">01/2023 — 06/2023</p>
-        <div class="xp__body">
-          <h3 class="xp__role">Estagiário de Desenvolvimento</h3>
-          <p class="xp__org"><strong>FIO GUIA</strong> Controle financeiro para médicos</p>
-          <ul class="xp__pts"><li>Primeiro contato profissional com desenvolvimento, em produto financeiro real.</li><li>SQL, Flutter e integração de APIs no aplicativo dos clientes.</li><li>Fluxos de automação de conversas no WhatsApp com Manychat.</li></ul>
-          <p class="xp__tags">SQL, Flutter, APIs, Manychat</p>
+      <li class="credit">
+        <div class="credit__side">
+          <p class="credit__when">01/2023 — 06/2023</p>
+          <h3 class="credit__role">Estagiário de Desenvolvimento</h3>
+        </div>
+        <div class="credit__main">
+          <p class="credit__where">FIO GUIA</p>
+          <p class="credit__org">Controle financeiro para médicos</p>
+          <ul class="credit__pts"><li>Primeiro contato profissional com desenvolvimento, em produto financeiro real.</li><li>SQL, Flutter e integração de APIs no aplicativo dos clientes.</li><li>Fluxos de automação de conversas no WhatsApp com Manychat.</li></ul>
+          <p class="credit__tags">SQL, Flutter, APIs, Manychat</p>
         </div>
       </li>
-      <li class="xp">
-        <p class="xp__when">01/2023 — 06/2025</p>
-        <div class="xp__body">
-          <h3 class="xp__role">Análise e Desenvolvimento de Sistemas</h3>
-          <p class="xp__org"><strong>Faculdade Senac Goiás</strong> Formação concluída</p>
-          <ul class="xp__pts"><li>Engenharia de software, qualidade de software, banco de dados e metodologias ágeis.</li></ul>
-          <p class="xp__tags">Scrum, Engenharia de Software, Qualidade de Software</p>
+      <li class="credit">
+        <div class="credit__side">
+          <p class="credit__when">01/2023 — 06/2025</p>
+          <h3 class="credit__role">Análise e Desenvolvimento de Sistemas</h3>
+        </div>
+        <div class="credit__main">
+          <p class="credit__where">Faculdade Senac Goiás</p>
+          <p class="credit__org">Formação concluída</p>
+          <ul class="credit__pts"><li>Engenharia de software, qualidade de software, banco de dados e metodologias ágeis.</li></ul>
+          <p class="credit__tags">Scrum, Engenharia de Software, Qualidade de Software</p>
         </div>
       </li>
-      <li class="xp">
-        <p class="xp__when">Concluído em 2026</p>
-        <div class="xp__body">
-          <h3 class="xp__role">Inglês, nível B2</h3>
-          <p class="xp__org"><strong>UFG</strong> Centro de Línguas da Universidade Federal de Goiás</p>
-          <ul class="xp__pts"><li>480 horas, nível B2 do Quadro Comum Europeu.</li><li>Vivência na Alemanha.</li></ul>
+      <li class="credit">
+        <div class="credit__side">
+          <p class="credit__when">Concluído em 2026</p>
+          <h3 class="credit__role">Inglês, nível B2</h3>
+        </div>
+        <div class="credit__main">
+          <p class="credit__where">UFG</p>
+          <p class="credit__org">Centro de Línguas da Universidade Federal de Goiás</p>
+          <ul class="credit__pts"><li>480 horas, nível B2 do Quadro Comum Europeu.</li><li>Vivência na Alemanha.</li></ul>
         </div>
       </li><!--/g:timeline--></ol>
-    </div>
   </div>
 </section>
 
-<!-- Sistemas em produção (trabalho) -->
-<section class="sec" id="sistemas">
-  <div class="wrap sec__grid">
+<!-- Sistemas internos: a cena sem imagens -->
+<section class="sec systems" id="sistemas">
+  <div class="wrap systems__grid">
     <header class="sec__head">
       <h2 class="sec__h" data-i18n="work.h">Sistemas em produção</h2>
-      <p class="sec__sub" data-i18n="work.sub">São sistemas internos, então não há link público. Aqui está o problema que cada um resolve e com o que foi feito.</p>
+      <p class="sec__sub" data-i18n="work.sub">Esta cena não tem imagens: são sistemas internos, então não há link público. Aqui está o problema que cada um resolve e com o que foi feito.</p>
     </header>
-    <div class="sec__body">
-      <ul class="projs" id="workGrid"><!--g:work-->
-      <li class="proj">
-        <h3 class="proj__h">Gestão de contratos</h3>
-        <p class="proj__p">Cadastro, fluxo de aprovação em etapas, geração de documento em PDF e histórico completo de alterações. Substituiu um processo que vivia em planilha e e-mail.</p>
-        <p class="proj__stack">PHP, MySQL, JavaScript, PDF</p>
+    <ul class="systems__list" id="workGrid"><!--g:work-->
+      <li class="system">
+        <h3 class="system__h">Gestão de contratos</h3>
+        <p class="system__p">Cadastro, fluxo de aprovação em etapas, geração de documento em PDF e histórico completo de alterações. Substituiu um processo que vivia em planilha e e-mail.</p>
+        <p class="system__stack">PHP, MySQL, JavaScript, PDF</p>
       </li>
-      <li class="proj">
-        <h3 class="proj__h">Dashboards gerenciais</h3>
-        <p class="proj__p">Relatórios para o administrativo e o financeiro com filtros combinados e exportação em PDF e Excel — o que antes exigia pedir número para o TI.</p>
-        <p class="proj__stack">React, TypeScript, PostgreSQL</p>
+      <li class="system">
+        <h3 class="system__h">Dashboards gerenciais</h3>
+        <p class="system__p">Relatórios para o administrativo e o financeiro com filtros combinados e exportação em PDF e Excel — o que antes exigia pedir número para o TI.</p>
+        <p class="system__stack">React, TypeScript, PostgreSQL</p>
       </li>
-      <li class="proj">
-        <h3 class="proj__h">Integração Sicoob e Itaú</h3>
-        <p class="proj__p">Emissão de boletos, leitura do retorno de pagamento e rotinas automáticas de cobrança. A parte do sistema que não pode errar valor nem data.</p>
-        <p class="proj__stack">PHP, APIs REST, Webhooks, MySQL</p>
+      <li class="system">
+        <h3 class="system__h">Integração Sicoob e Itaú</h3>
+        <p class="system__p">Emissão de boletos, leitura do retorno de pagamento e rotinas automáticas de cobrança. A parte do sistema que não pode errar valor nem data.</p>
+        <p class="system__stack">PHP, APIs REST, Webhooks, MySQL</p>
       </li>
-      <li class="proj">
-        <h3 class="proj__h">PWA do associado</h3>
-        <p class="proj__p">Aplicativo instalável usado por cerca de 9 mil associados para acessar seus dados pelo celular, com layout pensado primeiro para tela pequena.</p>
-        <p class="proj__stack">Next.js, TypeScript, PWA</p>
+      <li class="system">
+        <h3 class="system__h">PWA do associado</h3>
+        <p class="system__p">Aplicativo instalável usado por cerca de 9 mil associados para acessar seus dados pelo celular, com layout pensado primeiro para tela pequena.</p>
+        <p class="system__stack">Next.js, TypeScript, PWA</p>
       </li>
-      <li class="proj">
-        <h3 class="proj__h">Automação de rotinas internas</h3>
-        <p class="proj__p">Importação de arquivos, geração de relatórios agendada e disparo de e-mail com PHPMailer. Horas de trabalho manual por mês que deixaram de existir.</p>
-        <p class="proj__stack">PHP, Cron, PHPMailer, Linux</p>
+      <li class="system">
+        <h3 class="system__h">Automação de rotinas internas</h3>
+        <p class="system__p">Importação de arquivos, geração de relatórios agendada e disparo de e-mail com PHPMailer. Horas de trabalho manual por mês que deixaram de existir.</p>
+        <p class="system__stack">PHP, Cron, PHPMailer, Linux</p>
       </li>
-      <li class="proj">
-        <h3 class="proj__h">Manutenção de legado Java</h3>
-        <p class="proj__p">Deploy de WAR, ajuste de datasource e investigação de erro por log em Java 7/8 sobre JBoss EAP 6 e 7, além de correções em telas Angular.</p>
-        <p class="proj__stack">Java 7/8, JBoss EAP, Angular</p>
+      <li class="system">
+        <h3 class="system__h">Manutenção de legado Java</h3>
+        <p class="system__p">Deploy de WAR, ajuste de datasource e investigação de erro por log em Java 7/8 sobre JBoss EAP 6 e 7, além de correções em telas Angular.</p>
+        <p class="system__stack">Java 7/8, JBoss EAP, Angular</p>
       </li><!--/g:work--></ul>
-
-    </div>
   </div>
-</section>
-
-<!-- Projetos -->
-<section class="sec sec--projects" id="projetos">
-  <div class="wrap">
-    <header class="phead">
-      <h2 class="sec__h" data-i18n="proj.h">Projetos</h2>
-      <p class="sec__sub" data-i18n="proj.sub">Um sistema que mantenho para cliente e cinco que construí por conta própria. Todos estão no ar.</p>
-    </header>
-    <ul class="pgrid" id="projGrid"><!--g:projects-->
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/shopilot.jpg" alt="Página do Shopilot com o título &quot;Entenda o que faz seus vídeos do TikTok engajarem e venderem&quot; e um painel de exemplo com seguidores, views e a sugestão da IA" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Produto próprio · IA · em testes fechados</p>
-          <h3 class="pcard__name">Shopilot</h3>
-          <p class="pcard__tag">Métricas do TikTok explicadas por IA para criadores</p>
-          <p class="pcard__desc">SaaS que conecta a conta do TikTok por OAuth, coleta as métricas dos vídeos todo dia e usa IA (Gemini, com saída estruturada) para explicar por que um vídeo performou e o que testar no próximo. Tem fila de análises em segundo plano, assinatura mensal pelo Mercado Pago com webhook assinado, tokens cifrados, cotas por plano e painel administrativo com 2FA.</p>
-          <ul class="pcard__stack"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Gemini</li></ul>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://shopilot.matheusmorais.com" target="_blank" rel="noopener">Visitar o site</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/studiosports.jpg" alt="Página de eventos da StudioSports com cards de provas de ciclismo, data, horário e cidade" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Cliente · freelance</p>
-          <h3 class="pcard__name">StudioSports</h3>
-          <p class="pcard__tag">Inscrições, PIX e SOS para provas esportivas</p>
-          <p class="pcard__desc">Sistema em produção que mantenho para um cliente: inscrição paga por PIX pela API do Itaú, painel do organizador com relatório financeiro e apuração ao vivo, tag SOS com QR Code que avisa os contatos do atleta pelo WhatsApp e classificados de bikes. O código é do cliente.</p>
-          <ul class="pcard__stack"><li>PHP</li><li>MySQL</li><li>jQuery</li><li>Pix Itaú</li></ul>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://www.studiosports.com.br" target="_blank" rel="noopener">Visitar o site</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/freelamanager.jpg" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Full-stack · código aberto</p>
-          <h3 class="pcard__name">FreelaManager</h3>
-          <p class="pcard__tag">Clientes, contratos e recebimentos para freelancers</p>
-          <p class="pcard__desc">API em Express com JWT, PostgreSQL via Prisma e front em React. 95 testes rodam no CI a cada commit. Tem landing page e conta de demonstração que entra com um clique.</p>
-          <ul class="pcard__stack"><li>React</li><li>Express</li><li>PostgreSQL</li><li>Prisma</li></ul>
-          <p class="pcard__live" data-live="freelamanager"></p>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://app.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/freelamanager" target="_blank" rel="noopener">Código</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/pizzaria.jpg" alt="Painel da pizzaria com os pedidos em kanban: novos, em andamento, saiu para entrega e concluídos" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">PHP · código aberto</p>
-          <h3 class="pcard__name">Bella Napoli</h3>
-          <p class="pcard__tag">Delivery para pizzaria, do cardápio ao kanban</p>
-          <p class="pcard__desc">Pedido pelo celular com cupom, fidelidade e QR Code de mesa; a pizzaria acompanha tudo num kanban. Antes de publicar, revisei a segurança e corrigi XSS, CSRF e acesso a pedidos de terceiros.</p>
-          <ul class="pcard__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>Tailwind</li></ul>
-          <p class="pcard__live" data-live="pizzaria-delivery"></p>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://pizzaria.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/pizzaria-delivery" target="_blank" rel="noopener">Código</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/vitagesta.jpg" alt="Painel da nutricionista no VitaGesta com pacientes que precisam de atenção, próximas consultas e pedidos aguardando resposta" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Trabalho acadêmico · código aberto</p>
-          <h3 class="pcard__name">VitaGesta</h3>
-          <p class="pcard__tag">Ganho de peso na gestação, com nutricionista</p>
-          <p class="pcard__desc">Calcula o IMC gestacional pela recomendação do IOM e, se o ganho sai da faixa, encaminha a gestante a nutricionistas. Ela registra o peso e recebe o plano alimentar; a nutricionista tem painel, agenda e fichas. Painel ao vivo para a apresentação do grupo.</p>
-          <ul class="pcard__stack"><li>PHP 8</li><li>MySQL</li><li>JavaScript</li><li>PWA</li></ul>
-          <p class="pcard__live" data-live="vita-gesta"></p>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://vitagesta.matheusmorais.com" target="_blank" rel="noopener">Abrir a demo</a><a class="btn btn--sm btn--line" href="https://github.com/MatheusMorais1234/vita-gesta" target="_blank" rel="noopener">Código</a></div>
-        </div>
-      </li>
-      <li class="pcard">
-        <figure class="pcard__shot"><img src="assets/img/projetos/hipocratia.jpg" alt="Página inicial da HipocratIA com uma questão de legislação comentada pela IA" loading="lazy" width="800" height="500"><span class="pcard__stamp" aria-hidden="true">No ar</span></figure>
-        <div class="pcard__body">
-          <p class="pcard__kicker">Produto próprio · pré-lançamento</p>
-          <h3 class="pcard__name">HipocratIA</h3>
-          <p class="pcard__tag">Legislação da saúde para concursos, com IA</p>
-          <p class="pcard__desc">Questões comentadas por IA, simulados e assinatura pelo Mercado Pago, sobre um MVC próprio em PHP 8.1 com cerca de 30 mil linhas. Está no ar, ainda sem assinantes; o código é privado.</p>
-          <ul class="pcard__stack"><li>PHP 8.1</li><li>MySQL</li><li>Claude API</li><li>Mercado Pago</li></ul>
-          <div class="pcard__links"><a class="btn btn--sm btn--solid" href="https://hipocratia.com.br" target="_blank" rel="noopener">Visitar o site</a><a class="btn btn--sm btn--line" href="#contato">Pedir o código</a></div>
-        </div>
-      </li><!--/g:projects--></ul>
-    <p class="pmore"><span data-i18n="proj.more">Também há repositórios de estudo de POO e princípios SOLID em Java.</span>
-      <a href="https://github.com/MatheusMorais1234" target="_blank" rel="noopener" data-i18n="code.profile">Todos os repositórios</a></p>
-  </div>
+  <p class="systems__slate"><span data-i18n="work.slate">Cena sem filmagem</span><span data-i18n="work.slate2">Sistemas internos, sem link público</span></p>
 </section>
 
 <!-- Ferramentas -->
-<section class="sec" id="ferramentas">
-  <div class="wrap sec__grid">
+<section class="sec tools" id="ferramentas">
+  <div class="wrap">
     <header class="sec__head">
       <h2 class="sec__h" data-i18n="tools.h">Ferramentas</h2>
       <p class="sec__sub" data-i18n="tools.sub">Utilitários de pagamento que qualquer pessoa pode usar. Rodam no navegador, sem enviar dados, com as mesmas regras das integrações bancárias que faço no trabalho.</p>
     </header>
-    <div class="sec__body">
-      <!-- bancada: a linha do boleto do hero, editável. O main.js confere
-           os dígitos com o mesmo pagamentos.js das ferramentas. -->
-      <div class="demo" id="demo">
-        <label class="demo__label" for="demoLinha" data-i18n="demo.label">Troque qualquer número da linha do boleto lá de cima e veja qual dígito verificador acusa o erro.</label>
-        <input class="demo__input" id="demoLinha" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" translate="no" value="34191.09206 23010.166298 92014.463001 1 92180000000000">
-        <ol class="demo__checks" id="demoChecks"></ol>
-        <div class="demo__foot">
-          <p class="demo__sum" id="demoSum" aria-live="polite"></p>
-          <button class="btn btn--line btn--sm" id="demoReset" type="button" data-i18n="demo.reset" hidden>Voltar ao original</button>
-        </div>
-      </div>
-
-      <ul class="projs">
-        <li class="proj">
-          <h3 class="proj__h"><a class="proj__link" href="/ferramentas/pix/" data-i18n="tools.pixH">Gerador de Pix copia e cola e QR Code</a></h3>
-          <p class="proj__p" data-i18n="tools.pixP">Monta o código no padrão BR Code do Banco Central, com CRC16, e lê um código recebido para conferir se ele foi alterado.</p>
-          <p class="proj__stack">JavaScript, BR Code, CRC16, QR Code</p>
-        </li>
-        <li class="proj">
-          <h3 class="proj__h"><a class="proj__link" href="/ferramentas/boleto/" data-i18n="tools.boletoH">Validador de boleto</a></h3>
-          <p class="proj__p" data-i18n="tools.boletoP">Confere os dígitos verificadores em módulo 10 e 11, identifica banco, valor e vencimento, e desenha o código de barras Intercalado 2 de 5.</p>
-          <p class="proj__stack">JavaScript, FEBRABAN, módulo 10 e 11, ITF</p>
-        </li>
-        <li class="proj">
-          <h3 class="proj__h"><a class="proj__link" href="/ferramentas/cnab/" data-i18n="tools.cnabH">Leitor de arquivo de retorno CNAB</a></h3>
-          <p class="proj__p" data-i18n="tools.cnabP">Abre o retorno de cobrança do banco e mostra quem pagou, quanto foi creditado e o que foi rejeitado, conferindo os totais do trailer. CNAB 240 e 400 do Itaú.</p>
-          <p class="proj__stack">JavaScript, CNAB 240/400, FEBRABAN, CSV</p>
-        </li>
-      </ul>
-    </div>
+    <ul class="tools__list">
+      <li>
+        <a class="tool" href="/ferramentas/pix/">
+          <h3 class="tool__h" data-i18n="tools.pixH">Gerador de Pix copia e cola e QR Code</h3>
+          <p class="tool__p" data-i18n="tools.pixP">Monta o código no padrão BR Code do Banco Central, com CRC16, e lê um código recebido para conferir se ele foi alterado.</p>
+          <p class="tool__stack">JavaScript, BR Code, CRC16, QR Code</p>
+        </a>
+      </li>
+      <li>
+        <a class="tool" href="/ferramentas/boleto/">
+          <h3 class="tool__h" data-i18n="tools.boletoH">Validador de boleto</h3>
+          <p class="tool__p" data-i18n="tools.boletoP">Confere os dígitos verificadores em módulo 10 e 11, identifica banco, valor e vencimento, e desenha o código de barras Intercalado 2 de 5.</p>
+          <p class="tool__stack">JavaScript, FEBRABAN, módulo 10 e 11, ITF</p>
+        </a>
+      </li>
+      <li>
+        <a class="tool" href="/ferramentas/cnab/">
+          <h3 class="tool__h" data-i18n="tools.cnabH">Leitor de arquivo de retorno CNAB</h3>
+          <p class="tool__p" data-i18n="tools.cnabP">Abre o retorno de cobrança do banco e mostra quem pagou, quanto foi creditado e o que foi rejeitado, conferindo os totais do trailer. CNAB 240 e 400 do Itaú.</p>
+          <p class="tool__stack">JavaScript, CNAB 240/400, FEBRABAN, CSV</p>
+        </a>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!--g:secServices--><!--/g:secServices-->
 
-<!-- Tecnologias -->
-<section class="sec" id="tecnologias">
-  <div class="wrap sec__grid">
+<!-- Tecnologias: o elenco -->
+<section class="sec cast" id="tecnologias">
+  <div class="wrap">
     <header class="sec__head">
       <h2 class="sec__h" data-i18n="stack.h">Tecnologias</h2>
-      <p class="sec__sub" data-i18n="stack.sub">Agrupadas pelo quanto eu uso hoje. Abra qualquer uma para ver onde ela entrou no trabalho.</p>
+      <p class="sec__sub" data-i18n="stack.sub">Agrupadas pelo quanto eu uso hoje, com o lugar onde cada uma entrou no trabalho.</p>
     </header>
-    <div class="sec__body techgroups" id="stackGrid"><!--g:stack-->
+    <div class="cast__groups" id="stackGrid"><!--g:stack-->
       <div class="techs">
         <h3 class="techs__h">Domínio sólido</h3>
-        <ul class="techs__list">
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/php.svg" alt="" width="20" height="20" loading="lazy"><span>PHP</span></summary>
-              <p>Base dos sistemas internos da ASSEGO e de todos os projetos de cliente na JHON CODE: gestão de contratos, rotinas de cobrança, geração de PDF e envio de e-mail com PHPMailer.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/typescript.svg" alt="" width="20" height="20" loading="lazy"><span>TypeScript</span></summary>
-              <p>Linguagem padrão do front das aplicações novas. Tipagem dos contratos de API de pagamento evitou boa parte dos erros de integração com Sicoob e Itaú.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/javascript.svg" alt="" width="20" height="20" loading="lazy"><span>JavaScript</span></summary>
-              <p>Front-end desde 2023: painéis administrativos, validação de formulários, tabelas dinâmicas e exportação de relatórios direto no navegador.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/css3.svg" alt="" width="20" height="20" loading="lazy"><span>HTML &amp; CSS</span></summary>
-              <p>Layout responsivo em tudo que entrego, com atenção a acessibilidade básica e a telas de celular — este site inclusive, escrito à mão.</p>
-            </details>
-          </li>
-        </ul>
+        <dl class="techs__list">
+          <div class="actor">
+            <dt>PHP</dt>
+            <dd>Base dos sistemas internos da ASSEGO e de todos os projetos de cliente na JHON CODE: gestão de contratos, rotinas de cobrança, geração de PDF e envio de e-mail com PHPMailer.</dd>
+          </div>
+          <div class="actor">
+            <dt>TypeScript</dt>
+            <dd>Linguagem padrão do front das aplicações novas. Tipagem dos contratos de API de pagamento evitou boa parte dos erros de integração com Sicoob e Itaú.</dd>
+          </div>
+          <div class="actor">
+            <dt>JavaScript</dt>
+            <dd>Front-end desde 2023: painéis administrativos, validação de formulários, tabelas dinâmicas e exportação de relatórios direto no navegador.</dd>
+          </div>
+          <div class="actor">
+            <dt>HTML &amp; CSS</dt>
+            <dd>Layout responsivo em tudo que entrego, com atenção a acessibilidade básica e a telas de celular — este site inclusive, escrito à mão.</dd>
+          </div>
+        </dl>
       </div>
       <div class="techs">
         <h3 class="techs__h">Uso diário</h3>
-        <ul class="techs__list">
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/react.svg" alt="" width="20" height="20" loading="lazy"><span>React</span></summary>
-              <p>Interfaces dos dashboards gerenciais: filtros combinados, tabelas com muitos registros e exportação em PDF/Excel para as áreas administrativa e financeira.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/nextjs.svg" alt="" width="20" height="20" loading="lazy"><span>Next.js</span></summary>
-              <p>PWA dos associados — rotas, autenticação, cache offline e foco total em uso no celular, que é onde os associados realmente abrem o sistema.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/mysql.svg" alt="" width="20" height="20" loading="lazy"><span>MySQL</span></summary>
-              <p>Modelagem e manutenção das bases dos sistemas internos: histórico de alterações de contratos, conciliação de pagamentos e queries de relatório.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/postgresql.svg" alt="" width="20" height="20" loading="lazy"><span>PostgreSQL</span></summary>
-              <p>Base das aplicações mais novas. Uso de views e funções para consolidar relatórios financeiros sem pesar no front.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/docker.svg" alt="" width="20" height="20" loading="lazy"><span>Docker</span></summary>
-              <p>Padronização dos ambientes de desenvolvimento para que PHP, banco e serviços subam iguais na minha máquina e no servidor.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/linux.svg" alt="" width="20" height="20" loading="lazy"><span>Linux</span></summary>
-              <p>Deploy e operação dos sistemas: permissões, cron, leitura de log, FTP/SFTP e diagnóstico quando algo cai fora do horário.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/git.svg" alt="" width="20" height="20" loading="lazy"><span>Git</span></summary>
-              <p>Versionamento em todos os projetos, branches por demanda e histórico limpo — inclusive em bases que não tinham controle nenhum antes.</p>
-            </details>
-          </li>
-        </ul>
+        <dl class="techs__list">
+          <div class="actor">
+            <dt>React</dt>
+            <dd>Interfaces dos dashboards gerenciais: filtros combinados, tabelas com muitos registros e exportação em PDF/Excel para as áreas administrativa e financeira.</dd>
+          </div>
+          <div class="actor">
+            <dt>Next.js</dt>
+            <dd>PWA dos associados — rotas, autenticação, cache offline e foco total em uso no celular, que é onde os associados realmente abrem o sistema.</dd>
+          </div>
+          <div class="actor">
+            <dt>MySQL</dt>
+            <dd>Modelagem e manutenção das bases dos sistemas internos: histórico de alterações de contratos, conciliação de pagamentos e queries de relatório.</dd>
+          </div>
+          <div class="actor">
+            <dt>PostgreSQL</dt>
+            <dd>Base das aplicações mais novas. Uso de views e funções para consolidar relatórios financeiros sem pesar no front.</dd>
+          </div>
+          <div class="actor">
+            <dt>Docker</dt>
+            <dd>Padronização dos ambientes de desenvolvimento para que PHP, banco e serviços subam iguais na minha máquina e no servidor.</dd>
+          </div>
+          <div class="actor">
+            <dt>Linux</dt>
+            <dd>Deploy e operação dos sistemas: permissões, cron, leitura de log, FTP/SFTP e diagnóstico quando algo cai fora do horário.</dd>
+          </div>
+          <div class="actor">
+            <dt>Git</dt>
+            <dd>Versionamento em todos os projetos, branches por demanda e histórico limpo — inclusive em bases que não tinham controle nenhum antes.</dd>
+          </div>
+        </dl>
       </div>
       <div class="techs">
         <h3 class="techs__h">Nível inicial</h3>
-        <ul class="techs__list">
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/java.svg" alt="" width="20" height="20" loading="lazy"><span>Java</span></summary>
-              <p>Java 7 e 8 em sistemas legados: leitura de código existente, correção de rotinas e ajustes pontuais. Nível inicial, com apoio da equipe.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/spring.svg" alt="" width="20" height="20" loading="lazy"><span>Spring Boot</span></summary>
-              <p>Estudo dirigido e projetos próprios de API REST, para chegar preparado nas demandas de back-end Java do time.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/angular.svg" alt="" width="20" height="20" loading="lazy"><span>Angular</span></summary>
-              <p>Correções em telas de sistemas já existentes: componentes, formulários e chamadas de serviço. Primeiro contato, feito com apoio da equipe.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/flutter.svg" alt="" width="20" height="20" loading="lazy"><span>Flutter</span></summary>
-              <p>Na FIO GUIA, telas do app de controle financeiro para médicos, consumindo API e integrando com o fluxo de atendimento.</p>
-            </details>
-          </li>
-          <li>
-            <details class="tech">
-              <summary><img src="assets/img/logos/redhat.svg" alt="" width="20" height="20" loading="lazy"><span>JBoss EAP</span></summary>
-              <p>EAP 6 e 7: deploy de WAR, ajuste de datasource e leitura de logs para investigar erro em produção.</p>
-            </details>
-          </li>
-        </ul>
+        <dl class="techs__list">
+          <div class="actor">
+            <dt>Java</dt>
+            <dd>Java 7 e 8 em sistemas legados: leitura de código existente, correção de rotinas e ajustes pontuais. Nível inicial, com apoio da equipe.</dd>
+          </div>
+          <div class="actor">
+            <dt>Spring Boot</dt>
+            <dd>Estudo dirigido e projetos próprios de API REST, para chegar preparado nas demandas de back-end Java do time.</dd>
+          </div>
+          <div class="actor">
+            <dt>Angular</dt>
+            <dd>Correções em telas de sistemas já existentes: componentes, formulários e chamadas de serviço. Primeiro contato, feito com apoio da equipe.</dd>
+          </div>
+          <div class="actor">
+            <dt>Flutter</dt>
+            <dd>Na FIO GUIA, telas do app de controle financeiro para médicos, consumindo API e integrando com o fluxo de atendimento.</dd>
+          </div>
+          <div class="actor">
+            <dt>JBoss EAP</dt>
+            <dd>EAP 6 e 7: deploy de WAR, ajuste de datasource e leitura de logs para investigar erro em produção.</dd>
+          </div>
+        </dl>
       </div><!--/g:stack--></div>
   </div>
 </section>
 
 <!-- Certificados -->
-<section class="sec" id="certificados">
-  <div class="wrap sec__grid">
+<section class="sec certsec" id="certificados">
+  <div class="wrap certsec__grid">
     <header class="sec__head">
       <h2 class="sec__h" data-i18n="certs.h">Certificados</h2>
       <p class="sec__sub" data-i18n="certs.sub">Formação e cursos. Clique em um certificado para ampliar.</p>
     </header>
-    <div class="sec__body">
-      <ul class="certs" id="certsGrid"><!--g:certs-->
+    <div class="certsec__body">
+    <ul class="certs" id="certsGrid"><!--g:certs-->
       <li>
         <button class="cert" type="button" data-i="0">
-          <span class="cert__shot"><img src="assets/img/certificados/diploma-ads-senac.webp" alt="" loading="lazy" width="400" height="300"></span>
           <span class="cert__title">Tecnólogo em Análise e Desenvolvimento de Sistemas</span>
           <span class="cert__meta">Faculdade Senac Goiás, diploma, 2025</span>
+          <span class="cert__go">Ampliar</span>
+          <span class="cert__shot"><img src="assets/img/certificados/diploma-ads-senac.webp" alt="" loading="lazy" width="400" height="300"></span>
         </button>
       </li>
       <li>
         <button class="cert" type="button" data-i="1">
-          <span class="cert__shot"><img src="assets/img/certificados/ingles-b2-ufg.webp" alt="" loading="lazy" width="400" height="300"></span>
           <span class="cert__title">Inglês — nível B2</span>
           <span class="cert__meta">UFG, Centro de Línguas, 480h, 2026</span>
+          <span class="cert__go">Ampliar</span>
+          <span class="cert__shot"><img src="assets/img/certificados/ingles-b2-ufg.webp" alt="" loading="lazy" width="400" height="300"></span>
         </button>
       </li>
       <li>
         <button class="cert" type="button" data-i="2">
-          <span class="cert__shot"><img src="assets/img/certificados/ev-seguranca-ti.webp" alt="" loading="lazy" width="400" height="300"></span>
           <span class="cert__title">Segurança em Tecnologia da Informação</span>
           <span class="cert__meta">Fundação Bradesco, Escola Virtual, 12h, 2025</span>
+          <span class="cert__go">Ampliar</span>
+          <span class="cert__shot"><img src="assets/img/certificados/ev-seguranca-ti.webp" alt="" loading="lazy" width="400" height="300"></span>
         </button>
       </li><!--/g:certs--></ul>
-      <p class="certs__more" data-i18n="certs.more">Também concluí cinco cursos curtos do IFRO pela Cursa em 2025: Programação para Web, Análise e projeto de sistemas, Lógica de programação, Banco de dados e Estrutura de dados.</p>
+    <p class="certs__more" data-i18n="certs.more">Também concluí cinco cursos curtos do IFRO pela Cursa em 2025: Programação para Web, Análise e projeto de sistemas, Lógica de programação, Banco de dados e Estrutura de dados.</p>
     </div>
   </div>
 </section>
 
-<!-- Contato -->
-<section class="sec sec--contact" id="contato">
-  <div class="wrap sec__grid">
-    <header class="sec__head">
-      <h2 class="sec__h" data-i18n="contact.h">Contato</h2>
-      <p class="contact__lead" data-i18n="contact.lead">Procurando um desenvolvedor júnior que já colocou sistema em produção?</p>
-      <p class="sec__sub" data-i18n="contact.sub">Posso começar imediatamente, presencial em Goiânia ou remoto. Respondo em até um dia útil.</p>
+<!-- Contato: o letreiro final -->
+<section class="end" id="contato">
+  <video class="end__video" muted playsinline loop preload="none" aria-hidden="true" poster="assets/video/fim.jpg" data-src="assets/video/fim.mp4" data-src-m="assets/video/fim-m.mp4"></video>
+  <div class="wrap end__grid">
+    <header class="end__head">
+      <h2 class="end__h" data-i18n="contact.lead">Procurando um desenvolvedor júnior que já colocou sistema em produção?</h2>
+      <p class="end__sub" data-i18n="contact.sub">Posso começar imediatamente, presencial em Goiânia ou remoto. Respondo em até um dia útil.</p>
 
       <dl class="clinks">
         <div><dt>E-mail</dt><dd><a href="mailto:matheusrenatoam@gmail.com">matheusrenatoam@gmail.com</a></dd></div>
@@ -575,65 +596,61 @@
       <a class="btn btn--line js-cv" id="cvLink" href="assets/Curriculo_Matheus_Renato.pdf?v=20261028" download="Matheus-Morais-Curriculo.pdf" data-i18n="contact.cv">Baixar currículo (PDF)</a>
     </header>
 
-    <div class="sec__body">
-      <form class="form" id="contactForm" novalidate>
-        <h3 class="form__legend" data-i18n="form.legend">Enviar mensagem</h3>
+    <form class="form" id="contactForm" novalidate>
+      <h3 class="form__legend" data-i18n="form.legend">Enviar mensagem</h3>
 
-        <!-- campo-armadilha: humano não vê, robô de spam preenche -->
-        <div class="form__trap" aria-hidden="true">
-          <label for="f-site">Não preencha</label>
-          <input type="text" id="f-site" name="website" tabindex="-1" autocomplete="off">
-        </div>
+      <!-- campo-armadilha: humano não vê, robô de spam preenche -->
+      <div class="form__trap" aria-hidden="true">
+        <label for="f-site">Não preencha</label>
+        <input type="text" id="f-site" name="website" tabindex="-1" autocomplete="off">
+      </div>
 
-        <div class="form__row">
-          <p class="field">
-            <label for="f-nome" data-i18n="form.name">Nome</label>
-            <input type="text" id="f-nome" name="nome" required autocomplete="name" data-i18n-ph="form.namePh" placeholder="Seu nome">
-          </p>
-          <p class="field">
-            <label for="f-email" data-i18n="form.email">E-mail</label>
-            <input type="email" id="f-email" name="email" required autocomplete="email" spellcheck="false" autocapitalize="off" data-i18n-ph="form.emailPh" placeholder="nome@empresa.com.br">
-          </p>
-        </div>
-
-        <div class="form__row">
-          <p class="field">
-            <label for="f-fone"><span data-i18n="form.phone">WhatsApp</span> <em data-i18n="form.optional">opcional</em></label>
-            <input type="tel" id="f-fone" name="whatsapp" autocomplete="tel" data-i18n-ph="form.phonePh" placeholder="(62) 90000-0000">
-          </p>
-          <p class="field">
-            <label for="f-assunto" data-i18n="form.subject">Assunto</label>
-            <select id="f-assunto" name="assunto">
-              <option value="s1" data-i18n="form.s1">Vaga efetiva (CLT)</option>
-              <option value="s2" data-i18n="form.s2">Vaga PJ ou contrato</option>
-              <option value="s3" data-i18n="form.s3">Conversar sobre uma oportunidade</option>
-              <option value="s4" data-i18n="form.s4">Outro assunto</option>
-            </select>
-          </p>
-        </div>
-
+      <div class="form__row">
         <p class="field">
-          <label for="f-msg" data-i18n="form.msg">Mensagem</label>
-          <textarea id="f-msg" name="mensagem" rows="6" required data-i18n-ph="form.msgPh" placeholder="A empresa, a vaga e o que você gostaria de saber. Se tiver o link da vaga, cole aqui."></textarea>
+          <label for="f-nome" data-i18n="form.name">Nome</label>
+          <input type="text" id="f-nome" name="nome" required autocomplete="name" data-i18n-ph="form.namePh" placeholder="Seu nome">
         </p>
+        <p class="field">
+          <label for="f-email" data-i18n="form.email">E-mail</label>
+          <input type="email" id="f-email" name="email" required autocomplete="email" spellcheck="false" autocapitalize="off" data-i18n-ph="form.emailPh" placeholder="nome@empresa.com.br">
+        </p>
+      </div>
 
-        <div class="form__foot">
-          <button class="btn btn--solid" type="submit" id="formSend" data-i18n="form.send">Enviar mensagem</button>
-          <p class="form__privacy" data-i18n="form.privacy">Seus dados vão direto para o meu e-mail e não são repassados a ninguém.</p>
-        </div>
-        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-      </form>
-    </div>
+      <div class="form__row">
+        <p class="field">
+          <label for="f-fone"><span data-i18n="form.phone">WhatsApp</span> <em data-i18n="form.optional">opcional</em></label>
+          <input type="tel" id="f-fone" name="whatsapp" autocomplete="tel" data-i18n-ph="form.phonePh" placeholder="(62) 90000-0000">
+        </p>
+        <p class="field">
+          <label for="f-assunto" data-i18n="form.subject">Assunto</label>
+          <select id="f-assunto" name="assunto">
+            <option value="s1" data-i18n="form.s1">Vaga efetiva (CLT)</option>
+            <option value="s2" data-i18n="form.s2">Vaga PJ ou contrato</option>
+            <option value="s3" data-i18n="form.s3">Conversar sobre uma oportunidade</option>
+            <option value="s4" data-i18n="form.s4">Outro assunto</option>
+          </select>
+        </p>
+      </div>
+
+      <p class="field">
+        <label for="f-msg" data-i18n="form.msg">Mensagem</label>
+        <textarea id="f-msg" name="mensagem" rows="5" required data-i18n-ph="form.msgPh" placeholder="A empresa, a vaga e o que você gostaria de saber. Se tiver o link da vaga, cole aqui."></textarea>
+      </p>
+
+      <div class="form__foot">
+        <button class="btn btn--solid" type="submit" id="formSend" data-i18n="form.send">Enviar mensagem</button>
+        <p class="form__privacy" data-i18n="form.privacy">Seus dados vão direto para o meu e-mail e não são repassados a ninguém.</p>
+      </div>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
 </main>
 
 <footer class="foot">
-  <div class="wrap foot__in">
-    <span>© <span id="year">2026</span> Matheus Renato Arantes de Morais</span>
-    <a href="#top" data-i18n="foot.top">Voltar ao topo</a>
-  </div>
+  <span>© <span id="year">2026</span> Matheus Renato Arantes de Morais</span>
+  <a href="#top" data-i18n="foot.top">Voltar ao topo</a>
 </footer>
 
 <!-- Lightbox -->
@@ -645,7 +662,7 @@
     <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
   <figure class="lbox__fig">
-    <img id="lboxImg" src="" alt="" width="1400" height="1050">
+    <img id="lboxImg" alt="" width="1400" height="1050">
     <figcaption id="lboxCap"></figcaption>
   </figure>
   <button class="lbox__btn lbox__nav lbox__nav--next" id="lboxNext" type="button" data-i18n-label="lbox.next" aria-label="Próximo">
@@ -653,10 +670,12 @@
   </button>
 </div>
 
-<script src="assets/js/data.js?v=20261028" defer></script>
-<script src="assets/js/i18n.js?v=20261028" defer></script>
-<script src="assets/js/ferramentas/pagamentos.js?v=20261028" defer></script>
-<script src="assets/js/render.js?v=20261028" defer></script>
-<script src="assets/js/main.js?v=20261028" defer></script>
+<script src="assets/js/data.js?v=20261104" defer></script>
+<script src="assets/js/i18n.js?v=20261104" defer></script>
+<script src="assets/js/render.js?v=20261104" defer></script>
+<script src="assets/js/main.js?v=20261104" defer></script>
+<script src="assets/js/vendor/gsap.min.js?v=20261104" defer></script>
+<script src="assets/js/vendor/ScrollTrigger.min.js?v=20261104" defer></script>
+<script src="assets/js/cinema.js?v=20261104" defer></script>
 </body>
 </html>
