@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FreelaManager: estudo de caso — Matheus Morais</title>
+<meta name="description" content="Como o FreelaManager foi feito: API em Express com Prisma e PostgreSQL, front em React, 140 testes e as decisões para não perder centavo.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FreelaManager: estudo de caso">
+<meta property="og:description" content="API em Express com Prisma e PostgreSQL, front em React e 140 testes rodando na CI.">
+<meta property="og:image" content="https://matheusmorais.com/img/compartilhar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://matheusmorais.com/freelamanager.html">
+<link rel="alternate" hreflang="pt-BR" href="https://matheusmorais.com/freelamanager.html">
+<link rel="alternate" hreflang="en" href="https://matheusmorais.com/en/freelamanager.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#ffffff">
+<script src="js/tema.js?v=20261111"></script>
+<link rel="stylesheet" href="css/fontes.css?v=20261111">
+<link rel="stylesheet" href="css/estilo.css?v=20261111">
+</head>
+<body>
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="container">
+    <a class="logo" href="./">Matheus Morais</a>
+    <ul class="menu">
+      <li><a href="./#projetos">Projetos</a></li>
+      <li><a href="./#experiencia">Experiência</a></li>
+      <li><a href="./#tecnologias">Tecnologias</a></li>
+      <li><a href="./#contato">Contato</a></li>
+    </ul>
+    <div class="topo-acoes">
+      <a class="idioma" href="en/freelamanager.html" hreflang="en" lang="en">EN<span class="sr"> (English version)</span></a>
+      <button class="btn-icone" type="button" data-tema aria-label="Usar tema escuro">
+        <svg class="icone-lua" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="icone-sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-azul" href="./#contato">Enviar mensagem</a>
+      <button class="btn-icone abrir-menu" type="button" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo" class="caso">
+  <section class="caso-topo" aria-labelledby="titulo">
+    <div class="container">
+      <p class="hero-aviso">Estudo de caso</p>
+      <h1 id="titulo">FreelaManager: clientes, contratos e parcelas para freelancers</h1>
+      <p class="caso-lead">Projeto próprio, feito sozinho entre agosto e outubro de 2026. API em Express com Prisma e PostgreSQL, front em React, e uma CI que sobe o banco do zero a cada commit.</p>
+      <div class="links">
+        <a class="link" href="https://app.matheusmorais.com">Abrir a demo</a>
+        <a class="link" href="https://github.com/MatheusMorais1234/freelamanager">Ver o código</a>
+      </div>
+      <dl class="caso-numeros">
+        <div><dt>Testes</dt><dd>140</dd><dd class="suave">95 de integração no backend e 45 no front</dd></div>
+        <div><dt>Commits</dt><dd>23</dd><dd class="suave">de 17/08 a 22/10/2026</dd></div>
+        <div><dt>Último commit</dt><dd><time data-repo="freelamanager" datetime="2026-10-22">22/10/2026</time></dd><dd class="suave">a data vem da API do GitHub</dd></div>
+      </dl>
+      <div class="galeria">
+        <img src="img/freelamanager/painel.webp" alt="Painel do FreelaManager com clientes, contratos, valores a receber e gráfico de faturamento" width="972" height="640">
+        <img src="img/freelamanager/clientes.webp" alt="Lista de clientes com documento, contato, cidade e número de contratos" width="972" height="640" loading="lazy">
+        <img src="img/freelamanager/contratos.webp" alt="Lista de contratos com valor, quanto já foi recebido, prazo e status" width="972" height="640" loading="lazy">
+        <img src="img/freelamanager/pagamentos.webp" alt="Parcelas com totais de recebido, a receber e atrasado, vencimento e forma de pagamento" width="972" height="640" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="titulo-faz">
+    <div class="container duas-colunas">
+      <div class="cabeca">
+        <h2 id="titulo-faz">O que o sistema faz</h2>
+        <p>Cada usuário só enxerga os próprios dados. A demo tem uma conta pronta, recriada a cada 24 horas.</p>
+      </div>
+      <ul class="fatos">
+        <li>Clientes PF e PJ com validação de CPF e CNPJ e endereço pelo CEP (ViaCEP)</li>
+        <li>Contratos com status, valor e prazo</li>
+        <li>Parcelamento automático em até 60 vezes, com baixa em um clique</li>
+        <li>Parcela recebida, a receber ou atrasada, calculada pela data</li>
+        <li>Painel com gráficos e alerta de vencimento</li>
+        <li>Relatório por período com exportação em CSV</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cinza" aria-labelledby="titulo-arq">
+    <div class="container">
+      <div class="cabeca">
+        <h2 id="titulo-arq">Como as partes se ligam</h2>
+        <p>Em produção é um app Express só: a API responde em /api e o próprio Express entrega o build do React.</p>
+      </div>
+      <ol class="arquitetura">
+        <li><strong>React 19</strong><span>Vite, React Router, Tailwind e shadcn/ui</span></li>
+        <li><strong>Express 5</strong><span>JWT com bcrypt, validação com Zod</span></li>
+        <li><strong>Prisma 7</strong><span>migrations versionadas no repositório</span></li>
+        <li><strong>PostgreSQL 17</strong><span>no Neon; a Hostinger roda o Node</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="titulo-dec">
+    <div class="container">
+      <div class="cabeca">
+        <h2 id="titulo-dec">Decisões para não perder centavo</h2>
+        <p>Sistema de cobrança não pode errar valor nem data. Estas regras vieram disso.</p>
+      </div>
+      <div class="decisoes">
+        <div>
+          <h3>Dinheiro como Decimal</h3>
+          <p>No banco é Decimal e no JSON viaja como texto. Número de ponto flutuante soma 0,1 + 0,2 e não dá 0,3.</p>
+        </div>
+        <div>
+          <h3>Parcelas em centavos inteiros</h3>
+          <p>R$ 100 em 3 vezes vira 33,34 + 33,33 + 33,33. A sobra vai para a primeira parcela e a soma fecha.</p>
+        </div>
+        <div>
+          <h3>Vencimento no fim do mês</h3>
+          <p>Uma parcela de 31/01 vence em 28/02 e volta para 31/03. Sem cuidado, 31/01 mais um mês vira 03/03.</p>
+        </div>
+        <div>
+          <h3>Status calculado, nunca salvo</h3>
+          <p>Pago, pendente ou atrasado sai de paid_at e do vencimento. Não existe status velho no banco.</p>
+        </div>
+        <div>
+          <h3>Dados de outro usuário dão 404</h3>
+          <p>Toda consulta filtra por userId. Pedir o registro de outra conta responde como se ele não existisse.</p>
+        </div>
+        <div>
+          <h3>CSV que abre no Excel</h3>
+          <p>Separado por ponto e vírgula e com BOM, para acentos e colunas saírem certos no Excel em português.</p>
+        </div>
+      </div>
+
+      <figure class="codigo">
+        <figcaption>backend/src/lib/installments.js</figcaption>
+<pre><code>// Divide em centavos pra nao sumir centavo; a sobra vai pra 1a parcela
+export function splitAmount(total, parts) {
+  const cents = Math.round(total * 100);
+  const base = Math.floor(cents / parts);
+  const rest = cents - base * parts;
+
+  return Array.from({ length: parts }, (_, i) =&gt; (base + (i === 0 ? rest : 0)) / 100);
+}</code></pre>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cinza" aria-labelledby="titulo-bug">
+    <div class="container duas-colunas">
+      <div class="cabeca">
+        <h2 id="titulo-bug">Um bug que a CI não pegava</h2>
+      </div>
+      <div class="texto-corrido">
+        <p>A ficha do cliente mostrava como atrasada uma parcela que vencia no próprio dia, enquanto o resto do sistema mostrava a mesma parcela como “a receber”.</p>
+        <p>A causa era o fuso horário. As datas ficam no banco como meia-noite UTC, mas essa tela calculava “hoje” com a meia-noite local. Em Goiânia, que fica em UTC-3, o corte andava três horas.</p>
+        <p>Os testes passavam porque a CI roda em UTC, onde os dois cálculos dão o mesmo resultado. A correção foi tirar a regra dessa tela e usar a mesma função do resto do backend, para “hoje” ser definido num lugar só.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="titulo-testes">
+    <div class="container duas-colunas">
+      <div class="cabeca">
+        <h2 id="titulo-testes">Testes e CI</h2>
+        <p>Vitest e Supertest no backend, contra um Postgres de verdade. Cada teste cria a própria conta e apaga no final.</p>
+      </div>
+      <ul class="fatos">
+        <li>Isolamento entre usuários</li>
+        <li>Validação de CPF e CNPJ</li>
+        <li>Parcelamento sem perder centavo</li>
+        <li>Vencimento no fim do mês</li>
+        <li>Totais do relatório</li>
+        <li>No GitHub Actions: sobe o Postgres, roda as migrations do zero, os testes e o build do front</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cinza" aria-labelledby="titulo-falta">
+    <div class="container duas-colunas">
+      <div class="cabeca">
+        <h2 id="titulo-falta">O que ainda não tem</h2>
+      </div>
+      <div class="texto-corrido">
+        <p>Os botões de entrar com Google e Facebook aparecem na tela de login, mas ainda são só visuais e estão marcados como “em breve”.</p>
+        <div class="hero-botoes">
+          <a class="btn btn-azul" href="https://app.matheusmorais.com">Abrir a demo</a>
+          <a class="btn btn-linha" href="./#projetos">Ver os outros projetos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape rodape-curto">
+  <div class="container">
+    <div class="rodape-fim">
+      <span>&copy; 2026 Matheus Morais. <a href="./">Voltar ao portfólio</a></span>
+      <span><button type="button" data-tema>Usar tema escuro</button></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js?v=20261111" defer></script>
+</body>
+</html>

@@ -4,49 +4,58 @@
   <url>
     <loc>https://matheusmorais.com/</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheusmorais.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://matheusmorais.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://matheusmorais.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://matheusmorais.com/"/>
-    <lastmod>2026-11-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-11</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://matheusmorais.com/?lang=en</loc>
+    <loc>https://matheusmorais.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheusmorais.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://matheusmorais.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://matheusmorais.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://matheusmorais.com/"/>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://matheusmorais.com/freelamanager.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheusmorais.com/freelamanager.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://matheusmorais.com/en/freelamanager.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matheusmorais.com/freelamanager.html"/>
+    <lastmod>2026-11-11</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://matheusmorais.com/servicos/</loc>
-    <lastmod>2026-10-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://matheusmorais.com/en/freelamanager.html</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://matheusmorais.com/freelamanager.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://matheusmorais.com/en/freelamanager.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://matheusmorais.com/freelamanager.html"/>
+    <lastmod>2026-11-11</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://matheusmorais.com/ferramentas/</loc>
     <lastmod>2026-10-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://matheusmorais.com/ferramentas/pix/</loc>
     <lastmod>2026-10-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://matheusmorais.com/ferramentas/cnab/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://matheusmorais.com/ferramentas/boleto/</loc>
     <lastmod>2026-10-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matheusmorais.com/ferramentas/cnab/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://matheusmorais.com/servicos/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>
