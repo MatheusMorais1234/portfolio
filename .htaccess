@@ -39,9 +39,9 @@ RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set X-Frame-Options "SAMEORIGIN"
 
-  # O site e 100% self-hosted. O unico destino externo e api.github.com,
-  # usada para a data do ultimo commit (connect-src).
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.github.com https://api.web3forms.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'; upgrade-insecure-requests"
+  # Tudo e servido pelo proprio dominio. Os destinos externos sao a API do GitHub
+  # (data do ultimo commit) e o Web3Forms (formulario de contato).
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.github.com https://api.web3forms.com; object-src 'none'; base-uri 'none'; form-action https://api.web3forms.com; frame-ancestors 'self'; upgrade-insecure-requests"
 
   # Nenhuma dessas APIs e usada pelo site.
   Header set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=(), usb=(), magnetometer=(), accelerometer=(), gyroscope=()"

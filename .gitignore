@@ -10,3 +10,9 @@ Thumbs.db
 
 # Capturas e arquivos de trabalho da revisão de design
 .impeccable/
+
+# arquivos locais das ferramentas de design
+.taste-skill/
+
+# gravacoes brutas do OBS (so os videos finais vao para o site)
+_gravacoes/

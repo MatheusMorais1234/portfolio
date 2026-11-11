@@ -4,11 +4,11 @@
    Uso:  node _ferramentas/gerar-curriculo.mjs
    Precisa do Chrome ou do Edge instalado: o PDF é a impressão de uma
    página HTML. Saída:
-     assets/Curriculo_Matheus_Renato.pdf
-     assets/Matheus_Renato_Resume_EN.pdf
+     docs/Curriculo_Matheus_Renato.pdf
+     docs/Matheus_Renato_Resume_EN.pdf
 
    Para mudar o currículo, edite o texto em CV logo abaixo — as duas
-   línguas lado a lado, como no data.js.
+   línguas lado a lado.
    */
 
 import { writeFileSync, existsSync, mkdtempSync, rmSync } from 'node:fs';
@@ -37,35 +37,40 @@ const CV = {
     lang: 'pt-BR',
     titulo: 'Desenvolvedor Full-Stack | disponível para início imediato',
     secoes: { resumo:'Resumo', skills:'Competências técnicas', exp:'Experiência profissional', projetos:'Projetos (no ar)', edu:'Formação e idiomas' },
-    resumo: 'Desenvolvedor full-stack com quase dois anos mantendo sistemas de gestão em produção na ASSEGO, usados por mais de 100 funcionários e por cerca de 9 mil associados: contratos, cobrança integrada ao Sicoob e ao Itaú, relatórios e aplicativo. PHP, TypeScript, React e Next.js do banco ao front-end. Inglês B2. Disponível de imediato, presencial em Goiânia ou remoto.',
+    resumo: 'Desenvolvedor full-stack com quase dois anos mantendo sistemas de gestão em produção na ASSEGO, usados por mais de 100 funcionários e por cerca de 9 mil associados: contratos, cobrança integrada ao Sicoob e ao Itaú, relatórios e aplicativo. PHP, Laravel, TypeScript, React e Next.js do banco ao front-end. Inglês B2. Disponível de imediato, presencial em Goiânia ou remoto.',
     skills: [
-      ['Principais', 'PHP, TypeScript, JavaScript, React, Next.js, HTML, CSS.'],
+      ['Principais', 'PHP, Laravel, TypeScript, JavaScript, React, Next.js, HTML, CSS.'],
       ['Banco e back-end', 'MySQL, PostgreSQL, Node.js, Express, Prisma, APIs REST, Webhooks, JWT, CNAB 240/400.'],
       ['Infra e ferramentas', 'Linux, Docker, Git, GitHub Actions (CI), Cron.'],
       ['Em evolução', 'Java 7/8, Spring Boot, Angular, JBoss EAP 6/7, Flutter.']
     ],
     exp: [
-      { org:'StudioSports - plataforma de inscrições para provas esportivas (freelance)',
-        cargo:'Desenvolvedor Full-Stack | Ago 2026 - atual',
+      { org:'Automatiza ON - sistema de gestão comercial para pequenas e médias empresas',
+        cargo:'Desenvolvedor Full-Stack (sócio) | Nov 2026 - atual',
         pts:[
-          'Mantém o sistema em produção (PHP/MySQL): inscrições, lotes, cupons e duplas, com PIX pela API do Itaú.',
-          'Criou avisos por WhatsApp (senha, SOS, lembrete) e o painel do organizador com financeiro e apuração ao vivo.',
-          'Fez a revisão de segurança: controle de acesso no admin, sessões assinadas e CPF mascarado (LGPD).'
+          'Reestruturei do zero em Laravel 12 e PHP 8.2 um sistema legado em PHP (em fase de testes): clientes, propostas, ordens de serviço e financeiro.',
+          'Isolei os dados por empresa com global scopes do Eloquent e criei permissões por setor e auditoria de alterações.'
+        ] },
+      { org:'StudioSports - plataforma de inscrições para provas esportivas',
+        cargo:'Desenvolvedor Full-Stack (sócio) | Ago 2026 - atual',
+        pts:[
+          'Mantenho o sistema em produção (PHP/MySQL): inscrições, lotes, cupons e duplas, com PIX pela API do Itaú.',
+          'Criei avisos por WhatsApp (senha, SOS, lembrete) e o painel do organizador com financeiro e apuração ao vivo.',
+          'Fiz a revisão de segurança: controle de acesso no admin, sessões assinadas e CPF mascarado (LGPD).'
         ] },
       { org:'ASSEGO - Associação dos Subtenentes e Sargentos do Estado de Goiás',
         cargo:'Estagiário de Desenvolvimento | Jan 2025 - Out 2026 | Goiânia, GO',
         pts:[
-          'Integrou as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, leitura do retorno, baixa automática e régua de cobrança, com contratos de API tipados em TypeScript.',
-          'Criou o sistema de gestão de contratos (aprovação em etapas, PDF e histórico) e dashboards com exportação PDF/Excel usados por mais de 100 funcionários.',
-          'Construiu a PWA mobile-first usada por cerca de 9 mil associados, em Next.js e TypeScript.',
-          'Automatizou importações, relatórios e e-mails (PHPMailer/Cron) e manteve Java 7/8 em JBoss EAP e telas Angular.'
+          'Integrei as APIs de pagamento do Sicoob e do Itaú: emissão de boletos, leitura do retorno, baixa automática e régua de cobrança, com contratos de API tipados em TypeScript.',
+          'Criei o sistema de gestão de contratos (aprovação em etapas, PDF e histórico) e dashboards com exportação PDF/Excel usados por mais de 100 funcionários.',
+          'Construí a PWA mobile-first usada por cerca de 9 mil associados, em Next.js e TypeScript.',
+          'Automatizei importações, relatórios e e-mails (PHPMailer/Cron) e mantive Java 7/8 em JBoss EAP e telas Angular.'
         ] },
-      { org:'JHON CODE - agência de desenvolvimento web',
+      { org:'John Code - agência de desenvolvimento web',
         cargo:'Estagiário de Desenvolvimento | Jul 2023 - Abr 2024',
         pts:[
-          'Desenvolveu sistemas web sob medida para clientes, do banco MySQL ao front-end em PHP e JavaScript.',
-          'Criou painéis administrativos e autenticação com hash de senha, sessões e controle de acesso por perfil.',
-          'Modelou bancos e diagramas antes da implementação e integrou APIs REST.'
+          'Desenvolvi sistemas web sob medida para clientes, do banco MySQL ao front-end em PHP e JavaScript.',
+          'Criei painéis administrativos e autenticação com hash de senha, sessões e controle de acesso por perfil.'
         ] },
       { org:'FIO GUIA - produto financeiro para médicos',
         cargo:'Estagiário de Desenvolvimento | Jan 2023 - Jun 2023',
@@ -95,18 +100,24 @@ const CV = {
     lang: 'en',
     titulo: 'Full-Stack Developer | available immediately',
     secoes: { resumo:'Summary', skills:'Technical skills', exp:'Professional experience', projetos:'Projects (live)', edu:'Education and languages' },
-    resumo: 'Full-stack developer with almost two years maintaining production management systems at ASSEGO, used by more than 100 staff and around 9,000 members: contracts, billing integrated with Sicoob and Itaú banks, reporting and a member app. PHP, TypeScript, React and Next.js from database to front end. B2 English. Available immediately, on-site in Goiânia (Brazil) or remote.',
+    resumo: 'Full-stack developer with almost two years maintaining production management systems at ASSEGO, used by more than 100 staff and around 9,000 members: contracts, billing integrated with Sicoob and Itaú banks, reporting and a member app. PHP, Laravel, TypeScript, React and Next.js from database to front end. B2 English. Available immediately, on-site in Goiânia (Brazil) or remote.',
     skills: [
-      ['Core', 'PHP, TypeScript, JavaScript, React, Next.js, HTML, CSS.'],
+      ['Core', 'PHP, Laravel, TypeScript, JavaScript, React, Next.js, HTML, CSS.'],
       ['Data and back end', 'MySQL, PostgreSQL, Node.js, Express, Prisma, REST APIs, Webhooks, JWT, CNAB 240/400.'],
       ['Infra and tools', 'Linux, Docker, Git, GitHub Actions (CI), Cron.'],
       ['Developing', 'Java 7/8, Spring Boot, Angular, JBoss EAP 6/7, Flutter.']
     ],
     exp: [
-      { org:'StudioSports - registration platform for sports events (freelance)',
-        cargo:'Full-Stack Developer | Aug 2026 - present',
+      { org:'Automatiza ON - business management system for small and mid-sized companies',
+        cargo:'Full-Stack Developer (partner) | Nov 2026 - present',
         pts:[
-          'Maintains the live PHP/MySQL system: registrations, price tiers, coupons, pairs and Pix via the Itaú API.',
+          'Rebuilt a legacy PHP system from scratch in Laravel 12 and PHP 8.2 (currently in testing): clients, proposals, work orders and finance.',
+          'Isolated data per company with Eloquent global scopes and built department-level permissions and change auditing.'
+        ] },
+      { org:'StudioSports - registration platform for sports events',
+        cargo:'Full-Stack Developer (partner) | Aug 2026 - present',
+        pts:[
+          'Maintain the live PHP/MySQL system: registrations, price tiers, coupons, pairs and Pix via the Itaú API.',
           'Built WhatsApp notices (password, SOS, reminders) and the organizer dashboard with finances and live results.',
           'Ran the security review: admin access control, signed sessions and masked CPF (LGPD).'
         ] },
@@ -118,12 +129,11 @@ const CV = {
           'Built the mobile-first PWA used by around 9,000 members, in Next.js and TypeScript.',
           'Automated imports, reports and emails (PHPMailer/Cron) and maintained Java 7/8 on JBoss EAP and Angular screens.'
         ] },
-      { org:'JHON CODE - web development agency',
+      { org:'John Code - web development agency',
         cargo:'Development Intern | Jul 2023 - Apr 2024',
         pts:[
           'Developed custom web systems for clients, from MySQL to PHP and JavaScript front ends.',
-          'Built admin panels and authentication with password hashing, sessions and role-based access control.',
-          'Designed databases and system diagrams before implementation and integrated REST APIs.'
+          'Built admin panels and authentication with password hashing, sessions and role-based access control.'
         ] },
       { org:'FIO GUIA - financial product for physicians',
         cargo:'Development Intern | Jan 2023 - Jun 2023',
@@ -155,9 +165,9 @@ const a = ([texto, href]) => `<a href="${esc(href)}">${esc(texto)}</a>`;
 const lista = pts => `<ul>${pts.map(p => `<li>${esc(p)}</li>`).join('')}</ul>`;
 
 const CSS = `
-@page{ size:A4; margin:13mm 15mm 12mm 15mm; }
+@page{ size:A4; margin:10mm 14mm 9mm 14mm; }
 *{ box-sizing:border-box; margin:0; padding:0; }
-body{ font-family:Arial, Helvetica, sans-serif; font-size:9.4pt; line-height:1.3; color:#1a1a1a; }
+body{ font-family:Arial, Helvetica, sans-serif; font-size:9.2pt; line-height:1.26; color:#1a1a1a; }
 a{ color:inherit; text-decoration:none; }
 h1{ font-size:21pt; line-height:1.1; color:#111; }
 .tit{ font-size:11pt; color:#555; margin-top:2pt; }
@@ -225,7 +235,7 @@ try {
   for (const c of Object.values(CV)) {
     const fonte = join(tmp, c.arquivo.replace(/\.pdf$/, '.html'));
     writeFileSync(fonte, html(c));
-    const saida = join(raiz, 'assets', c.arquivo);
+    const saida = join(raiz, 'docs', c.arquivo);
     execFileSync(navegador, [
       '--headless', '--disable-gpu', '--no-pdf-header-footer',
       `--user-data-dir=${join(tmp, 'perfil')}`,
@@ -236,4 +246,4 @@ try {
 } finally {
   rmSync(tmp, { recursive:true, force:true });
 }
-console.log('\nCurrículos gerados em assets/. Abra os dois e confira antes de publicar.\n');
+console.log('\nCurrículos gerados em docs/. Abra os dois e confira antes de publicar.\n');
