@@ -1,0 +1,20 @@
+name: testes
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Regras de Pix, boleto e CNAB
+        run: node _ferramentas/testar-pagamentos.mjs
+      - name: Regras de publicação
+        run: node --test "_ferramentas/*.test.mjs"
+      - name: Links quebrados
+        run: node _ferramentas/checar-links.mjs

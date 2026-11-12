@@ -33,6 +33,7 @@ export function extrairVersionados(html) {
 }
 
 export function extrairLinksLocais(html) {
-  const links = [...html.matchAll(/\s(?:href|src)="([^"]*)"/g)].map(m => m[1]);
+  const links = [...html.matchAll(/\s(href|src|srcset)="([^"]*)"/g)].flatMap(([, attr, valor]) =>
+    attr === 'srcset' ? valor.split(',').map(v => v.trim().split(/\s+/)[0]) : [valor]);
   return links.filter(u => u && !u.startsWith('#') && !u.startsWith('//') && !/^[a-z][a-z0-9+.-]*:/i.test(u));
 }

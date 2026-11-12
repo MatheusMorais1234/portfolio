@@ -42,12 +42,26 @@ O texto fica em `_ferramentas/gerar-curriculo.mjs`. Para gerar os PDFs em `docs/
 node _ferramentas/gerar-curriculo.mjs
 ```
 
-## Antes de publicar
+## Publicar
 
-O `.htaccess` guarda CSS e JS em cache por um ano, então troque o `?v=` nos arquivos alterados:
+O `.htaccess` guarda CSS e JS em cache por um ano, por isso cada referência leva `?v=`. A tag `publicado` marca o último commit que está no servidor.
 
 ```bash
-grep -rl "?v=20261111" --include=*.html . | xargs sed -i 's/?v=20261111/?v=AAAAMMDD/g'
+node _ferramentas/publicar.mjs --aplicar   # troca o ?v= do que mudou e lista o que subir
+git commit -am "Versão nova dos arquivos"
+# subir a lista na Hostinger (HTML por último)
+node _ferramentas/verificar-no-ar.mjs       # páginas, ?v= e pastas privadas, no ar
+node _ferramentas/publicar.mjs --marcar
 ```
 
-`_nao-publicar/` e `_gravacoes/` nunca sobem.
+O script nunca lista `_nao-publicar/`, `_gravacoes/`, `_ferramentas/` nem `.github/`.
+
+## Testes
+
+Rodam no GitHub Actions a cada push (`.github/workflows/testes.yml`):
+
+```bash
+node _ferramentas/testar-pagamentos.mjs
+node --test "_ferramentas/*.test.mjs"
+node _ferramentas/checar-links.mjs
+```

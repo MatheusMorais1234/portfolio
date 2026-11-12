@@ -51,3 +51,8 @@ test('links locais ignoram externos, âncoras, mailto e data:', () => {
 <a href="//cdn.exemplo.com/x.js">e</a><a href="tel:+55">f</a>`;
   assert.deepEqual(extrairLinksLocais(pagina), ['freelamanager.html', 'img/matheus.webp']);
 });
+
+test('links locais incluem cada imagem do srcset', () => {
+  const pagina = '<img src="img/a.webp" srcset="img/a-800.webp 800w, img/a.webp 1440w" alt="">';
+  assert.deepEqual(extrairLinksLocais(pagina), ['img/a.webp', 'img/a-800.webp', 'img/a.webp']);
+});
